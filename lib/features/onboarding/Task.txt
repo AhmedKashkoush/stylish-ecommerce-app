@@ -1,0 +1,7 @@
+Esraa's Task (2 Screens)
+
+if your flutter version is below 3.22.3, install fvm then open the terminal in the root of the project and type:
+fvm install 3.22.3 then,
+fvm use 3.22.3.
+
+Task: Design Getting started and Onboarding screens.

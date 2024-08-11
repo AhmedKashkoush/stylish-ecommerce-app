@@ -1,0 +1,9 @@
+Ahmed's Task (1 Screen)
+
+if your flutter version is below 3.22.3, install fvm then open the terminal in the root of the project and type:
+fvm install 3.22.3 then,
+fvm use 3.22.3.
+
+Task: Design Home screen
+
+(Work only on the 'view' folder)
