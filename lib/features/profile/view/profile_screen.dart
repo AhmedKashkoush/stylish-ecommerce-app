@@ -44,7 +44,7 @@ class ProfileScreen extends StatelessWidget {
             ),
             SizedBox(
               height: 20.h,
-            ),
+            ),    
             Text(
               'Personal Details',
               style: GoogleFonts.montserrat(
