@@ -7,12 +7,13 @@ class SharedWidget extends StatelessWidget {
     required this.text,
     this.textController,
     required this.hintText,
+    required this.keyboardType,
   });
 
   final String text;
   final String hintText;
+  final TextInputType? keyboardType;
   final TextEditingController? textController;
-
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -33,8 +34,9 @@ class SharedWidget extends StatelessWidget {
           height: 15,
         ),
         TextForm(
-          controller: textController,
           hintText: hintText,
+          controller: textController,
+          keyboardType: keyboardType,
         ),
       ],
     );

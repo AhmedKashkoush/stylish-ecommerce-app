@@ -5,15 +5,25 @@ class TextForm extends StatelessWidget {
     super.key,
     required this.hintText,
     required this.controller,
+    required this.keyboardType,
   });
 
   final String hintText;
+  final TextInputType? keyboardType;
   final TextEditingController? controller;
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      validator: (value) {
+        if (value == null || value.isEmpty) {
+          return 'Please enter a valid value';
+        }
+        return null;
+      },
+      
       controller: controller,
+      keyboardType: keyboardType,
       cursorColor: Colors.black,
       decoration: InputDecoration(
         hintText: hintText,

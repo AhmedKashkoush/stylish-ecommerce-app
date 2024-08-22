@@ -22,14 +22,28 @@ class BankDetails extends StatelessWidget {
           ),
         ),
         const SharedWidget(
-            text: 'Bank Account Number', hintText: '204356XXXXXXX'),
+          text: 'Bank Account Number',
+          hintText: '204356XXXXXXX',
+          keyboardType: TextInputType.number,
+        ),
         const SharedWidget(
-            text: 'Account Holder\'s Name', hintText: 'Abhiraj Sisodiya'),
-        const SharedWidget(text: 'IFSC Code', hintText: 'SBIN00428'),
+          text: 'Account Holder\'s Name',
+          hintText: 'Abhiraj Sisodiya',
+          keyboardType: TextInputType.text,
+        ),
+        const SharedWidget(
+          text: 'IFSC Code',
+          hintText: 'SBIN00428',
+          keyboardType: TextInputType.text,
+        ),
         const SizedBox(
           height: 25,
         ),
-        CustomButton(textButton: 'Save', onPressed: () {}),
+        CustomButton(
+            textButton: 'Save',
+            onPressed: () {
+              // Implement save action
+            }),
       ],
     );
   }

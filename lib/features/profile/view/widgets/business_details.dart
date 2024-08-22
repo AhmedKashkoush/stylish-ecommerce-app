@@ -20,11 +20,31 @@ class BusinessDetails extends StatelessWidget {
             fontWeight: FontWeight.w600,
           ),
         ),
-        SharedWidget(text: 'Pincode', hintText: '450116'),
-        SharedWidget(text: 'Address', hintText: '216 St Paul\'s Rd,'),
-        SharedWidget(text: 'City', hintText: 'London'),
-        SharedWidget(text: 'State', hintText: 'N1 2LL,'),
-        SharedWidget(text: 'Country', hintText: 'United Kingdom'),
+        SharedWidget(
+          text: 'Pincode',
+          hintText: '450116',
+          keyboardType: TextInputType.number,
+        ),
+        SharedWidget(
+          text: 'Address',
+          hintText: '216 St Paul\'s Rd,',
+          keyboardType: TextInputType.streetAddress,
+        ),
+        SharedWidget(
+          text: 'City',
+          hintText: 'London',
+          keyboardType: TextInputType.text,
+        ),
+        SharedWidget(
+          text: 'State',
+          hintText: 'N1 2LL',
+          keyboardType: TextInputType.text,
+        ),
+        SharedWidget(
+          text: 'Country',
+          hintText: 'United Kingdom',
+          keyboardType: TextInputType.text,
+        ),
         SizedBox(
           height: 25,
         ),

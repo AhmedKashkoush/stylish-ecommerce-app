@@ -23,8 +23,15 @@ class PersonalDetails extends StatelessWidget {
           ),
         ),
         const SharedWidget(
-            text: 'Email Address', hintText: 'aashifa@gmail.com'),
-        const SharedWidget(text: 'Password', hintText: '***********'),
+          text: 'Email Address',
+          hintText: 'aashifa@gmail.com',
+          keyboardType: TextInputType.emailAddress,
+        ),
+        const SharedWidget(
+          text: 'Password',
+          hintText: '***********',
+          keyboardType: TextInputType.visiblePassword,
+        ),
         const SizedBox(
           height: 10,
         ),

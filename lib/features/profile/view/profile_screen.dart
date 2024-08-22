@@ -31,15 +31,13 @@ class ProfileScreen extends StatelessWidget {
           ),
         ),
       ),
-      body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 20),
-        child: ListView(
-          children: const [
-            PersonalDetails(),
-            BusinessDetails(),
-            BankDetails(),
-          ],
-        ),
+      body: ListView(
+        padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 10),
+        children: const [
+          PersonalDetails(),
+          BusinessDetails(),
+          BankDetails(),
+        ],
       ),
     );
   }
