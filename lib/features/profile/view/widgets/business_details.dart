@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:stylish_ecommerce_app/features/profile/view/widgets/shared_widget.dart';
 
 class BusinessDetails extends StatelessWidget {
@@ -8,29 +6,29 @@ class BusinessDetails extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return const Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         SizedBox(
-          height: 20.h,
+          height: 20,
         ),
         Text(
           'Business Address Details',
-          style: GoogleFonts.montserrat(
-            fontSize: 18.sp,
+          style: TextStyle(
+            fontSize: 18,
             color: Colors.black,
             fontWeight: FontWeight.w600,
           ),
         ),
-        const SharedWidget(text: 'Pincode', hintText: '450116'),
-        const SharedWidget(text: 'Address', hintText: '216 St Paul\'s Rd,'),
-        const SharedWidget(text: 'City', hintText: 'London'),
-        const SharedWidget(text: 'State', hintText: 'N1 2LL,'),
-        const SharedWidget(text: 'Country', hintText: 'United Kingdom'),
+        SharedWidget(text: 'Pincode', hintText: '450116'),
+        SharedWidget(text: 'Address', hintText: '216 St Paul\'s Rd,'),
+        SharedWidget(text: 'City', hintText: 'London'),
+        SharedWidget(text: 'State', hintText: 'N1 2LL,'),
+        SharedWidget(text: 'Country', hintText: 'United Kingdom'),
         SizedBox(
-          height: 25.h,
+          height: 25,
         ),
-        const Divider(
+        Divider(
           thickness: 0.8,
           color: Color(0xffC4C4C4),
         ),

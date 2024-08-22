@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:stylish_ecommerce_app/features/profile/view/widgets/bank_details.dart';
 import 'package:stylish_ecommerce_app/features/profile/view/widgets/business_details.dart';
 import 'package:stylish_ecommerce_app/features/profile/view/widgets/personal_details.dart';
@@ -24,17 +22,17 @@ class ProfileScreen extends StatelessWidget {
             Icons.arrow_back_ios,
           ),
         ),
-        title: Text(
+        title: const Text(
           'Profile',
-          style: GoogleFonts.montserrat(
-            fontSize: 16.sp,
+          style: TextStyle(
+            fontSize: 16,
             color: Colors.black,
             fontWeight: FontWeight.w600,
           ),
         ),
       ),
       body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 20.h),
+        padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 20),
         child: ListView(
           children: const [
             PersonalDetails(),

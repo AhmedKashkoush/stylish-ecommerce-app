@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:stylish_ecommerce_app/features/profile/view/widgets/custom_button.dart';
 import 'package:stylish_ecommerce_app/features/profile/view/widgets/shared_widget.dart';
 
@@ -12,13 +10,13 @@ class BankDetails extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        SizedBox(
-          height: 20.h,
+        const SizedBox(
+          height: 20,
         ),
-        Text(
+        const Text(
           'Bank Account Details',
-          style: GoogleFonts.montserrat(
-            fontSize: 18.sp,
+          style: TextStyle(
+            fontSize: 18,
             color: Colors.black,
             fontWeight: FontWeight.w600,
           ),
@@ -28,8 +26,8 @@ class BankDetails extends StatelessWidget {
         const SharedWidget(
             text: 'Account Holder\'s Name', hintText: 'Abhiraj Sisodiya'),
         const SharedWidget(text: 'IFSC Code', hintText: 'SBIN00428'),
-        SizedBox(
-          height: 25.h,
+        const SizedBox(
+          height: 25,
         ),
         CustomButton(textButton: 'Save', onPressed: () {}),
       ],

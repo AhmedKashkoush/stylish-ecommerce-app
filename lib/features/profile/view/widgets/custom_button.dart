@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:google_fonts/google_fonts.dart';
 
 class CustomButton extends StatelessWidget {
   const CustomButton({
@@ -18,18 +16,18 @@ class CustomButton extends StatelessWidget {
     return ElevatedButton(
       onPressed: onPressed,
       style: ElevatedButton.styleFrom(
-        fixedSize: Size(double.maxFinite, 52.h),
+        fixedSize: const Size(double.maxFinite, 52),
         backgroundColor: const Color(
           0xffF83758,
         ),
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(8.r),
+          borderRadius: BorderRadius.circular(8),
         ),
       ),
       child: Text(
         textButton,
-        style: GoogleFonts.plusJakartaSans(
-          fontSize: 15.sp,
+        style: const TextStyle(
+          fontSize: 15,
           fontWeight: FontWeight.w600,
           color: Colors.white,
         ),

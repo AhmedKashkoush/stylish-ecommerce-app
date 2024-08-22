@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:stylish_ecommerce_app/features/profile/view/widgets/text_field.dart';
 
 class SharedWidget extends StatelessWidget {
@@ -20,13 +18,13 @@ class SharedWidget extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        SizedBox(
-          height: 20.h,
+        const SizedBox(
+          height: 20,
         ),
         Text(
           text,
-          style: GoogleFonts.montserrat(
-            fontSize: 14.sp,
+          style: const TextStyle(
+            fontSize: 14,
             fontWeight: FontWeight.w400,
             color: Colors.black,
           ),
