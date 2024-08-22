@@ -8,14 +8,15 @@ class StylishApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: AppStrings.appName,
-      theme: AppThemes.light,
-      darkTheme: AppThemes.dark,
-      themeMode: ThemeMode.system,
-      initialRoute: AppRouter.initialRoute,
-      onGenerateRoute: AppRouter.onGenerateRoute,
-    );
+    return  MaterialApp(
+            debugShowCheckedModeBanner: false,
+            title: AppStrings.appName,
+            theme: AppThemes.light,
+            darkTheme: AppThemes.dark,
+            themeMode: ThemeMode.system,
+            initialRoute: AppRouter.initialRoute,
+            onGenerateRoute: AppRouter.onGenerateRoute,
+          );
+       
   }
 }
