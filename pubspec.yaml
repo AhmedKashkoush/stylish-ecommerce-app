@@ -15,7 +15,6 @@ dependencies:
   flutter_bloc: ^8.1.6
   get_it: ^7.7.0
   shared_preferences: ^2.3.1
-  smooth_page_indicator: ^1.2.0+3
 
 dev_dependencies:
   flutter_launcher_icons: ^0.13.1
@@ -47,7 +46,7 @@ flutter:
   assets:
     - assets/images/
     - assets/icons/
-    
+    - assets/translations/
 
   fonts:
     - family: Montserrat
