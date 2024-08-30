@@ -1,6 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 import '../../../../core/constants/colors.dart';
 import '../../../../core/constants/images.dart';
@@ -57,7 +55,7 @@ class GettingStartedScreen extends StatelessWidget {
                     height: 10,
                   ),
                   const Text(
-                    AppStrings.getStartedPargraph,
+                    AppStrings.getStartedParagraph,
                     textAlign: TextAlign.center,
                     style: TextStyle(
                         color: AppColors.backgroundLight,
@@ -68,11 +66,10 @@ class GettingStartedScreen extends StatelessWidget {
                     height: 30,
                   ),
                   InkWell(
-                    onTap: (){
+                    onTap: () {
                       Navigator.pushNamed(context, '/onboarding');
                     },
                     borderRadius: BorderRadius.circular(5),
-                    
                     child: Container(
                       width: double.infinity,
                       height: 55,
@@ -84,15 +81,16 @@ class GettingStartedScreen extends StatelessWidget {
                         child: Text(
                           AppStrings.getStarted,
                           style: TextStyle(
-                            color: AppColors.backgroundLight,
-                            fontSize: 18,
-                            fontWeight: FontWeight.bold
-                          ),
+                              color: AppColors.backgroundLight,
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold),
                         ),
                       ),
                     ),
-                  ), 
-                  const SizedBox(height: 15,),
+                  ),
+                  const SizedBox(
+                    height: 15,
+                  ),
                 ],
               ),
             ),

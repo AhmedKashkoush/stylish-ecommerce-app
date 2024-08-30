@@ -8,6 +8,7 @@ class AppThemes {
     scaffoldBackgroundColor: AppColors.backgroundLight,
     appBarTheme: const AppBarTheme(
       backgroundColor: AppColors.backgroundLight,
+      surfaceTintColor: Colors.transparent,
     ),
     colorScheme: ColorScheme.fromSeed(
       seedColor: AppColors.primary,
@@ -19,6 +20,7 @@ class AppThemes {
     scaffoldBackgroundColor: AppColors.backgroundDark,
     appBarTheme: const AppBarTheme(
       backgroundColor: AppColors.backgroundDark,
+      surfaceTintColor: Colors.transparent,
     ),
     colorScheme: ColorScheme.fromSeed(
       seedColor: AppColors.primary,

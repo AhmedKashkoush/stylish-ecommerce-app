@@ -16,16 +16,17 @@ class OnBoardingModel {
 List<OnBoardingModel> onBoardingList = [
   OnBoardingModel(
     image: AppImages.onBoarding1,
-    title :AppStrings.onBoarding1Title,
-   description:  AppStrings.onBoarding1Pragraph,
+    title: AppStrings.onBoarding1Title,
+    description: AppStrings.onBoarding1Paragraph,
   ),
-  OnBoardingModel(image: AppImages.onBoarding2 ,
-   title :AppStrings.onBoarding2Title,
-   description:  AppStrings.onBoarding2Pragraph,
+  OnBoardingModel(
+    image: AppImages.onBoarding2,
+    title: AppStrings.onBoarding2Title,
+    description: AppStrings.onBoarding2Paragraph,
   ),
-  OnBoardingModel(image: AppImages.onBoarding3 , 
-   title :AppStrings.onBoarding3Title,
-   description:  AppStrings.onBoarding3Pragraph,
-  
+  OnBoardingModel(
+    image: AppImages.onBoarding3,
+    title: AppStrings.onBoarding3Title,
+    description: AppStrings.onBoarding3Paragraph,
   ),
 ];
