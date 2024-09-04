@@ -1,14 +1,11 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:hugeicons/hugeicons.dart';
 import 'package:stylish_ecommerce_app/core/constants/colors.dart';
 import 'package:stylish_ecommerce_app/core/extensions/space_extension.dart';
-
-import '../../../../../core/widgets/icons/custom_icon.dart';
+import 'package:stylish_ecommerce_app/core/widgets/buttons/offer_button.dart';
 
 part 'view_all_card_type.dart';
-part 'view_all_button.dart';
 part 'title_widget.dart';
 part 'remaining_time_widget.dart';
 part 'last_date_widget.dart';
@@ -85,7 +82,10 @@ class _ViewAllCardState extends State<ViewAllCard> {
                   : LastDateWidget(until: widget.until),
             ],
           ),
-          ViewAllButton(onTap: widget.onTap),
+          OfferButton(
+            text: 'View all',
+            onTap: widget.onTap,
+          ),
         ],
       ),
     );

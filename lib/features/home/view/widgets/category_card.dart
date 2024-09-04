@@ -12,11 +12,17 @@ class CategoryCard extends StatelessWidget {
       mainAxisSize: MainAxisSize.min,
       children: [
         CircleAvatar(
-          radius: 28,
+          radius: 30,
           backgroundImage: AssetImage(category.image),
         ),
         4.h,
-        Text(category.name),
+        Text(
+          category.name,
+          style: const TextStyle(
+            fontSize: 12,
+            fontWeight: FontWeight.w400,
+          ),
+        ),
       ],
     );
   }

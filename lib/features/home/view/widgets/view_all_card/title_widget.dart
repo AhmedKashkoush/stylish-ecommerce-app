@@ -15,7 +15,7 @@ class TitleWidget extends StatelessWidget {
           : 'Trending Products',
       style: const TextStyle(
         color: Colors.white,
-        fontSize: 18,
+        fontSize: 16,
       ),
     );
   }

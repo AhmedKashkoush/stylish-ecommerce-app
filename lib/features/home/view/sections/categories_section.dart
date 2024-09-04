@@ -13,19 +13,23 @@ class CategoriesSection extends StatelessWidget {
     return Container(
       alignment: Alignment.center,
       constraints: const BoxConstraints(
-        maxHeight: kTextTabBarHeight * 2,
+        maxHeight: kTextTabBarHeight * 2.2,
       ),
       decoration: BoxDecoration(
         color: context.theme.scaffoldBackgroundColor,
         borderRadius: BorderRadius.circular(6),
       ),
       child: ListView.separated(
-        padding: const EdgeInsets.all(8),
+        // shrinkWrap: true,
+        padding: const EdgeInsets.symmetric(
+          horizontal: 18,
+          vertical: 10,
+        ),
         scrollDirection: Axis.horizontal,
         itemBuilder: (_, index) => CategoryCard(
           category: categories[index],
         ),
-        separatorBuilder: (_, index) => 12.w,
+        separatorBuilder: (_, index) => 22.w,
         itemCount: categories.length,
       ),
     );

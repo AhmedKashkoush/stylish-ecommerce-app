@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:stylish_ecommerce_app/core/dummy/dummy_categories.dart';
+import 'package:stylish_ecommerce_app/core/dummy/dummy_dod.dart';
 import 'package:stylish_ecommerce_app/core/extensions/space_extension.dart';
 import 'package:stylish_ecommerce_app/core/widgets/app_bars/custom_app_bar.dart';
-import 'package:stylish_ecommerce_app/features/home/model/category_model.dart';
+import 'package:stylish_ecommerce_app/features/home/model/dod_model.dart';
 import 'package:stylish_ecommerce_app/features/home/view/sections/categories_section.dart';
-import 'package:stylish_ecommerce_app/features/home/view/widgets/view_all_card/view_all_card.dart';
+import 'package:stylish_ecommerce_app/features/home/view/sections/dod_section.dart';
+import 'package:stylish_ecommerce_app/features/home/view/sections/sales_section.dart';
 
 class HomeScreen extends StatelessWidget {
   final GlobalKey<ScaffoldState> rootKey;
@@ -33,21 +36,18 @@ class HomeScreen extends StatelessWidget {
             ),
           ),
           10.h,
-          CategoriesSection(
-            categories: List.generate(
-              10,
-              (index) => const CategoryModel(
-                name: 'category',
-                image: 'assets/images/get_started.png',
-              ),
-            ),
+          const CategoriesSection(
+            categories: dummyCategories,
           ),
           10.h,
-          ViewAllCard(
-            onTap: () {},
-            type: ViewAllCardType.dealOfTheDay,
-            until: DateTime.now().add(
-              const Duration(days: 1),
+          const SalesSection(),
+          10.h,
+          DodSection(
+            dealOfTheDay: DodModel(
+              until: DateTime.now().add(
+                const Duration(days: 1),
+              ),
+              products: dummyDod,
             ),
           ),
         ],
