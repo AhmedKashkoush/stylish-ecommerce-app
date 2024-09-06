@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:stylish_ecommerce_app/core/widgets/buttons/list_scroll_button.dart';
+import 'package:stylish_ecommerce_app/core/widgets/scroll/list_scroll_bar.dart';
 import 'package:stylish_ecommerce_app/features/home/model/product_model.dart';
 import 'package:stylish_ecommerce_app/features/home/view/widgets/deal_of_the_day/dod_card.dart';
 
@@ -13,19 +13,11 @@ class DodList extends StatefulWidget {
 
 class _DodListState extends State<DodList> {
   final PageController _controller = PageController(viewportFraction: 0.5);
-  final ValueNotifier<bool> _hasNextNotifier = ValueNotifier<bool>(true),
-      _hasPreviousNotifier = ValueNotifier<bool>(false);
-
-  @override
-  void initState() {
-    _controller.addListener(_pageListener);
-    super.initState();
-  }
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 300,
+      height: 242,
       child: Stack(
         alignment: Alignment.center,
         children: [
@@ -42,33 +34,11 @@ class _DodListState extends State<DodList> {
             ),
             itemCount: widget.products.length,
           ),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                ValueListenableBuilder(
-                  valueListenable: _hasPreviousNotifier,
-                  builder: (_, hasPrevious, __) {
-                    if (!hasPrevious) return const SizedBox.shrink();
-                    return ListScrollButton(
-                      iconType: ListScrollButtonIconType.previous,
-                      onTap: _previous,
-                    );
-                  },
-                ),
-                ValueListenableBuilder(
-                  valueListenable: _hasNextNotifier,
-                  builder: (_, hasNext, __) {
-                    if (!hasNext) return const SizedBox.shrink();
-                    return ListScrollButton(
-                      iconType: ListScrollButtonIconType.next,
-                      onTap: _next,
-                    );
-                  },
-                ),
-              ],
-            ),
+          ListScrollBar(
+            controller: _controller,
+            length: widget.products.length - 2,
+            onNext: _next,
+            onPrevious: _previous,
           ),
         ],
       ),
@@ -95,12 +65,5 @@ class _DodListState extends State<DodList> {
       duration: const Duration(milliseconds: 300),
       curve: Curves.easeInOut,
     );
-  }
-
-  void _pageListener() {
-    if (!_controller.hasClients) return;
-
-    _hasNextNotifier.value = _controller.page! < widget.products.length - 2;
-    _hasPreviousNotifier.value = _controller.page! > 0;
   }
 }

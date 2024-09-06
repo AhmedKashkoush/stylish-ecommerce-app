@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
 
 class StarRatingWidget extends StatelessWidget {
+  final double rate, size;
+  final Color? color, rateColor;
   const StarRatingWidget({
     super.key,
     required this.rate,
+    this.size = 16,
+    this.color,
+    this.rateColor,
   });
-
-  final double rate;
 
   @override
   Widget build(BuildContext context) {
@@ -18,30 +21,29 @@ class StarRatingWidget extends StatelessWidget {
           if (rate - 1 >= index) {
             return Icon(
               Icons.star,
-              color: _activeColor,
-              size: _size,
+              color: rateColor ?? _rateColor,
+              size: size,
             );
           }
           double remaining = rate - 1 / rate.floor() - 1;
           if (remaining > 0 && index == rate.ceil() - 1) {
             return Icon(
               Icons.star_half,
-              color: _color,
-              size: _size,
+              color: color ?? _color,
+              size: size,
             );
           }
 
           return Icon(
             Icons.star_outline_outlined,
-            color: _color,
-            size: _size,
+            color: color ?? _color,
+            size: size,
           );
         },
       ),
     );
   }
 
-  double get _size => 14;
-  Color get _activeColor => Colors.yellow.shade700;
+  Color get _rateColor => Colors.yellow.shade700;
   Color get _color => Colors.grey.shade300;
 }

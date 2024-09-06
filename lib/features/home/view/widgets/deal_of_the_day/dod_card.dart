@@ -21,8 +21,8 @@ class DodCard extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Expanded(
-            flex: 2,
+          SizedBox(
+            height: 124,
             child: Container(
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(6),
@@ -33,69 +33,84 @@ class DodCard extends StatelessWidget {
               ),
             ),
           ),
-          10.h,
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child:
-                Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-              Text(
-                product.name,
-                maxLines: 2,
-                overflow: TextOverflow.ellipsis,
-                style: const TextStyle(
-                  fontSize: 14,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-              10.h,
-              Text(
-                product.description,
-                maxLines: 2,
-                overflow: TextOverflow.ellipsis,
-              ),
-              10.h,
-              Text(
-                '${product.currency} ${product.sale != null ? (product.price - product.price * product.sale!) : product.price}',
-                style: const TextStyle(
-                  fontSize: 14,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-              if (product.sale != null) ...[
-                10.h,
-                Row(
-                  children: [
-                    Text(
-                      '${product.currency} ${product.price}',
-                      style: const TextStyle(
-                        fontSize: 14,
-                        decoration: TextDecoration.lineThrough,
-                        color: Colors.grey,
-                      ),
+          Expanded(
+            child: Padding(
+              padding: const EdgeInsets.all(6.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    product.name,
+                    maxLines: 2,
+                    overflow: TextOverflow.ellipsis,
+                    style: const TextStyle(
+                      fontSize: 12,
+                      fontWeight: FontWeight.w500,
                     ),
-                    10.w,
-                    Text(
-                      '${product.sale! * 100}% OFF',
-                      style: const TextStyle(
-                        fontSize: 14,
-                        color: Colors.red,
-                      ),
+                  ),
+                  6.h,
+                  Text(
+                    product.description,
+                    maxLines: 2,
+                    overflow: TextOverflow.ellipsis,
+                    style: const TextStyle(
+                      fontSize: 10,
+                      fontWeight: FontWeight.w400,
+                    ),
+                  ),
+                  6.h,
+                  Text(
+                    '${product.currency} ${product.sale != null ? (product.price - product.price * product.sale!) : product.price}',
+                    style: const TextStyle(
+                      fontSize: 12,
+                      fontWeight: FontWeight.w500,
+                    ),
+                  ),
+                  if (product.sale != null) ...[
+                    Row(
+                      children: [
+                        4.w,
+                        Text(
+                          '${product.currency} ${product.price}',
+                          style: const TextStyle(
+                            fontSize: 12,
+                            fontWeight: FontWeight.w300,
+                            decoration: TextDecoration.lineThrough,
+                            color: Colors.grey,
+                            height: 0.8,
+                          ),
+                        ),
+                        10.w,
+                        Text(
+                          '${product.sale! * 100}% OFF',
+                          style: const TextStyle(
+                            fontSize: 10,
+                            fontWeight: FontWeight.w400,
+                            color: Colors.red,
+                            height: 0.8,
+                          ),
+                        ),
+                      ],
                     ),
                   ],
-                ),
-              ],
-              10.h,
-              Row(
-                children: [
-                  StarRatingWidget(rate: product.rate),
-                  10.w,
-                  Text(
-                    '${product.totalRate}',
-                    style: const TextStyle(fontSize: 12, color: Colors.grey),
+                  const Spacer(),
+                  Row(
+                    children: [
+                      StarRatingWidget(rate: product.rate),
+                      10.w,
+                      Text(
+                        '${product.totalRate}',
+                        style: const TextStyle(
+                          fontSize: 10,
+                          fontWeight: FontWeight.w400,
+                          color: Colors.grey,
+                        ),
+                      ),
+                    ],
                   ),
                 ],
               ),
-            ]),
+            ),
           )
         ],
       ),

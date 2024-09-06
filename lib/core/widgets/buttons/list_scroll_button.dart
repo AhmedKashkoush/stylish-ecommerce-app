@@ -14,28 +14,32 @@ class ListScrollButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return Material(
+      type: MaterialType.transparency,
       clipBehavior: Clip.hardEdge,
-      alignment: Alignment.center,
-      width: size,
-      height: size,
-      decoration: BoxDecoration(
-        color: context.theme.scaffoldBackgroundColor.withOpacity(0.5),
-        shape: BoxShape.circle,
-        gradient: RadialGradient(
-          colors: [
-            context.theme.iconTheme.color!.withOpacity(0.6),
-            context.theme.iconTheme.color!.withOpacity(0.1),
-          ],
-        ),
-      ),
+      shape: const CircleBorder(),
       child: InkWell(
         onTap: onTap,
-        child: Icon(
-          iconType == ListScrollButtonIconType.previous
-              ? Icons.arrow_back_ios_outlined
-              : Icons.arrow_forward_ios_outlined,
-          size: size / 2,
+        child: Container(
+          // clipBehavior: Clip.hardEdge,
+          alignment: Alignment.center,
+          width: size,
+          height: size,
+          decoration: BoxDecoration(
+            color: context.theme.scaffoldBackgroundColor.withOpacity(0.5),
+            gradient: RadialGradient(
+              colors: [
+                context.theme.iconTheme.color!.withOpacity(0.6),
+                context.theme.iconTheme.color!.withOpacity(0.1),
+              ],
+            ),
+          ),
+          child: Icon(
+            iconType == ListScrollButtonIconType.previous
+                ? Icons.arrow_back_ios_outlined
+                : Icons.arrow_forward_ios_outlined,
+            size: size / 2,
+          ),
         ),
       ),
     );
