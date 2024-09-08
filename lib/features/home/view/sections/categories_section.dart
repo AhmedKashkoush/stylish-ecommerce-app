@@ -12,18 +12,15 @@ class CategoriesSection extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       alignment: Alignment.center,
-      constraints: const BoxConstraints(
-        maxHeight: kTextTabBarHeight * 2.2,
-      ),
+      height: 88,
       decoration: BoxDecoration(
         color: context.theme.scaffoldBackgroundColor,
         borderRadius: BorderRadius.circular(6),
       ),
       child: ListView.separated(
-        // shrinkWrap: true,
         padding: const EdgeInsets.symmetric(
           horizontal: 18,
-          vertical: 10,
+          vertical: 6,
         ),
         scrollDirection: Axis.horizontal,
         itemBuilder: (_, index) => CategoryCard(

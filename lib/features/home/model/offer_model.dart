@@ -1,13 +1,13 @@
 import 'package:stylish_ecommerce_app/features/home/model/product_model.dart';
 
-class DodModel {
+class OfferModel {
   final DateTime until;
   final List<ProductModel> products;
 
-  const DodModel({required this.until, required this.products});
+  const OfferModel({required this.until, required this.products});
 
-  factory DodModel.fromJson(Map<String, dynamic> json) {
-    return DodModel(
+  factory OfferModel.fromJson(Map<String, dynamic> json) {
+    return OfferModel(
       until: DateTime.parse(json['until']),
       products: (json['products'] as List)
           .map((e) => ProductModel.fromJson(e))

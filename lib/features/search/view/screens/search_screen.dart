@@ -8,7 +8,8 @@ class SearchScreen extends StatefulWidget {
   State<SearchScreen> createState() => _SearchScreenState();
 }
 
-class _SearchScreenState extends State<SearchScreen> {
+class _SearchScreenState extends State<SearchScreen>
+    with AutomaticKeepAliveClientMixin<SearchScreen> {
   final TextEditingController _searchController = TextEditingController();
 
   @override
@@ -19,6 +20,7 @@ class _SearchScreenState extends State<SearchScreen> {
 
   @override
   Widget build(BuildContext context) {
+    super.build(context);
     return Scaffold(
       appBar: AppBar(
         title: CustomSearchBar(
@@ -28,4 +30,7 @@ class _SearchScreenState extends State<SearchScreen> {
       ),
     );
   }
+
+  @override
+  bool get wantKeepAlive => true;
 }

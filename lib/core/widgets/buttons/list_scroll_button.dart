@@ -15,7 +15,7 @@ class ListScrollButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Material(
-      type: MaterialType.transparency,
+      // type: MaterialType.transparency,
       clipBehavior: Clip.hardEdge,
       shape: const CircleBorder(),
       child: InkWell(
@@ -26,8 +26,9 @@ class ListScrollButton extends StatelessWidget {
           width: size,
           height: size,
           decoration: BoxDecoration(
-            color: context.theme.scaffoldBackgroundColor.withOpacity(0.5),
+            color: context.theme.scaffoldBackgroundColor.withOpacity(0.7),
             gradient: RadialGradient(
+              radius: 0.4,
               colors: [
                 context.theme.iconTheme.color!.withOpacity(0.6),
                 context.theme.iconTheme.color!.withOpacity(0.1),

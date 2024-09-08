@@ -1,14 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:stylish_ecommerce_app/core/dummy/dummy_categories.dart';
 import 'package:stylish_ecommerce_app/core/dummy/dummy_dod.dart';
+import 'package:stylish_ecommerce_app/core/dummy/dummy_sales.dart';
+import 'package:stylish_ecommerce_app/core/dummy/dummy_trending.dart';
 import 'package:stylish_ecommerce_app/core/extensions/space_extension.dart';
 import 'package:stylish_ecommerce_app/core/widgets/app_bars/custom_app_bar.dart';
-import 'package:stylish_ecommerce_app/features/home/model/dod_model.dart';
+import 'package:stylish_ecommerce_app/features/home/model/offer_model.dart';
 import 'package:stylish_ecommerce_app/features/home/view/sections/categories_section.dart';
 import 'package:stylish_ecommerce_app/features/home/view/sections/dod_section.dart';
 import 'package:stylish_ecommerce_app/features/home/view/sections/sales_section.dart';
+import 'package:stylish_ecommerce_app/features/home/view/sections/trending_section.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   final GlobalKey<ScaffoldState> rootKey;
   final void Function() onSearchTap;
   const HomeScreen({
@@ -18,11 +21,18 @@ class HomeScreen extends StatelessWidget {
   }) : super(key: key);
 
   @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen>
+    with AutomaticKeepAliveClientMixin<HomeScreen> {
+  @override
   Widget build(BuildContext context) {
+    super.build(context);
     return Scaffold(
       appBar: CustomAppBar(
-        scaffoldKey: rootKey,
-        onSearchTap: onSearchTap,
+        scaffoldKey: widget.rootKey,
+        onSearchTap: widget.onSearchTap,
       ),
       backgroundColor: Colors.grey.shade200,
       body: ListView(
@@ -40,18 +50,30 @@ class HomeScreen extends StatelessWidget {
             categories: dummyCategories,
           ),
           10.h,
-          const SalesSection(),
+          SalesSection(offers: dummySales),
           10.h,
           DodSection(
-            dealOfTheDay: DodModel(
+            dealOfTheDay: OfferModel(
               until: DateTime.now().add(
                 const Duration(days: 1),
               ),
               products: dummyDod,
             ),
           ),
+          10.h,
+          TrendingSection(
+            trending: OfferModel(
+              until: DateTime.now().add(
+                const Duration(days: 1),
+              ),
+              products: dummyTrending,
+            ),
+          ),
         ],
       ),
     );
   }
+
+  @override
+  bool get wantKeepAlive => true;
 }

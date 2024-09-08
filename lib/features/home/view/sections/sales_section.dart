@@ -4,10 +4,15 @@ import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:stylish_ecommerce_app/core/constants/colors.dart';
 import 'package:stylish_ecommerce_app/core/dummy/dummy_sales.dart';
 import 'package:stylish_ecommerce_app/core/extensions/space_extension.dart';
+import 'package:stylish_ecommerce_app/features/home/model/sales_offer_model.dart';
 import 'package:stylish_ecommerce_app/features/home/view/widgets/sales_offer_card.dart';
 
 class SalesSection extends StatefulWidget {
-  const SalesSection({Key? key}) : super(key: key);
+  final List<SalesOfferModel> offers;
+  const SalesSection({
+    Key? key,
+    required this.offers,
+  }) : super(key: key);
 
   @override
   State<SalesSection> createState() => _SalesSectionState();
@@ -22,7 +27,8 @@ class _SalesSectionState extends State<SalesSection> {
       mainAxisSize: MainAxisSize.min,
       children: [
         CarouselSlider(
-          items: dummySales
+          key: const PageStorageKey<String>('sales'),
+          items: widget.offers
               .map(
                 (offer) => SalesOfferCard(
                   offer: offer,

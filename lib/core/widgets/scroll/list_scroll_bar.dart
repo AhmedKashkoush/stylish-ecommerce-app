@@ -62,7 +62,7 @@ class _ListScrollBarState extends State<ListScrollBar> {
   void _pageListener() {
     if (!widget.controller.hasClients) return;
 
-    _hasNextNotifier.value = widget.controller.page! < widget.length;
+    _hasNextNotifier.value = widget.controller.page!.ceil() < widget.length;
     _hasPreviousNotifier.value = widget.controller.page! > 0;
   }
 }

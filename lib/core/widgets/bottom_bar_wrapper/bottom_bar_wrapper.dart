@@ -22,6 +22,7 @@ class BottomBarWrapper extends StatefulWidget {
 class _BottomBarWrapperState extends State<BottomBarWrapper> {
   int _currentIndex = 0;
   final GlobalKey<ScaffoldState> _rootKey = GlobalKey<ScaffoldState>();
+  final PageController _controller = PageController();
   late final List<Widget> _screens = [
     HomeScreen(
       rootKey: _rootKey,
@@ -49,11 +50,21 @@ class _BottomBarWrapperState extends State<BottomBarWrapper> {
   ];
 
   @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       key: _rootKey,
       drawer: const CustomDrawer(),
-      body: _screens[_currentIndex],
+      body: PageView(
+        controller: _controller,
+        physics: const NeverScrollableScrollPhysics(),
+        children: _screens,
+      ),
       bottomNavigationBar: CustomBottomBar(
         icons: _icons,
         labels: _labels,
@@ -64,6 +75,7 @@ class _BottomBarWrapperState extends State<BottomBarWrapper> {
   }
 
   void _changeTab(int index) {
+    _controller.jumpToPage(index);
     setState(() {
       _currentIndex = index;
     });

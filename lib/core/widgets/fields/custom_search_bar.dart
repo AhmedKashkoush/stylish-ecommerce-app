@@ -40,11 +40,10 @@ class _CustomSearchBarState extends State<CustomSearchBar> {
 
   @override
   Widget build(BuildContext context) {
-    return Material(
-      elevation: 1,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(6.0),
-      ),
+    return PhysicalModel(
+      elevation: 2,
+      color: context.theme.scaffoldBackgroundColor,
+      borderRadius: BorderRadius.circular(6.0),
       child: TextField(
         onTap: !widget.canSearch ? widget.onTap : null,
         controller: widget.controller,

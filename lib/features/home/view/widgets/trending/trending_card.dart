@@ -1,15 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:stylish_ecommerce_app/core/extensions/space_extension.dart';
 import 'package:stylish_ecommerce_app/core/extensions/theme_extension.dart';
-import 'package:stylish_ecommerce_app/core/widgets/rating/star_rating_widget.dart';
 import 'package:stylish_ecommerce_app/features/home/model/product_model.dart';
 
-class DodCard extends StatelessWidget {
+class TrendingCard extends StatelessWidget {
   final ProductModel product;
-  const DodCard({
-    super.key,
-    required this.product,
-  });
+  const TrendingCard({super.key, required this.product});
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +18,7 @@ class DodCard extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           SizedBox(
-            height: 124,
+            height: 100,
             child: Container(
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(6),
@@ -41,21 +37,11 @@ class DodCard extends StatelessWidget {
                 children: [
                   Text(
                     product.name,
-                    maxLines: 2,
+                    maxLines: 3,
                     overflow: TextOverflow.ellipsis,
                     style: const TextStyle(
                       fontSize: 12,
                       fontWeight: FontWeight.w500,
-                    ),
-                  ),
-                  6.h,
-                  Text(
-                    product.description,
-                    maxLines: 2,
-                    overflow: TextOverflow.ellipsis,
-                    style: const TextStyle(
-                      fontSize: 10,
-                      fontWeight: FontWeight.w400,
                     ),
                   ),
                   6.h,
@@ -92,21 +78,6 @@ class DodCard extends StatelessWidget {
                         ),
                       ],
                     ),
-                  const Spacer(),
-                  Row(
-                    children: [
-                      StarRatingWidget(rate: product.rate),
-                      10.w,
-                      Text(
-                        '${product.totalRate}',
-                        style: const TextStyle(
-                          fontSize: 10,
-                          fontWeight: FontWeight.w400,
-                          color: Colors.grey,
-                        ),
-                      ),
-                    ],
-                  ),
                 ],
               ),
             ),
