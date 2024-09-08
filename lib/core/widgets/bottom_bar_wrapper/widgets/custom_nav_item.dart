@@ -21,7 +21,7 @@ class CustomNavItem extends StatelessWidget {
           icon: icon,
           color: isActive ? AppColors.primary : context.theme.iconTheme.color!,
         ),
-        5.h,
+        3.h,
         Text(
           label,
           style: TextStyle(

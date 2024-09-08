@@ -46,7 +46,10 @@ class OfferButton extends StatelessWidget {
         color: Colors.white,
       );
 
-  Widget _buildText() => Text(text);
+  Widget _buildText() => Text(
+        text,
+        overflow: TextOverflow.ellipsis,
+      );
 
   Widget _buildIcon(bool isRtl) => CustomIcon(
         color: Colors.white,

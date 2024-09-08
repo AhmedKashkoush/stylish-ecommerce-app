@@ -16,7 +16,10 @@ class SalesOfferCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       alignment: AlignmentDirectional.centerStart,
-      padding: const EdgeInsets.all(16),
+      padding: const EdgeInsets.symmetric(
+        horizontal: 16,
+        vertical: 8,
+      ),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(8),
         image: DecorationImage(
@@ -37,7 +40,7 @@ class SalesOfferCard extends StatelessWidget {
               fontWeight: FontWeight.bold,
             ),
           ),
-          10.h,
+          4.h,
           Text(
             offer.description,
             style: const TextStyle(

@@ -19,14 +19,14 @@ class CategoriesSection extends StatelessWidget {
       ),
       child: ListView.separated(
         padding: const EdgeInsets.symmetric(
-          horizontal: 18,
+          horizontal: 12,
           vertical: 6,
         ),
         scrollDirection: Axis.horizontal,
         itemBuilder: (_, index) => CategoryCard(
           category: categories[index],
         ),
-        separatorBuilder: (_, index) => 22.w,
+        separatorBuilder: (_, index) => 12.w,
         itemCount: categories.length,
       ),
     );

@@ -4,6 +4,7 @@ import 'package:stylish_ecommerce_app/core/dummy/dummy_dod.dart';
 import 'package:stylish_ecommerce_app/core/dummy/dummy_sales.dart';
 import 'package:stylish_ecommerce_app/core/dummy/dummy_trending.dart';
 import 'package:stylish_ecommerce_app/core/extensions/space_extension.dart';
+import 'package:stylish_ecommerce_app/core/extensions/theme_extension.dart';
 import 'package:stylish_ecommerce_app/core/widgets/app_bars/custom_app_bar.dart';
 import 'package:stylish_ecommerce_app/features/home/model/offer_model.dart';
 import 'package:stylish_ecommerce_app/features/home/view/sections/categories_section.dart';
@@ -34,7 +35,7 @@ class _HomeScreenState extends State<HomeScreen>
         scaffoldKey: widget.rootKey,
         onSearchTap: widget.onSearchTap,
       ),
-      backgroundColor: Colors.grey.shade200,
+      backgroundColor: context.theme.colorScheme.surface,
       body: ListView(
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
         children: [

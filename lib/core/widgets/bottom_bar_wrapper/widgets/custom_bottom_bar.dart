@@ -26,19 +26,21 @@ class CustomBottomBar extends StatelessWidget {
           final int mid = (icons.length ~/ 2);
           if (index == mid) {
             return Transform(
-              transform: Matrix4.identity()..translate(0, -20),
+              transform: Matrix4.identity()..translate(0.0, -20.0),
               child: const CartButton(),
             );
           }
           final int selectedIndex = index >= mid ? index - 1 : index;
-          return MaterialButton(
-            onPressed: () => onChangeTab(selectedIndex),
-            padding: const EdgeInsets.all(8),
-            shape: const StadiumBorder(),
-            child: CustomNavItem(
-              icon: icons[selectedIndex],
-              isActive: selectedIndex == currentIndex,
-              label: labels[selectedIndex],
+          return Expanded(
+            child: MaterialButton(
+              onPressed: () => onChangeTab(selectedIndex),
+              padding: const EdgeInsets.all(4),
+              shape: const StadiumBorder(),
+              child: CustomNavItem(
+                icon: icons[selectedIndex],
+                isActive: selectedIndex == currentIndex,
+                label: labels[selectedIndex],
+              ),
             ),
           );
         }),

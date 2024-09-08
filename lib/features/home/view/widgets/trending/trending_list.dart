@@ -15,7 +15,7 @@ class TrendingList extends StatefulWidget {
 }
 
 class _TrendingListState extends State<TrendingList> {
-  final PageController _controller = PageController(viewportFraction: 0.4);
+  final PageController _controller = PageController(viewportFraction: 0.46);
   @override
   Widget build(BuildContext context) {
     return SizedBox(

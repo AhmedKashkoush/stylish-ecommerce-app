@@ -4,6 +4,7 @@ import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:stylish_ecommerce_app/core/constants/colors.dart';
 import 'package:stylish_ecommerce_app/core/dummy/dummy_sales.dart';
 import 'package:stylish_ecommerce_app/core/extensions/space_extension.dart';
+import 'package:stylish_ecommerce_app/core/extensions/theme_extension.dart';
 import 'package:stylish_ecommerce_app/features/home/model/sales_offer_model.dart';
 import 'package:stylish_ecommerce_app/features/home/view/widgets/sales_offer_card.dart';
 
@@ -52,7 +53,7 @@ class _SalesSectionState extends State<SalesSection> {
                 count: dummySales.length,
                 effect: ScaleEffect(
                   activeDotColor: AppColors.primary.withOpacity(0.7),
-                  dotColor: Colors.grey.shade300,
+                  dotColor: context.theme.iconTheme.color!.withOpacity(0.1),
                   dotHeight: 8,
                   dotWidth: 8,
                   scale: 1.2,

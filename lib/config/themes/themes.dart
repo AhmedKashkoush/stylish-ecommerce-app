@@ -13,6 +13,7 @@ class AppThemes {
     colorScheme: ColorScheme.fromSeed(
       seedColor: AppColors.primary,
       secondary: AppColors.secondary,
+      surface: Colors.grey.shade200,
     ),
   );
   static final ThemeData dark = ThemeData(
@@ -26,6 +27,7 @@ class AppThemes {
       seedColor: AppColors.primary,
       secondary: AppColors.secondary,
       brightness: Brightness.dark,
+      surface: Colors.grey.shade900,
     ),
   );
 }
