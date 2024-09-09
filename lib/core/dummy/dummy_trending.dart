@@ -1,0 +1,33 @@
+import 'package:stylish_ecommerce_app/features/home/model/product_model.dart';
+
+const String _base = 'assets/images/dummy/trending';
+
+final List<ProductModel> dummyTrending = List.generate(
+  5,
+  (index) {
+    return index % 2 == 0
+        ? ProductModel(
+            id: 'Product $index',
+            name: 'Product $index',
+            description:
+                'Description $index Description $index Description $index Description $index Description $index',
+            image: '$_base/watch.png',
+            currency: 'EGP',
+            price: 8000,
+            rate: 5,
+            totalRate: 344567,
+          )
+        : ProductModel(
+            id: 'Product $index',
+            name: 'Product $index',
+            description:
+                'Description $index Description $index Description $index Description $index Description $index',
+            image: '$_base/watch.png',
+            currency: 'EGP',
+            price: 5000,
+            rate: 3.5,
+            sale: 0.5,
+            totalRate: 344567,
+          );
+  },
+);

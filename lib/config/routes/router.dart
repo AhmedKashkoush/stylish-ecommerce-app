@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:stylish_ecommerce_app/config/routes/routes.dart';
+import 'package:stylish_ecommerce_app/core/widgets/bottom_bar_wrapper/bottom_bar_wrapper.dart';
 import 'package:stylish_ecommerce_app/features/auth/view/forgot_password_screen.dart';
 import 'package:stylish_ecommerce_app/features/auth/view/sign_in_screen.dart';
 import 'package:stylish_ecommerce_app/features/auth/view/sign_up_screen.dart';
@@ -9,7 +10,6 @@ import 'package:stylish_ecommerce_app/features/onboarding/view/screens/getting_s
 import 'package:stylish_ecommerce_app/features/profile/view/profile_screen.dart';
 
 import 'package:stylish_ecommerce_app/features/splash/splash_screen.dart';
-
 
 import '../../features/onboarding/view/screens/onboarding_screen.dart';
 
@@ -30,9 +30,13 @@ class AppRouter {
         return MaterialPageRoute(
           builder: (context) => const OnBoardingScreen(),
         );
-      case AppRoutes.profile:
+      case AppRoutes.home:
         return MaterialPageRoute(
-          builder: (context) => const ProfileScreen(),
+          builder: (context) => const BottomBarWrapper(),
+        );
+      case AppRoutes.profile:
+        return _slideTransition(
+          const ProfileScreen(),
         );
         case AppRoutes.signIn:
         return MaterialPageRoute(
@@ -49,5 +53,28 @@ class AppRouter {
       default:
         return null;
     }
+  }
+
+  static PageRouteBuilder _slideTransition(Widget page) {
+    return PageRouteBuilder(
+      transitionsBuilder: (context, animation, __, child) {
+        final bool isRtl = Directionality.of(context) == TextDirection.rtl;
+        return SlideTransition(
+          position: Tween<Offset>(
+            begin: Offset(isRtl ? -1 : 1, 0),
+            end: Offset.zero,
+          ).animate(
+            CurvedAnimation(
+              parent: animation,
+              curve: Curves.easeInOut,
+            ),
+          ),
+          child: child,
+        );
+      },
+      pageBuilder: (_, __, ___) {
+        return const ProfileScreen();
+      },
+    );
   }
 }
