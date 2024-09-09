@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:stylish_ecommerce_app/config/routes/routes.dart';
 import 'package:stylish_ecommerce_app/core/widgets/bottom_bar_wrapper/bottom_bar_wrapper.dart';
+import 'package:stylish_ecommerce_app/features/auth/view/forgot_password_screen.dart';
+import 'package:stylish_ecommerce_app/features/auth/view/sign_in_screen.dart';
+import 'package:stylish_ecommerce_app/features/auth/view/sign_up_screen.dart';
 
 import 'package:stylish_ecommerce_app/features/onboarding/view/screens/getting_started_screen.dart';
 
@@ -34,6 +37,18 @@ class AppRouter {
       case AppRoutes.profile:
         return _slideTransition(
           const ProfileScreen(),
+        );
+        case AppRoutes.signIn:
+        return MaterialPageRoute(
+          builder: (context) => const SignInScreen(),
+        );
+      case AppRoutes.signUp:
+        return MaterialPageRoute(
+          builder: (context) => const SignUpScreen(),
+        );
+      case AppRoutes.forgotPassword:
+        return MaterialPageRoute(
+          builder: (context) => const ForgotPasswordScreen(),
         );
       default:
         return null;
