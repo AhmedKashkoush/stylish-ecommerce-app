@@ -4,9 +4,7 @@ import 'package:stylish_ecommerce_app/core/constants/colors.dart';
 import 'package:stylish_ecommerce_app/core/extensions/space_extension.dart';
 import 'package:stylish_ecommerce_app/core/extensions/theme_extension.dart';
 import 'package:stylish_ecommerce_app/core/widgets/drawers/custom_drawer.dart';
-import 'package:stylish_ecommerce_app/features/home/view/screens/home_screen.dart';
-
-import '../../../features/search/view/screens/search_screen.dart';
+import 'package:stylish_ecommerce_app/features/products/home/view/screens/home_screen.dart';
 
 part 'widgets/custom_bottom_bar.dart';
 part 'widgets/custom_nav_item.dart';
@@ -26,12 +24,13 @@ class _BottomBarWrapperState extends State<BottomBarWrapper> {
   late final List<Widget> _screens = [
     HomeScreen(
       rootKey: _rootKey,
-      onSearchTap: () => _changeTab(2),
     ),
     const Center(
       child: Text('WishList'),
     ),
-    const SearchScreen(),
+    const Center(
+      child: Text('Notifications'),
+    ),
     const Center(
       child: Text('Settings'),
     ),
@@ -39,13 +38,13 @@ class _BottomBarWrapperState extends State<BottomBarWrapper> {
   final List<String> _labels = [
     'Home',
     'Wishlist',
-    'Search',
+    'Notifications',
     'Settings',
   ];
   final List<IconData> _icons = [
     HugeIcons.strokeRoundedHome09,
     HugeIcons.strokeRoundedFavourite,
-    HugeIcons.strokeRoundedSearch01,
+    HugeIcons.strokeRoundedNotification01,
     HugeIcons.strokeRoundedSettings01,
   ];
 

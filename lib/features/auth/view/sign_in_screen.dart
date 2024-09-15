@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:auth_buttons/auth_buttons.dart';
+import 'package:stylish_ecommerce_app/core/extensions/navigation_extension.dart';
 import '../../../config/routes/routes.dart';
-
 
 class SignInScreen extends StatelessWidget {
   const SignInScreen({super.key});
@@ -16,7 +16,7 @@ class SignInScreen extends StatelessWidget {
             child: Text(
               "Welcome \n Back!",
               style: TextStyle(
-                  fontFamily: "Montserrat",
+                  // fontFamily: "Montserrat",
                   fontSize: 36,
                   color: Colors.black,
                   fontWeight: FontWeight.bold),
@@ -59,20 +59,21 @@ class SignInScreen extends StatelessWidget {
               ),
             ),
           ),
-           Padding(
-            padding: const EdgeInsets.only(right: 24.0,top: 8,bottom: 10),
+          Padding(
+            padding: const EdgeInsets.only(right: 24.0, top: 8, bottom: 10),
             child: InkWell(
               onTap: () {
-                Navigator.pushNamed(context, AppRoutes.forgotPassword);
+                context.pushNamed(AppRoutes.forgotPassword);
               },
               child: const Align(
                 alignment: Alignment.centerRight,
                 child: Text(
                   "Forgot Password?",
                   style: TextStyle(
-                      color: Color(0xffF83758),
-                      fontFamily: "Montserrat",
-                      fontSize: 12),
+                    color: Color(0xffF83758),
+                    // fontFamily: "Montserrat",
+                    fontSize: 12,
+                  ),
                 ),
               ),
             ),
@@ -82,16 +83,18 @@ class SignInScreen extends StatelessWidget {
             child: ElevatedButton(
               onPressed: () {
                 // Define the button's action here
+                context.pushReplacementNamed(AppRoutes.home);
               },
               style: ElevatedButton.styleFrom(
-                backgroundColor: Color(0xffF83758),
+                backgroundColor: const Color(0xffF83758),
                 // Red background color
                 padding: const EdgeInsets.symmetric(
                     horizontal: 24.0, vertical: 12.0),
                 textStyle: const TextStyle(fontSize: 22),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(
-                      10.0), // Circular border with radius 10
+                    10.0,
+                  ), // Circular border with radius 10
                 ),
               ),
               child: const Text(
@@ -109,7 +112,7 @@ class SignInScreen extends StatelessWidget {
                 "- OR Continue with -",
                 style: TextStyle(
                     color: Colors.black,
-                    fontFamily: "Montserrat",
+                    // fontFamily: "Montserrat",
                     fontSize: 14),
               ),
               const SizedBox(
@@ -117,21 +120,21 @@ class SignInScreen extends StatelessWidget {
               ),
               GoogleAuthButton(
                 onPressed: () {},
-                 text: "Google",
-                style:const AuthButtonStyle(
-                  textStyle: TextStyle(
+                text: "Google",
+                style: const AuthButtonStyle(
+                    textStyle: TextStyle(
                       color: Colors.black,
-                  fontWeight: FontWeight.bold),
-                  borderColor: Colors.red,
-                   // padding: EdgeInsets.zero,
+                      fontWeight: FontWeight.bold,
+                    ),
+                    borderColor: Colors.red,
+                    // padding: EdgeInsets.zero,
                     borderWidth: 1,
                     margin: EdgeInsets.zero,
                     buttonColor: Colors.white,
-                     // padding: EdgeInsets.symmetric(horizontal: 7,),
+                    // padding: EdgeInsets.symmetric(horizontal: 7,),
                     buttonType: AuthButtonType.secondary,
                     iconType: AuthIconType.secondary,
-                    borderRadius: 5
-                  ),
+                    borderRadius: 5),
               ),
               const SizedBox(
                 height: 10,
@@ -139,16 +142,16 @@ class SignInScreen extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                const  Text(
+                  const Text(
                     "Create An Account ",
                     style: TextStyle(
                         color: Colors.black,
-                        fontFamily: "Montserrat",
+                        // fontFamily: "Montserrat",
                         fontSize: 14),
                   ),
                   InkWell(
                     onTap: () {
-                      Navigator.pushNamed(context, AppRoutes.signUp);
+                      context.pushReplacementNamed(AppRoutes.signUp);
                     },
                     child: const Text(
                       "Sign Up ",
@@ -158,7 +161,7 @@ class SignInScreen extends StatelessWidget {
                           // Optional: Set color of the underline
                           decorationThickness: 2.0,
                           color: Color(0xffF83758),
-                          fontFamily: "Montserrat",
+                          // fontFamily: "Montserrat",
                           fontWeight: FontWeight.w700,
                           fontSize: 14),
                     ),
@@ -171,6 +174,4 @@ class SignInScreen extends StatelessWidget {
       ),
     );
   }
-
-
 }

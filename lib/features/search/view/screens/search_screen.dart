@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:stylish_ecommerce_app/core/extensions/navigation_extension.dart';
 import 'package:stylish_ecommerce_app/core/widgets/fields/custom_search_bar.dart';
 
 class SearchScreen extends StatefulWidget {
@@ -8,8 +9,7 @@ class SearchScreen extends StatefulWidget {
   State<SearchScreen> createState() => _SearchScreenState();
 }
 
-class _SearchScreenState extends State<SearchScreen>
-    with AutomaticKeepAliveClientMixin<SearchScreen> {
+class _SearchScreenState extends State<SearchScreen> {
   final TextEditingController _searchController = TextEditingController();
 
   @override
@@ -20,17 +20,15 @@ class _SearchScreenState extends State<SearchScreen>
 
   @override
   Widget build(BuildContext context) {
-    super.build(context);
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         title: CustomSearchBar(
           canSearch: true,
+          canPop: context.canPop,
           controller: _searchController,
         ),
       ),
     );
   }
-
-  @override
-  bool get wantKeepAlive => true;
 }

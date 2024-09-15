@@ -1,4 +1,4 @@
-import 'package:stylish_ecommerce_app/features/home/model/product_model.dart';
+import 'package:stylish_ecommerce_app/features/products/home/model/product_model.dart';
 
 const String _base = 'assets/images/dummy/trending';
 

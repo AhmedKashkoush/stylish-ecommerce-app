@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
 extension SpaceExtension on num {
-  SizedBox get w => SizedBox(
+  SizedBox get width => SizedBox(
         width: toDouble(),
       );
-  SizedBox get h => SizedBox(
+  SizedBox get height => SizedBox(
         height: toDouble(),
       );
 }

@@ -15,10 +15,10 @@ class CartButton extends StatelessWidget {
       child: FloatingActionButton(
         onPressed: () {},
         shape: const CircleBorder(),
-        backgroundColor: context.theme.scaffoldBackgroundColor,
-        child: HugeIcon(
+        backgroundColor: AppColors.primary,
+        child: const HugeIcon(
           icon: HugeIcons.strokeRoundedShoppingCart01,
-          color: context.theme.iconTheme.color!,
+          color: Colors.white,
         ),
       ),
     );

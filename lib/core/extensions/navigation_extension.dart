@@ -10,4 +10,6 @@ extension NavigationExtension on BuildContext {
 
   void pushReplacementNamed(String name) =>
       Navigator.of(this).pushReplacementNamed(name);
+
+  bool get canPop => Navigator.of(this).canPop();
 }

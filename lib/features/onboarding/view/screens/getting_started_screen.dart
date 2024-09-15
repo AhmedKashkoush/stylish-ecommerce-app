@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:stylish_ecommerce_app/core/extensions/navigation_extension.dart';
+import 'package:stylish_ecommerce_app/config/routes/routes.dart';
 
 import '../../../../core/constants/colors.dart';
 import '../../../../core/constants/images.dart';
@@ -67,7 +69,7 @@ class GettingStartedScreen extends StatelessWidget {
                   ),
                   InkWell(
                     onTap: () {
-                      Navigator.pushNamed(context, '/onboarding');
+                      context.pushReplacementNamed(AppRoutes.onboarding);
                     },
                     borderRadius: BorderRadius.circular(5),
                     child: Container(
@@ -81,9 +83,10 @@ class GettingStartedScreen extends StatelessWidget {
                         child: Text(
                           AppStrings.getStarted,
                           style: TextStyle(
-                              color: AppColors.backgroundLight,
-                              fontSize: 18,
-                              fontWeight: FontWeight.bold),
+                            color: AppColors.backgroundLight,
+                            fontSize: 18,
+                            fontWeight: FontWeight.bold,
+                          ),
                         ),
                       ),
                     ),

@@ -28,7 +28,7 @@ class AppLogo extends StatelessWidget {
           height: size,
         ),
         if (showText) ...[
-          10.w,
+          10.width,
           Text(
             AppStrings.appName,
             style: TextStyle(

@@ -8,6 +8,7 @@ import 'package:stylish_ecommerce_app/features/auth/view/sign_up_screen.dart';
 import 'package:stylish_ecommerce_app/features/onboarding/view/screens/getting_started_screen.dart';
 
 import 'package:stylish_ecommerce_app/features/profile/view/profile_screen.dart';
+import 'package:stylish_ecommerce_app/features/search/view/screens/search_screen.dart';
 
 import 'package:stylish_ecommerce_app/features/splash/splash_screen.dart';
 
@@ -30,15 +31,7 @@ class AppRouter {
         return MaterialPageRoute(
           builder: (context) => const OnBoardingScreen(),
         );
-      case AppRoutes.home:
-        return MaterialPageRoute(
-          builder: (context) => const BottomBarWrapper(),
-        );
-      case AppRoutes.profile:
-        return _slideTransition(
-          const ProfileScreen(),
-        );
-        case AppRoutes.signIn:
+      case AppRoutes.signIn:
         return MaterialPageRoute(
           builder: (context) => const SignInScreen(),
         );
@@ -50,18 +43,53 @@ class AppRouter {
         return MaterialPageRoute(
           builder: (context) => const ForgotPasswordScreen(),
         );
+      case AppRoutes.home:
+        return MaterialPageRoute(
+          builder: (context) => const BottomBarWrapper(),
+        );
+      case AppRoutes.profile:
+        return _slideTransition(
+          const ProfileScreen(),
+          transitionType: _PageTransitionType.endToStart,
+        );
+      case AppRoutes.search:
+        return _slideTransition(
+          const SearchScreen(),
+          transitionType: _PageTransitionType.bottomToTop,
+        );
       default:
         return null;
     }
   }
 
-  static PageRouteBuilder _slideTransition(Widget page) {
+  static PageRouteBuilder _slideTransition(
+    Widget page, {
+    required _PageTransitionType transitionType,
+  }) {
     return PageRouteBuilder(
       transitionsBuilder: (context, animation, __, child) {
+        late final Offset offset;
         final bool isRtl = Directionality.of(context) == TextDirection.rtl;
+        switch (transitionType) {
+          case _PageTransitionType.startToEnd:
+            offset = Offset(isRtl ? 1 : -1, 0);
+            break;
+          case _PageTransitionType.endToStart:
+            offset = Offset(isRtl ? -1 : 1, 0);
+            break;
+          case _PageTransitionType.topToBottom:
+            offset = const Offset(0, -1);
+            break;
+          case _PageTransitionType.bottomToTop:
+            offset = const Offset(0, 1);
+            break;
+          default:
+            Offset.zero;
+        }
+
         return SlideTransition(
           position: Tween<Offset>(
-            begin: Offset(isRtl ? -1 : 1, 0),
+            begin: offset,
             end: Offset.zero,
           ).animate(
             CurvedAnimation(
@@ -73,8 +101,10 @@ class AppRouter {
         );
       },
       pageBuilder: (_, __, ___) {
-        return const ProfileScreen();
+        return page;
       },
     );
   }
 }
+
+enum _PageTransitionType { startToEnd, endToStart, topToBottom, bottomToTop }

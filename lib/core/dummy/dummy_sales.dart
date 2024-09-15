@@ -1,4 +1,4 @@
-import 'package:stylish_ecommerce_app/features/home/model/sales_offer_model.dart';
+import 'package:stylish_ecommerce_app/features/products/home/model/sales_offer_model.dart';
 
 const String _base = 'assets/images/dummy';
 

@@ -21,12 +21,16 @@ class CustomNavItem extends StatelessWidget {
           icon: icon,
           color: isActive ? AppColors.primary : context.theme.iconTheme.color!,
         ),
-        3.h,
-        Text(
-          label,
-          style: TextStyle(
-            color:
-                isActive ? AppColors.primary : context.theme.iconTheme.color!,
+        3.height,
+        FittedBox(
+          child: Text(
+            label,
+            style: TextStyle(
+              color:
+                  isActive ? AppColors.primary : context.theme.iconTheme.color!,
+              fontWeight: FontWeight.w400,
+              fontSize: 12,
+            ),
           ),
         ),
       ],

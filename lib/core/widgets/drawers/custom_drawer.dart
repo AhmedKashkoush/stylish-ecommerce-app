@@ -29,7 +29,7 @@ class CustomDrawer extends StatelessWidget {
                     backgroundImage: AssetImage('assets/images/avatar.png'),
                   ),
                 ),
-                16.h,
+                16.height,
                 TextButton(
                   onPressed: () => _goToProfile(context),
                   child: const Text(AppStrings.viewProfile),

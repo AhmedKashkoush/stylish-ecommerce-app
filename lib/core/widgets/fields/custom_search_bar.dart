@@ -3,7 +3,7 @@ import 'package:stylish_ecommerce_app/core/constants/strings.dart';
 import 'package:stylish_ecommerce_app/core/extensions/theme_extension.dart';
 
 class CustomSearchBar extends StatefulWidget {
-  final bool canSearch;
+  final bool canSearch, canPop;
   final void Function()? onTap;
   final TextEditingController? controller;
   const CustomSearchBar({
@@ -11,6 +11,7 @@ class CustomSearchBar extends StatefulWidget {
     this.canSearch = false,
     this.onTap,
     this.controller,
+    this.canPop = false,
   });
 
   @override
@@ -49,18 +50,21 @@ class _CustomSearchBarState extends State<CustomSearchBar> {
         onTap: !widget.canSearch ? widget.onTap : null,
         controller: widget.controller,
         readOnly: !widget.canSearch,
+        autofocus: true,
         decoration: InputDecoration(
           isDense: true,
           hintStyle: TextStyle(
             color: context.theme.hintColor.withOpacity(0.3),
           ),
           contentPadding: const EdgeInsets.symmetric(horizontal: 16.0),
-          prefixIcon: const Padding(
-            padding: EdgeInsets.symmetric(horizontal: 8.0),
-            child: Icon(
-              Icons.search,
-              size: 24.0,
-            ),
+          prefixIcon: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 8.0),
+            child: widget.canPop
+                ? const BackButton()
+                : const Icon(
+                    Icons.search,
+                    size: 24.0,
+                  ),
           ),
           prefixIconColor: context.theme.hintColor.withOpacity(0.3),
           suffixIcon: widget.canSearch && !_isEmpty

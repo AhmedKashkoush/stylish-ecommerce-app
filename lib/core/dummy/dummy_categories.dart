@@ -1,4 +1,4 @@
-import 'package:stylish_ecommerce_app/features/home/model/category_model.dart';
+import 'package:stylish_ecommerce_app/features/products/home/model/category_model.dart';
 
 const String _base = 'assets/images/dummy/categories';
 const List<CategoryModel> dummyCategories = [
