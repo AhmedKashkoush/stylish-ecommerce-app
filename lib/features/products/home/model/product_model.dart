@@ -1,5 +1,5 @@
 class ProductModel {
-  final String id, name, description, image, currency;
+  final String id, name, description, image, currency, category;
   final double price, rate;
   final int totalRate;
   final double? sale;
@@ -10,6 +10,7 @@ class ProductModel {
     required this.description,
     required this.image,
     required this.currency,
+    required this.category,
     required this.price,
     required this.rate,
     required this.totalRate,
@@ -23,6 +24,7 @@ class ProductModel {
       description: json['description'],
       image: json['image'],
       currency: json['currency'],
+      category: json['category'],
       price: json['price'],
       rate: json['rate'],
       totalRate: json['totalRate'],
@@ -36,6 +38,7 @@ class ProductModel {
         'description': description,
         'image': image,
         'currency': currency,
+        'category': category,
         'price': price,
         'rate': rate,
         'totalRate': totalRate,

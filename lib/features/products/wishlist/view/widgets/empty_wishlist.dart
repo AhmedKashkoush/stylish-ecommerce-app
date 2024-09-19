@@ -9,21 +9,25 @@ class EmptyWishlist extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        CustomIcon(
-          icon: HugeIcons.strokeRoundedFavourite,
-          color: context.theme.iconTheme.color!.withOpacity(0.5),
-        ),
-        10.height,
-        Text(
-          'No items',
-          style: context.theme.textTheme.bodyLarge?.copyWith(
-            color: context.theme.textTheme.bodyLarge?.color?.withOpacity(0.5),
+    return Center(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          CustomIcon(
+            icon: HugeIcons.strokeRoundedHeartRemove,
+            color: context.theme.iconTheme.color!.withOpacity(0.5),
+            size: 100,
           ),
-        ),
-      ],
+          10.height,
+          Text(
+            'No items',
+            style: context.theme.textTheme.bodyLarge?.copyWith(
+              color: context.theme.textTheme.bodyLarge?.color?.withOpacity(0.5),
+              fontSize: 20,
+            ),
+          ),
+        ],
+      ),
     );
   }
 }

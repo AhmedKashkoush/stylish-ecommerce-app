@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
+import 'package:stylish_ecommerce_app/core/extensions/bottom_sheet_extension.dart';
 import 'package:stylish_ecommerce_app/features/products/home/model/product_model.dart';
+import 'package:stylish_ecommerce_app/features/products/wishlist/view/widgets/action_bar.dart';
+import 'package:stylish_ecommerce_app/features/products/wishlist/view/widgets/bottom_sheets/filter_bottom_sheet.dart';
+import 'package:stylish_ecommerce_app/features/products/wishlist/view/widgets/bottom_sheets/sort_bottom_sheet.dart';
 import 'package:stylish_ecommerce_app/features/products/wishlist/view/widgets/wishlist_item.dart';
 
 class WishlistWidget extends StatelessWidget {
@@ -25,6 +29,10 @@ class WishlistWidget extends StatelessWidget {
                   fontWeight: FontWeight.w600,
                 ),
               ),
+              ActionBar(
+                onSort: () => _showSortBottomSheet(context),
+                onFilter: () => _showFilterBottomSheet(context),
+              ),
             ],
           ),
         ),
@@ -46,5 +54,21 @@ class WishlistWidget extends StatelessWidget {
         ),
       ],
     );
+  }
+
+  void _showSortBottomSheet(BuildContext context) {
+    context.showBottomSheet(content: const SortBottomSheet());
+  }
+
+  void _showFilterBottomSheet(BuildContext context) async {
+    final (List<String>, List<ProductModel>)? result =
+        await context.showBottomSheet(
+      content: FilterBottomSheet(
+        items: items,
+      ),
+    );
+    if (result == null) return;
+    print('filters: ${result.$1}');
+    print('items: ${result.$2}');
   }
 }
