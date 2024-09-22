@@ -4,7 +4,7 @@ import 'package:stylish_ecommerce_app/core/constants/colors.dart';
 class CustomFilterChip extends StatelessWidget {
   final String label;
   final bool selected;
-  final Function(bool selected, String filter) onSelected;
+  final void Function(bool selected, String filter) onSelected;
   const CustomFilterChip({
     super.key,
     required this.label,
