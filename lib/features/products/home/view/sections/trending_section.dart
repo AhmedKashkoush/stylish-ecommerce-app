@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:stylish_ecommerce_app/config/routes/routes.dart';
+import 'package:stylish_ecommerce_app/core/dummy/dummy_categories.dart';
+import 'package:stylish_ecommerce_app/core/extensions/navigation_extension.dart';
 import 'package:stylish_ecommerce_app/core/extensions/space_extension.dart';
 import 'package:stylish_ecommerce_app/features/products/home/model/offer_model.dart';
 import 'package:stylish_ecommerce_app/features/products/home/view/widgets/trending/trending_list.dart';
@@ -17,7 +20,13 @@ class TrendingSection extends StatelessWidget {
       mainAxisSize: MainAxisSize.min,
       children: [
         ViewAllCard(
-          onTap: () {},
+          onTap: () => context.pushNamed(
+            AppRoutes.products,
+            arguments: {
+              'categories': dummyCategories,
+              'initialTab': 'Trending',
+            },
+          ),
           type: ViewAllCardType.trending,
           until: trending.until,
         ),
