@@ -14,27 +14,27 @@ class SharedWidget extends StatelessWidget {
   final String hintText;
   final TextInputType? keyboardType;
   final TextEditingController? textController;
+
   @override
   Widget build(BuildContext context) {
+    final isDarkTheme = Theme.of(context).brightness == Brightness.dark;
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const SizedBox(
-          height: 20,
-        ),
+        const SizedBox(height: 20),
         Text(
           text,
-          style: const TextStyle(
+          style: TextStyle(
             fontSize: 14,
             fontWeight: FontWeight.w400,
-            color: Colors.black,
+            color: isDarkTheme ? Colors.white : Colors.black,
           ),
         ),
-        const SizedBox(
-          height: 15,
-        ),
+        const SizedBox(height: 15),
         TextForm(
           hintText: hintText,
+          labelText: text,
           controller: textController,
           keyboardType: keyboardType,
         ),
