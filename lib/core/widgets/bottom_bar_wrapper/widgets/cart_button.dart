@@ -13,7 +13,9 @@ class CartButton extends StatelessWidget {
       shadowColor: context.theme.iconTheme.color!.withOpacity(0.3),
       shape: BoxShape.circle,
       child: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.pushNamed(context, AppRoutes.cart);
+        },
         shape: const CircleBorder(),
         backgroundColor: AppColors.primary,
         child: const HugeIcon(

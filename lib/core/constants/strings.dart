@@ -17,4 +17,5 @@ class AppStrings {
   static const String prev = "Prev";
   static const String viewProfile = "View Profile";
   static const String searchHint = "Search any Product..";
+  
 }
