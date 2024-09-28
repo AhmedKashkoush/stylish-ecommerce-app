@@ -3,6 +3,7 @@ import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:stylish_ecommerce_app/config/routes/routes.dart';
 import 'package:stylish_ecommerce_app/core/constants/strings.dart';
 import 'package:stylish_ecommerce_app/core/extensions/navigation_extension.dart';
+import 'package:stylish_ecommerce_app/core/extensions/space_extension.dart';
 import 'package:stylish_ecommerce_app/core/extensions/theme_extension.dart';
 
 import '../../../../core/constants/colors.dart';
@@ -25,9 +26,9 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
     return Scaffold(
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+          padding: const EdgeInsets.symmetric(
+                        horizontal: 20, vertical: 20),
           child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -70,13 +71,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                     ),
                 ],
               ),
-
-              const SizedBox(
-                height: 30,
-              ),
-              SizedBox(
-                height: 300,
-                width: 300,
+              Expanded(
                 child: PageView.builder(
                   controller: controller,
                   onPageChanged: (index) {
@@ -85,38 +80,47 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                   },
                   itemCount: onBoardingList.length,
                   itemBuilder: (_, i) {
-                    return Center(
-                      child: Image.asset(onBoardingList[i].image),
+                    return Column(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        30.height,
+                    
+                        Center(
+                          child: SizedBox(
+                              height: 300,
+                              width: 300,
+                              child: Image.asset(onBoardingList[i].image)),
+                        ),
+                    
+                        10.height,
+                    
+                        Text(
+                          onBoardingList[currentIndex].title,
+                          textAlign: TextAlign.center,
+                          style: const TextStyle(
+                            color: AppColors.backgroundDark,
+                            height: 2.5,
+                            fontSize: 20,
+                            fontWeight: FontWeight.w800,
+                          ),
+                        ),
+                        Text(
+                          onBoardingList[currentIndex].description,
+                          textAlign: TextAlign.center,
+                          style: const TextStyle(
+                            color: AppColors.grey,
+                            height: 1.5,
+                            fontSize: 13,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        const Spacer(),
+                        // smooth page indicator
+                      ],
                     );
                   },
                 ),
               ),
-              const SizedBox(
-                height: 10,
-              ),
-
-              Text(
-                onBoardingList[currentIndex].title,
-                textAlign: TextAlign.center,
-                style: const TextStyle(
-                  color: AppColors.backgroundDark,
-                  height: 2.5,
-                  fontSize: 20,
-                  fontWeight: FontWeight.w800,
-                ),
-              ),
-              Text(
-                onBoardingList[currentIndex].description,
-                textAlign: TextAlign.center,
-                style: const TextStyle(
-                  color: AppColors.grey,
-                  height: 1.5,
-                  fontSize: 13,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-              const Spacer(),
-              // smooth page indicator
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -204,8 +208,8 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
       decoration: BoxDecoration(
         shape: BoxShape.circle,
         color: index == 0
-            ? AppColors.darkBlue
-            : AppColors.darkBlue.withOpacity(.2),
+            ? context.theme.textTheme.bodyLarge!.color
+            : context.theme.textTheme.bodyLarge!.color!.withOpacity(0.2),
       ),
     );
   }
