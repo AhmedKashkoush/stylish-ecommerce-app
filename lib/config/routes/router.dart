@@ -4,10 +4,12 @@ import 'package:stylish_ecommerce_app/core/widgets/bottom_bar_wrapper/bottom_bar
 import 'package:stylish_ecommerce_app/features/auth/view/forgot_password_screen.dart';
 import 'package:stylish_ecommerce_app/features/auth/view/sign_in_screen.dart';
 import 'package:stylish_ecommerce_app/features/auth/view/sign_up_screen.dart';
+import 'package:stylish_ecommerce_app/features/cart/view/screens/cart_screen.dart';
 
 import 'package:stylish_ecommerce_app/features/onboarding/view/screens/getting_started_screen.dart';
+import 'package:stylish_ecommerce_app/features/products/all_products/view/screens/all_products_screen.dart';
 
-import 'package:stylish_ecommerce_app/features/profile/view/profile_screen.dart';
+import 'package:stylish_ecommerce_app/features/profile/view/screens/profile_screen.dart';
 import 'package:stylish_ecommerce_app/features/search/view/screens/search_screen.dart';
 
 import 'package:stylish_ecommerce_app/features/splash/splash_screen.dart';
@@ -16,7 +18,8 @@ import '../../features/onboarding/view/screens/onboarding_screen.dart';
 import '../../features/payment/view/screens/payment_screen.dart';
 
 class AppRouter {
-  static const String initialRoute = AppRoutes.onboarding;
+  static const String initialRoute = AppRoutes.splash;
+
   static Route<dynamic>? onGenerateRoute(RouteSettings settings) {
     switch (settings.name) {
       case AppRoutes.splash:
@@ -63,7 +66,21 @@ class AppRouter {
         return MaterialPageRoute(
           builder: (context) => const PaymentScreen(),
         );
-
+      case AppRoutes.products:
+        final Map<String, dynamic> args =
+            settings.arguments as Map<String, dynamic>;
+        return _slideTransition(
+          AllProductsScreen(
+            categories: args['categories'],
+            initialTab: args['initialTab'],
+          ),
+          transitionType: _PageTransitionType.bottomToTop,
+        );
+      case AppRoutes.cart:
+        return _slideTransition(
+          const CartScreen(),
+          transitionType: _PageTransitionType.bottomToTop,
+        );
       default:
         return null;
     }
