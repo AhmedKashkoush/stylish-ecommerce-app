@@ -15,3 +15,4 @@ extension NavigationExtension on BuildContext {
 
   bool get canPop => Navigator.of(this).canPop();
 }
+
