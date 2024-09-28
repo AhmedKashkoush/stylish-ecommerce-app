@@ -14,7 +14,7 @@ import 'package:stylish_ecommerce_app/features/products/home/view/sections/dod_s
 import 'package:stylish_ecommerce_app/features/products/home/view/sections/sales_section.dart';
 import 'package:stylish_ecommerce_app/features/products/home/view/sections/trending_section.dart';
 
-class HomeScreen extends StatefulWidget {
+class HomeScreen extends StatelessWidget {
   final GlobalKey<ScaffoldState> rootKey;
 
   const HomeScreen({
@@ -23,17 +23,10 @@ class HomeScreen extends StatefulWidget {
   }) : super(key: key);
 
   @override
-  State<HomeScreen> createState() => _HomeScreenState();
-}
-
-class _HomeScreenState extends State<HomeScreen>
-    with AutomaticKeepAliveClientMixin<HomeScreen> {
-  @override
   Widget build(BuildContext context) {
-    super.build(context);
     return Scaffold(
       appBar: CustomAppBar(
-        scaffoldKey: widget.rootKey,
+        scaffoldKey: rootKey,
         onSearchTap: () => context.pushNamed(AppRoutes.search),
       ),
       backgroundColor: context.theme.colorScheme.surface,
@@ -75,7 +68,4 @@ class _HomeScreenState extends State<HomeScreen>
       ),
     );
   }
-
-  @override
-  bool get wantKeepAlive => true;
 }
