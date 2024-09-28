@@ -4,6 +4,7 @@ import 'package:stylish_ecommerce_app/core/constants/colors.dart';
 import 'package:stylish_ecommerce_app/core/extensions/space_extension.dart';
 import 'package:stylish_ecommerce_app/core/extensions/theme_extension.dart';
 import 'package:stylish_ecommerce_app/core/widgets/drawers/custom_drawer.dart';
+import 'package:stylish_ecommerce_app/core/widgets/views/persistent_view.dart';
 import 'package:stylish_ecommerce_app/features/products/home/view/screens/home_screen.dart';
 import 'package:stylish_ecommerce_app/features/products/wishlist/view/screens/wishlist_screen.dart';
 
@@ -23,8 +24,10 @@ class _BottomBarWrapperState extends State<BottomBarWrapper> {
   final GlobalKey<ScaffoldState> _rootKey = GlobalKey<ScaffoldState>();
   final PageController _controller = PageController();
   late final List<Widget> _screens = [
-    HomeScreen(
-      rootKey: _rootKey,
+    PersistentView(
+      child: HomeScreen(
+        rootKey: _rootKey,
+      ),
     ),
     WishlistScreen(rootKey: _rootKey),
     const Center(

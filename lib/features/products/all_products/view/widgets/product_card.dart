@@ -21,13 +21,13 @@ class ProductCard extends StatelessWidget {
           children: [
             Expanded(
               child: Container(
+                height: 140,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(6),
-                ),
-                child: Image.asset(
-                  product.image,
-                  fit: BoxFit.cover,
-                  height: 140,
+                  image: DecorationImage(
+                    image: AssetImage(product.image),
+                    fit: BoxFit.cover,
+                  ),
                 ),
               ),
             ),

@@ -17,8 +17,7 @@ class WishlistWidget extends StatefulWidget {
   State<WishlistWidget> createState() => _WishlistWidgetState();
 }
 
-class _WishlistWidgetState extends State<WishlistWidget>
-    with AutomaticKeepAliveClientMixin {
+class _WishlistWidgetState extends State<WishlistWidget> {
   final List<String> _sortOptions = [
     'Price',
     'Ratings',
@@ -42,7 +41,6 @@ class _WishlistWidgetState extends State<WishlistWidget>
 
   @override
   Widget build(BuildContext context) {
-    super.build(context);
     final bool isPortrait =
         MediaQuery.of(context).orientation == Orientation.portrait;
     return Column(
@@ -141,7 +139,4 @@ class _WishlistWidgetState extends State<WishlistWidget>
     }
     return sortedList;
   }
-
-  @override
-  bool get wantKeepAlive => true;
 }

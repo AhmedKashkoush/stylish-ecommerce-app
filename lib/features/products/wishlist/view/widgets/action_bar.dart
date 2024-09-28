@@ -37,8 +37,10 @@ class ActionBar extends StatelessWidget {
               isLabelVisible: options.filters.isNotEmpty,
               backgroundColor: AppColors.primary,
               label: Text(
-                options.filters.length.toString(),
-                style: const TextStyle(color: Colors.white),
+                '${options.filters.length}',
+                style: const TextStyle(
+                  color: Colors.white,
+                ),
               ),
               child: child!,
             );

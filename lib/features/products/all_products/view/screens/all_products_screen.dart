@@ -47,6 +47,7 @@ class _AllProductsScreenState extends State<AllProductsScreen>
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        titleSpacing: 0,
         title: TabBar(
           tabs: _tabs.map((tab) => Tab(text: tab)).toList(),
           isScrollable: true,
