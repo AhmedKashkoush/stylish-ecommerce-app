@@ -11,4 +11,5 @@ class AppRoutes {
   static const String payment = '/payment';
   static const String products = '/products';
   static const String cart = '/cart';
+  static const String checkout = '/cart';
 }

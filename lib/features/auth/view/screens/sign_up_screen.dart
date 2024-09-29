@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:auth_buttons/auth_buttons.dart';
 import 'package:stylish_ecommerce_app/core/extensions/navigation_extension.dart';
-import '../../../config/routes/routes.dart';
+import 'package:stylish_ecommerce_app/core/widgets/buttons/google_btn.dart';
+import '../../../../config/routes/routes.dart';
+import '../../../../core/widgets/fields/custom_text_field.dart';
 
 class SignUpScreen extends StatelessWidget {
   const SignUpScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final isDarkTheme = Theme.of(context).brightness == Brightness.dark;
     return Scaffold(
       body: ListView(
         children: [
@@ -18,67 +21,31 @@ class SignUpScreen extends StatelessWidget {
               style: TextStyle(
                 // fontFamily: "Montserrat",
                 fontSize: 36,
-                color: Colors.black,
+                // color: Colors.black,
                 fontWeight: FontWeight.bold,
               ),
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.all(24.0),
-            child: TextFormField(
-              decoration: InputDecoration(
-                filled: true,
-                fillColor: Colors.grey[200],
-                // Light grey fill color
-                prefixIcon: const Icon(Icons.person),
-                // Profile icon
+          const Padding(
+              padding: EdgeInsets.all(24.0),
+              child: CustomTextField(
                 hintText: 'Username or Email',
-                // Hint text
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(10.0), // Rounded border
-                  borderSide: BorderSide.none, // Remove border line
-                ),
-              ),
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 24.0),
-            child: TextFormField(
-              decoration: InputDecoration(
-                filled: true,
-                fillColor: Colors.grey[200],
-                // Light grey fill color
-                prefixIcon: const Icon(Icons.lock),
-                suffixIcon: const Icon(Icons.remove_red_eye_outlined),
-                // Profile icon
+                prefixIcon: Icon(Icons.person),
+              )),
+          const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 24.0),
+              child: CustomTextField(
                 hintText: 'Password',
-                // Hint text
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(10.0), // Rounded border
-                  borderSide: BorderSide.none, // Remove border line
-                ),
-              ),
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 24),
-            child: TextFormField(
-              decoration: InputDecoration(
-                filled: true,
-                fillColor: Colors.grey[200],
-                // Light grey fill color
-                prefixIcon: const Icon(Icons.lock),
-                suffixIcon: const Icon(Icons.remove_red_eye_outlined),
-                // Profile icon
+                prefixIcon: Icon(Icons.lock),
+                suffixIcon: Icon(Icons.remove_red_eye_outlined),
+              )),
+          const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 24.0, vertical: 24),
+              child: CustomTextField(
                 hintText: 'Confirm Password',
-                // Hint text
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(10.0), // Rounded border
-                  borderSide: BorderSide.none, // Remove border line
-                ),
-              ),
-            ),
-          ),
+                prefixIcon: Icon(Icons.lock),
+                suffixIcon: Icon(Icons.remove_red_eye_outlined),
+              )),
           Padding(
             padding: const EdgeInsets.only(left: 24, right: 24, bottom: 24),
             child: RichText(
@@ -86,7 +53,9 @@ class SignUpScreen extends StatelessWidget {
                 children: [
                   TextSpan(
                     text: "By clicking the ",
-                    style: TextStyle(color: Colors.grey.shade700),
+                    style: TextStyle(
+                      color: isDarkTheme ? Colors.white : Colors.grey.shade700,
+                    ),
                   ),
                   const TextSpan(
                     text: "Register ",
@@ -94,7 +63,9 @@ class SignUpScreen extends StatelessWidget {
                   ),
                   TextSpan(
                     text: "button,you agree to the public offer ",
-                    style: TextStyle(color: Colors.grey.shade700),
+                    style: TextStyle(
+                      color: isDarkTheme ? Colors.white : Colors.grey.shade700,
+                    ),
                   ),
                 ],
               ),
@@ -129,10 +100,10 @@ class SignUpScreen extends StatelessWidget {
           ),
           Column(
             children: [
-              const Text(
+              Text(
                 "- OR Continue with -",
                 style: TextStyle(
-                  color: Colors.black,
+                  color: isDarkTheme ? Colors.white : Colors.grey.shade700,
                   // fontFamily: "Montserrat",
                   fontSize: 14,
                 ),
@@ -140,33 +111,19 @@ class SignUpScreen extends StatelessWidget {
               const SizedBox(
                 height: 10,
               ),
-              GoogleAuthButton(
-                onPressed: () {},
-                text: "Google",
-                style: const AuthButtonStyle(
-                  textStyle: TextStyle(
-                      color: Colors.black, fontWeight: FontWeight.bold),
-                  borderColor: Colors.red,
-                  // padding: EdgeInsets.zero,
-                  borderWidth: 1,
-                  margin: EdgeInsets.zero,
-                  buttonColor: Colors.white,
-                  // padding: EdgeInsets.symmetric(horizontal: 7,),
-                  buttonType: AuthButtonType.secondary,
-                  iconType: AuthIconType.secondary,
-                  borderRadius: 5,
-                ),
-              ),
+             GoogleBtn(),
               const SizedBox(
                 height: 10,
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  const Text(
+                  Text(
                     "I Already Have An Account ",
                     style: TextStyle(
-                        color: Colors.black,
+                        color:
+                            isDarkTheme ? Colors.white : Colors.grey.shade700,
+                        // color: Colors.black,
                         // fontFamily: "Montserrat",
                         fontSize: 14),
                   ),
@@ -197,15 +154,15 @@ class SignUpScreen extends StatelessWidget {
     );
   }
 
-  // Widget _buildIcon(Widget button) {
-  //   return Container(
-  //     padding: const EdgeInsets.all(12.0),
-  //     decoration: BoxDecoration(
-  //       color: const Color(0XFFFCF3F6), // White background color
-  //       shape: BoxShape.circle, // Circular shape
-  //       border: Border.all(color: Colors.red, width: 2.0), // Red border
-  //     ),
-  //     child: ClipOval(child: button), // Red icon color
-  //   );
-  // }
+// Widget _buildIcon(Widget button) {
+//   return Container(
+//     padding: const EdgeInsets.all(12.0),
+//     decoration: BoxDecoration(
+//       color: const Color(0XFFFCF3F6), // White background color
+//       shape: BoxShape.circle, // Circular shape
+//       border: Border.all(color: Colors.red, width: 2.0), // Red border
+//     ),
+//     child: ClipOval(child: button), // Red icon color
+//   );
+// }
 }

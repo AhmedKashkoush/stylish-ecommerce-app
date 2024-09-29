@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../../../core/widgets/fields/custom_text_field.dart';
+
 class ForgotPasswordScreen extends StatelessWidget {
   const ForgotPasswordScreen({super.key});
 
@@ -24,35 +26,23 @@ class ForgotPasswordScreen extends StatelessWidget {
               style: TextStyle(
                 // fontFamily: "Montserrat",
                 fontSize: 36,
-                color: Colors.black,
+             //   color: Colors.black,
                 fontWeight: FontWeight.bold,
               ),
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.all(24.0),
-            child: TextFormField(
-              decoration: InputDecoration(
-                filled: true,
-                fillColor: Colors.grey[200],
-                // Light grey fill color
-                prefixIcon: const Icon(Icons.email),
-                // Profile icon
-                hintText: 'Enter your email address',
-                // Hint text
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(10.0), // Rounded border
-                  borderSide: BorderSide.none, // Remove border line
-                ),
-              ),
-            ),
+          const Padding(
+            padding: EdgeInsets.all(24.0),
+            child:
+            CustomTextField(hintText: "Enter your email address",
+              prefixIcon:Icon(Icons.email) ,),
           ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 12),
+          const Padding(
+            padding: EdgeInsets.symmetric(horizontal: 24.0, vertical: 12),
             child: Text(
               "We will send you a message to set or reset your new password",
               style: TextStyle(
-                color: Colors.grey.shade700,
+              //  color: Colors.grey.shade700,
                 // fontFamily: "Montserrat",
                 fontSize: 12,
               ),
