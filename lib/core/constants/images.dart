@@ -5,4 +5,5 @@ class AppImages {
   static const String onBoarding2 = '$_base/on_boarding_2.png';
   static const String onBoarding3 = '$_base/on_boarding_3.png';
   static const String getStarted = '$_base/get_started.png';
+  static const String dress = '$_base/dress.png';
 }

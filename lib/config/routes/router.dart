@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:stylish_ecommerce_app/config/routes/routes.dart';
 import 'package:stylish_ecommerce_app/core/widgets/bottom_bar_wrapper/bottom_bar_wrapper.dart';
-import 'package:stylish_ecommerce_app/features/auth/view/forgot_password_screen.dart';
-import 'package:stylish_ecommerce_app/features/auth/view/sign_in_screen.dart';
-import 'package:stylish_ecommerce_app/features/auth/view/sign_up_screen.dart';
+import 'package:stylish_ecommerce_app/features/auth/view/screens/forgot_password_screen.dart';
+import 'package:stylish_ecommerce_app/features/auth/view/screens/sign_in_screen.dart';
+import 'package:stylish_ecommerce_app/features/auth/view/screens/sign_up_screen.dart';
 import 'package:stylish_ecommerce_app/features/cart/view/screens/cart_screen.dart';
 
 import 'package:stylish_ecommerce_app/features/onboarding/view/screens/getting_started_screen.dart';
+import 'package:stylish_ecommerce_app/features/payment/view/screens/checkout_screen.dart';
 
 import 'package:stylish_ecommerce_app/features/profile/view/screens/profile_screen.dart';
 import 'package:stylish_ecommerce_app/features/search/view/screens/search_screen.dart';
@@ -16,7 +17,7 @@ import 'package:stylish_ecommerce_app/features/splash/splash_screen.dart';
 import '../../features/onboarding/view/screens/onboarding_screen.dart';
 
 class AppRouter {
-  static const String initialRoute = AppRoutes.profile;
+  static const String initialRoute = AppRoutes.checkout;
   static Route<dynamic>? onGenerateRoute(RouteSettings settings) {
     switch (settings.name) {
       case AppRoutes.splash:
@@ -63,6 +64,8 @@ class AppRouter {
           const CartScreen(),
           transitionType: _PageTransitionType.bottomToTop,
         );
+      case AppRoutes.checkout:
+        return _slideTransition(const CheckoutScreen(), transitionType: _PageTransitionType.bottomToTop);
 
       default:
         return null;
