@@ -221,10 +221,10 @@ class CustomContainer extends StatelessWidget {
         height: 59,
         width: double.infinity,
         decoration: BoxDecoration(
-          color: AppColors.lightGrey,
+          color: AppColors.grey,
           borderRadius: BorderRadius.circular(8),
           border: Border.all(
-            color: isSelected ? AppColors.primary : AppColors.lightGrey,
+            color: isSelected ? AppColors.primary : AppColors.grey,
           ),
         ),
         child: child,
