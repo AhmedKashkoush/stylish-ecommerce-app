@@ -110,7 +110,7 @@ class DodCard extends StatelessWidget {
                 ],
               ),
             ),
-          )
+          ),
         ],
       ),
     );

@@ -69,7 +69,11 @@ class _PaymentScreenState extends State<PaymentScreen> {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
+
                   Image.asset(AppImages.logo),
+
+                  Image.asset(AppImages.visa),
+
                   const Text(
                     "*********2109",
                     style: TextStyle(
@@ -164,7 +168,11 @@ class CustomElevatedButton extends StatelessWidget {
               children: [
                 Stack(
                   children: [
+
                     Image.asset(AppImages.logo),
+
+                    Image.asset(AppImages.star),
+
                     const Positioned(
                       top: 20,
                       left: 18,
@@ -221,13 +229,19 @@ class CustomContainer extends StatelessWidget {
         height: 59,
         width: double.infinity,
         decoration: BoxDecoration(
-          color: AppColors.grey,
+
+
           borderRadius: BorderRadius.circular(8),
+
+
+
+
           border: Border.all(
-            color: isSelected ? AppColors.primary : AppColors.grey,
+            color: isSelected ? AppColors.primary : AppColors.lightGrey,
+
           ),
         ),
-        child: child,
+
       ),
     );
   }

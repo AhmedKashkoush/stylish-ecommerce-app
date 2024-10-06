@@ -186,7 +186,11 @@ class CheckoutScreen extends StatelessWidget {
 
                               borderRadius: BorderRadius.circular(15),
 
+
                               child: Image.asset(AppImages.dress),),
+
+                           //   child: Image.asset(AppImages.logo),),
+
                         ),
                          Padding(
                            padding: const EdgeInsets.symmetric(horizontal: 8.0),
@@ -194,7 +198,11 @@ class CheckoutScreen extends StatelessWidget {
                              mainAxisAlignment: MainAxisAlignment.start,
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                               Text("Women's Casual Wear ",
+
+
+
+                               const Text("Women's Casual Wear ",
+
                                 style: TextStyle(
                                     fontSize: 16,
                                //     color:  Colors.black,
@@ -245,8 +253,12 @@ class CheckoutScreen extends StatelessWidget {
                                     direction: Axis.horizontal,
                                     allowHalfRating: true,
                                     itemCount: 5,
+
                                     itemPadding: EdgeInsets.symmetric(horizontal: 1.0),
-                                    itemBuilder: (context, _) => Icon(
+
+
+                                    itemBuilder: (context, _) => const Icon(
+
                                       Icons.star,
                                       color: Colors.amber,
                                     ),
