@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "1091097233790",
+    "project_id": "stylish-e-commerce-app",
+    "storage_bucket": "stylish-e-commerce-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1091097233790:android:c23d18f1c885baac1d0b2f",
+        "android_client_info": {
+          "package_name": "com.example.stylish_ecommerce_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC_XYFi8pWzytwsJkwG6T1CeyhnKVqRjnE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
