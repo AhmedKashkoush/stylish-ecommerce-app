@@ -74,10 +74,10 @@ class MyDropdownMenu extends StatefulWidget {
   const MyDropdownMenu({super.key});
 
   @override
-  _MyDropdownMenuState createState() => _MyDropdownMenuState();
+  MyDropdownMenuState createState() => MyDropdownMenuState();
 }
 
-class _MyDropdownMenuState extends State<MyDropdownMenu> {
+class MyDropdownMenuState extends State<MyDropdownMenu> {
   String dropdownSize = '42';
   int dropdownQty = 1;
 
