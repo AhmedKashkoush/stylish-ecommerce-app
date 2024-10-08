@@ -11,16 +11,14 @@ import 'package:stylish_ecommerce_app/features/payment/view/screens/checkout_scr
 
 import 'package:stylish_ecommerce_app/features/profile/view/screens/profile_screen.dart';
 import 'package:stylish_ecommerce_app/features/search/view/screens/search_screen.dart';
+import 'package:stylish_ecommerce_app/features/settings/setting_screen.dart';
 
 import 'package:stylish_ecommerce_app/features/splash/splash_screen.dart';
 
 import '../../features/onboarding/view/screens/onboarding_screen.dart';
 
 class AppRouter {
-
-  static const String initialRoute = AppRoutes.splash;
-
-
+  static const String initialRoute = AppRoutes.home;
 
   static Route<dynamic>? onGenerateRoute(RouteSettings settings) {
     switch (settings.name) {
@@ -53,11 +51,16 @@ class AppRouter {
         return MaterialPageRoute(
           builder: (context) => const BottomBarWrapper(),
         );
+      case AppRoutes.setting:
+        return MaterialPageRoute(
+          builder: (context) => const SettingScreen(),
+        );
       case AppRoutes.profile:
         return _slideTransition(
           const ProfileScreen(),
           transitionType: _PageTransitionType.endToStart,
         );
+
       case AppRoutes.search:
         return _slideTransition(
           const SearchScreen(),
@@ -69,7 +72,10 @@ class AppRouter {
           transitionType: _PageTransitionType.bottomToTop,
         );
       case AppRoutes.checkout:
-        return _slideTransition(const CheckoutScreen(), transitionType: _PageTransitionType.bottomToTop);
+        return _slideTransition(
+          const CheckoutScreen(),
+          transitionType: _PageTransitionType.bottomToTop,
+        );
 
       default:
         return null;

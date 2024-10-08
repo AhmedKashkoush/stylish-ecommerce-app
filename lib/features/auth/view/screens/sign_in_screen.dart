@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:auth_buttons/auth_buttons.dart';
 import 'package:stylish_ecommerce_app/core/extensions/navigation_extension.dart';
-import 'package:stylish_ecommerce_app/core/extensions/theme_extension.dart';
 import 'package:stylish_ecommerce_app/core/widgets/buttons/google_btn.dart';
 import 'package:stylish_ecommerce_app/core/widgets/fields/custom_text_field.dart';
 import '../../../../config/routes/routes.dart';
@@ -11,7 +9,6 @@ class SignInScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     final isDarkTheme = Theme.of(context).brightness == Brightness.dark;
 
     return Scaffold(
@@ -29,19 +26,18 @@ class SignInScreen extends StatelessWidget {
             ),
           ),
           const Padding(
-            padding: EdgeInsets.all(24.0),
-            child:
-              CustomTextField(hintText: 'Username or Email',
-                prefixIcon:Icon(Icons.person) ,)
-          ),
+              padding: EdgeInsets.all(24.0),
+              child: CustomTextField(
+                hintText: 'Username or Email',
+                prefixIcon: Icon(Icons.person),
+              )),
           const Padding(
-            padding: EdgeInsets.symmetric(horizontal: 24.0),
-            child:
-            CustomTextField(hintText: 'Password',
-              prefixIcon:Icon(Icons.lock) ,
-              suffixIcon: Icon(Icons.remove_red_eye_outlined),)
-
-          ),
+              padding: EdgeInsets.symmetric(horizontal: 24.0),
+              child: CustomTextField(
+                hintText: 'Password',
+                prefixIcon: Icon(Icons.lock),
+                suffixIcon: Icon(Icons.remove_red_eye_outlined),
+              )),
           Padding(
             padding: const EdgeInsets.only(right: 24.0, top: 8, bottom: 10),
             child: InkWell(
@@ -94,14 +90,14 @@ class SignInScreen extends StatelessWidget {
               const Text(
                 "- OR Continue with -",
                 style: TextStyle(
-                   // color: Colors.black,
+                    // color: Colors.black,
                     // fontFamily: "Montserrat",
                     fontSize: 14),
               ),
               const SizedBox(
                 height: 10,
               ),
-             GoogleBtn(),
+              const GoogleBtn(),
               const SizedBox(
                 height: 10,
               ),
@@ -111,7 +107,7 @@ class SignInScreen extends StatelessWidget {
                   const Text(
                     "Create An Account ",
                     style: TextStyle(
-                     //   color: Colors.black,
+                        //   color: Colors.black,
                         // fontFamily: "Montserrat",
                         fontSize: 14),
                   ),

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:auth_buttons/auth_buttons.dart';
 import 'package:stylish_ecommerce_app/core/extensions/navigation_extension.dart';
 import 'package:stylish_ecommerce_app/core/widgets/buttons/google_btn.dart';
 import '../../../../config/routes/routes.dart';
@@ -111,7 +110,7 @@ class SignUpScreen extends StatelessWidget {
               const SizedBox(
                 height: 10,
               ),
-             GoogleBtn(),
+              const GoogleBtn(),
               const SizedBox(
                 height: 10,
               ),
