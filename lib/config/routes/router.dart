@@ -51,10 +51,7 @@ class AppRouter {
         return MaterialPageRoute(
           builder: (context) => const BottomBarWrapper(),
         );
-      case AppRoutes.setting:
-        return MaterialPageRoute(
-          builder: (context) => const SettingScreen(),
-        );
+     
       case AppRoutes.profile:
         return _slideTransition(
           const ProfileScreen(),

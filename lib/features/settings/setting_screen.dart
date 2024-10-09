@@ -22,7 +22,7 @@ class SettingScreen extends StatelessWidget {
               buildProfileHeader(isDarkTheme),
               const SizedBox(height: 20.0),
               buildLanguageTile(isDarkTheme),
-              buildProfileSettingsTile(isDarkTheme),
+              buildProfileSettingsTile(isDarkTheme,context),
               buildDarkModeTile(isDarkTheme),
               buildPushNotificationsTile(isDarkTheme),
               buildLogoutTile(isDarkTheme),

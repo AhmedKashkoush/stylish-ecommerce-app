@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:stylish_ecommerce_app/config/routes/routes.dart';
+import 'package:stylish_ecommerce_app/core/extensions/navigation_extension.dart';
 
 Widget buildProfileHeader(bool isDarkTheme) {
   return Row(
@@ -63,36 +65,40 @@ Widget buildLanguageTile(bool isDarkTheme) {
   );
 }
 
-Widget buildProfileSettingsTile(bool isDarkTheme) {
-  return GestureDetector(
-    onTap: () {},
-    child: ListTile(
-      leading: const Image(
-        width: 40,
-        height: 40,
-        image: AssetImage(
-          'assets/images/user.png',
-        ),
+void _goToProfile(BuildContext context) {
+  context.pop();
+  context.pushNamed(AppRoutes.profile);
+}
+
+Widget buildProfileSettingsTile(bool isDarkTheme, BuildContext context) {
+  return ListTile(
+    leading: const Image(
+      width: 40,
+      height: 40,
+      image: AssetImage(
+        'assets/images/user.png',
       ),
-      title: Text(
-        "Profile Settings",
-        style: TextStyle(
-          color: isDarkTheme ? Colors.white : Colors.black,
-          fontWeight: FontWeight.bold,
-        ),
-      ),
-      subtitle: Text(
-        "Fatma Atef",
-        style: TextStyle(
-          color: isDarkTheme ? Colors.white70 : Colors.black54,
-        ),
-      ),
-      trailing: Icon(
-        Icons.keyboard_arrow_right,
-        color: isDarkTheme ? Colors.white : Colors.black,
-      ),
-      onTap: () {},
     ),
+    title: Text(
+      "Profile Settings",
+      style: TextStyle(
+        color: isDarkTheme ? Colors.white : Colors.black,
+        fontWeight: FontWeight.bold,
+      ),
+    ),
+    subtitle: Text(
+      "Fatma Atef",
+      style: TextStyle(
+        color: isDarkTheme ? Colors.white70 : Colors.black54,
+      ),
+    ),
+    trailing: Icon(
+      Icons.keyboard_arrow_right,
+      color: isDarkTheme ? Colors.white : Colors.black,
+    ),
+    onTap: () {
+      Navigator.pushNamed(context, AppRoutes.profile);
+    },
   );
 }
 
