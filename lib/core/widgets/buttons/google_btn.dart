@@ -3,14 +3,15 @@ import 'package:flutter/material.dart';
 import 'package:stylish_ecommerce_app/core/extensions/theme_extension.dart';
 
 class GoogleBtn extends StatelessWidget {
-  const GoogleBtn({super.key});
+ final void Function()? onPressed;
+  const GoogleBtn({super.key, this.onPressed});
 
   @override
   Widget build(BuildContext context) {
     final isDarkTheme = Theme.of(context).brightness == Brightness.dark;
 
     return  GoogleAuthButton(
-      onPressed: () {},
+      onPressed:onPressed ,
       text: "Google",
 
       style:  AuthButtonStyle(

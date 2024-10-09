@@ -4,6 +4,15 @@
         android:label="@string/app_name"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
+        <!-- Add the meta-data for the Google Services -->
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="YOUR_ADMOB_APP_ID"/>
+
+        <!-- Google Sign-In configuration -->
+        <meta-data
+            android:name="com.google.android.gms.auth.api.signin.DEFAULT_WEB_CLIENT_ID"
+            android:value="@string/default_web_client_id" />
         <activity
             android:name=".MainActivity"
             android:exported="true"
