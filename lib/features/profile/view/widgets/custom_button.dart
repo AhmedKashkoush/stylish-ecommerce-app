@@ -14,7 +14,6 @@ class CustomButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final isDarkTheme = Theme.of(context).brightness == Brightness.dark;
 
     return ElevatedButton(
       onPressed: onPressed,

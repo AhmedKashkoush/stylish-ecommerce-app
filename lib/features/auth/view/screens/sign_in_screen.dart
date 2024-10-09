@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+
+
 import 'package:flutter_bloc/flutter_bloc.dart';
+
 import 'package:stylish_ecommerce_app/core/extensions/navigation_extension.dart';
 import 'package:stylish_ecommerce_app/core/widgets/buttons/google_btn.dart';
 import 'package:stylish_ecommerce_app/core/widgets/fields/custom_text_field.dart';
@@ -10,6 +13,8 @@ class SignInScreen extends StatefulWidget {
   const SignInScreen({super.key});
 
   @override
+
+
   State<SignInScreen> createState() => _SignInScreenState();
 }
 
@@ -22,6 +27,7 @@ class _SignInScreenState extends State<SignInScreen> {
     final isDarkTheme = Theme
         .of(context)
         .brightness == Brightness.dark;
+
 
     return Scaffold(
 
@@ -56,6 +62,22 @@ class _SignInScreenState extends State<SignInScreen> {
                     fontWeight: FontWeight.bold),
               ),
             ),
+
+          ),
+          const Padding(
+              padding: EdgeInsets.all(24.0),
+              child: CustomTextField(
+                hintText: 'Username or Email',
+                prefixIcon: Icon(Icons.person),
+              )),
+          const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 24.0),
+              child: CustomTextField(
+                hintText: 'Password',
+                prefixIcon: Icon(Icons.lock),
+                suffixIcon: Icon(Icons.remove_red_eye_outlined),
+              )),
+          
             Padding(
                 padding: const EdgeInsets.all(24.0),
                 child: CustomTextField(
@@ -89,6 +111,7 @@ class _SignInScreenState extends State<SignInScreen> {
                       // fontFamily: "Montserrat",
                       fontSize: 12,
                     ),
+
                   ),
                 ),
               ),
@@ -124,9 +147,12 @@ class _SignInScreenState extends State<SignInScreen> {
                 );
               },
             ),
-            const SizedBox(
-              height: 50,
-            ),
+
+          ),
+          const SizedBox(
+            height: 50,
+          ),
+     
             Column(
               children: [
                 const Text(
@@ -156,6 +182,7 @@ class _SignInScreenState extends State<SignInScreen> {
                   children: [
                     const Text(
                       "Create An Account ",
+
                       style: TextStyle(
                         //   color: Colors.black,
                         // fontFamily: "Montserrat",

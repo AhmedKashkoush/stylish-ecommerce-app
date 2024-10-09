@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:stylish_ecommerce_app/core/extensions/space_extension.dart';
 
 import '../../../../core/constants/colors.dart';

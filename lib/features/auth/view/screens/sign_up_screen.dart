@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+
+
 import 'package:flutter_bloc/flutter_bloc.dart';
+
 import 'package:stylish_ecommerce_app/core/extensions/navigation_extension.dart';
 import 'package:stylish_ecommerce_app/core/widgets/buttons/google_btn.dart';
 import '../../../../config/routes/routes.dart';
@@ -117,6 +120,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 ),
               ),
             ),
+
             Padding(
               padding:
               const EdgeInsets.symmetric(horizontal: 24.0, vertical: 8),
@@ -145,6 +149,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     ),
                   );
                 },
+
               ),
             ),
             const SizedBox(
