@@ -4,10 +4,8 @@ import 'package:stylish_ecommerce_app/core/extensions/theme_extension.dart';
 import 'package:stylish_ecommerce_app/core/widgets/rating/star_rating_widget.dart';
 import 'package:stylish_ecommerce_app/features/products/home/model/product_model.dart';
 
-import '../../../model/product.dart';
-
 class DodCard extends StatelessWidget {
-  final Product product;
+  final ProductModel product;
   const DodCard({
     super.key,
     required this.product,
@@ -29,7 +27,7 @@ class DodCard extends StatelessWidget {
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(6),
                 image: DecorationImage(
-                  image: NetworkImage(product.image),
+                  image: AssetImage(product.image),
                   fit: BoxFit.cover,
                 ),
               ),

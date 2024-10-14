@@ -45,21 +45,21 @@ class _SalesSectionState extends State<SalesSection> {
           ),
         ),
         10.height,
-        // ValueListenableBuilder(
-        //     valueListenable: _pageNotifier,
-        //     builder: (context, value, _) {
-        //       return AnimatedSmoothIndicator(
-        //         activeIndex: value,
-        //         count: dummySales.length,
-        //         effect: ScaleEffect(
-        //           activeDotColor: AppColors.primary.withOpacity(0.7),
-        //           dotColor: context.theme.iconTheme.color!.withOpacity(0.1),
-        //           dotHeight: 8,
-        //           dotWidth: 8,
-        //           scale: 1.2,
-        //         ),
-        //       );
-        //     }),
+        ValueListenableBuilder(
+            valueListenable: _pageNotifier,
+            builder: (context, value, _) {
+              return AnimatedSmoothIndicator(
+                activeIndex: value,
+                count: dummySales.length,
+                effect: ScaleEffect(
+                  activeDotColor: AppColors.primary.withOpacity(0.7),
+                  dotColor: context.theme.iconTheme.color!.withOpacity(0.1),
+                  dotHeight: 8,
+                  dotWidth: 8,
+                  scale: 1.2,
+                ),
+              );
+            }),
       ],
     );
   }
