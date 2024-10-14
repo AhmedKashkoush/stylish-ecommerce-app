@@ -1,0 +1,291 @@
+[
+    {
+        "id": "1",
+        "name": "Men",
+        "image": "gs://stylish-e-commerce-app.appspot.com/men.png",
+        "products": [
+            {
+                "id": "11",
+                "name": "Shoes",
+                "description": "Comfortable shoes",
+                "image": "gs://stylish-e-commerce-app.appspot.com/men1.png",
+                "currency": "USD",
+                "price": 100,
+                "rate": 4,
+                "totalRate": 50,
+                "sale": 10
+            },
+            {
+                "id": "12",
+                "name": "tie",
+                "description": "Casual T-shirt",
+                "image": "gs://stylish-e-commerce-app.appspot.com/men2.png",
+                "currency": "USD",
+                "price": 25,
+                "rate": 4.5,
+                "totalRate": 30
+            },
+            {
+                "id": "13",
+                "name": "shirt",
+                "description": "Casual T-shirt",
+                "image": "gs://stylish-e-commerce-app.appspot.com/men3.png",
+                "currency": "USD",
+                "price": 25,
+                "rate": 4.5,
+                "totalRate": 30
+            },
+            {
+                "id": "14",
+                "name": "glasses",
+                "description": "Casual T-shirt",
+                "image": "gs://stylish-e-commerce-app.appspot.com/men4.png",
+                "currency": "USD",
+                "price": 25,
+                "rate": 4.5,
+                "totalRate": 30
+            },
+            {
+                "id": "15",
+                "name": "T-shirt",
+                "description": "Casual T-shirt",
+                "image": "gs://stylish-e-commerce-app.appspot.com/men5.png",
+                "currency": "USD",
+                "price": 25,
+                "rate": 4.5,
+                "totalRate": 30
+            }
+        ]
+    },
+    {
+        "id": "2",
+        "name": "Women",
+        "image": "gs://stylish-e-commerce-app.appspot.com/women.png",
+        "products": [
+            {
+                "id": "21",
+                "name": "Dress",
+                "description": "Elegant dress",
+                "image": "gs://stylish-e-commerce-app.appspot.com/women1.png",
+                "currency": "USD",
+                "price": 80,
+                "rate": 5,
+                "totalRate": 20
+            },
+            {
+                "id": "22",
+                "name": "skirt",
+                "description": "Elegant dress",
+                "image": "gs://stylish-e-commerce-app.appspot.com/women2.png",
+                "currency": "USD",
+                "price": 80,
+                "rate": 5,
+                "totalRate": 20
+            },
+            {
+                "id": "23",
+                "name": "hijab",
+                "description": "Elegant dress",
+                "image": "gs://stylish-e-commerce-app.appspot.com/women3.png",
+                "currency": "USD",
+                "price": 80,
+                "rate": 5,
+                "totalRate": 20
+            },
+            {
+                "id": "24",
+                "name": "tarha",
+                "description": "Elegant dress",
+                "image": "gs://stylish-e-commerce-app.appspot.com/women4.png",
+                "currency": "USD",
+                "price": 80,
+                "rate": 5,
+                "totalRate": 20
+            },
+            {
+                "id": "25",
+                "name": "blue Dress",
+                "description": "Elegant dress",
+                "image": "gs://stylish-e-commerce-app.appspot.com/women5.png",
+                "currency": "USD",
+                "price": 80,
+                "rate": 5,
+                "totalRate": 20
+            }
+        ]
+    },
+    {
+        "id": "3",
+        "name": "Beauty",
+        "image": "gs://stylish-e-commerce-app.appspot.com/beauty.png",
+        "products": [
+            {
+                "id": "31",
+                "name": "rings",
+                "description": "Comfortable shoes",
+                "image": "gs://stylish-e-commerce-app.appspot.com/beauty1.jpg",
+                "currency": "USD",
+                "price": 100,
+                "rate": 4,
+                "totalRate": 50,
+                "sale": 10
+            },
+            {
+                "id": "32",
+                "name": "nicklace",
+                "description": "Casual T-shirt",
+                "image": "gs://stylish-e-commerce-app.appspot.com/beauty2.jpg",
+                "currency": "USD",
+                "price": 25,
+                "rate": 4.5,
+                "totalRate": 30
+            },
+            {
+                "id": "33",
+                "name": "tato",
+                "description": "Casual T-shirt",
+                "image": "gs://stylish-e-commerce-app.appspot.com/beauty3.jpg",
+                "currency": "USD",
+                "price": 25,
+                "rate": 4.5,
+                "totalRate": 30
+            },
+            {
+                "id": "34",
+                "name": "pillow",
+                "description": "Casual T-shirt",
+                "image": "gs://stylish-e-commerce-app.appspot.com/beauty4.jpg",
+                "currency": "USD",
+                "price": 25,
+                "rate": 4.5,
+                "totalRate": 30
+            },
+            {
+                "id": "35",
+                "name": "kholkhal",
+                "description": "Casual T-shirt",
+                "image": "gs://stylish-e-commerce-app.appspot.com/beauty5.jpg",
+                "currency": "USD",
+                "price": 25,
+                "rate": 4.5,
+                "totalRate": 30
+            }
+        ]
+    },
+    {
+        "id": "4",
+        "name": "Kids",
+        "image": "gs://stylish-e-commerce-app.appspot.com/kids.png",
+        "products": [
+            {
+                "id": "41",
+                "name": "Shoes",
+                "description": "Comfortable shoes",
+                "image": "gs://stylish-e-commerce-app.appspot.com/kids1.jpg",
+                "currency": "USD",
+                "price": 100,
+                "rate": 4,
+                "totalRate": 50,
+                "sale": 10
+            },
+            {
+                "id": "42",
+                "name": "T-shirt",
+                "description": "Casual T-shirt",
+                "image": "gs://stylish-e-commerce-app.appspot.com/kids2.jpg",
+                "currency": "USD",
+                "price": 25,
+                "rate": 4.5,
+                "totalRate": 30
+            },
+            {
+                "id": "43",
+                "name": "kids pants",
+                "description": "Casual T-shirt",
+                "image": "gs://stylish-e-commerce-app.appspot.com/kids3.jpg",
+                "currency": "USD",
+                "price": 25,
+                "rate": 4.5,
+                "totalRate": 30
+            },
+            {
+                "id": "44",
+                "name": "short",
+                "description": "Casual T-shirt",
+                "image": "gs://stylish-e-commerce-app.appspot.com/kids4.jpg",
+                "currency": "USD",
+                "price": 25,
+                "rate": 4.5,
+                "totalRate": 30
+            },
+            {
+                "id": "45",
+                "name": "socks",
+                "description": "Casual T-shirt",
+                "image": "gs://stylish-e-commerce-app.appspot.com/kids5.jpg",
+                "currency": "USD",
+                "price": 25,
+                "rate": 4.5,
+                "totalRate": 30
+            }
+        ]
+    },
+    {
+        "id": "5",
+        "name": "Fashion",
+        "image": "gs://stylish-e-commerce-app.appspot.com/fashion.png",
+        "products": [
+            {
+                "id": "51",
+                "name": "polish",
+                "description": "Comfortable shoes",
+                "image": "gs://stylish-e-commerce-app.appspot.com/fashion1.jpg",
+                "currency": "USD",
+                "price": 100,
+                "rate": 4,
+                "totalRate": 50,
+                "sale": 10
+            },
+            {
+                "id": "52",
+                "name": "pen",
+                "description": "Casual T-shirt",
+                "image": "gs://stylish-e-commerce-app.appspot.com/fashion2.jpg",
+                "currency": "USD",
+                "price": 25,
+                "rate": 4.5,
+                "totalRate": 30
+            },
+            {
+                "id": "53",
+                "name": "disk",
+                "description": "Casual T-shirt",
+                "image": "gs://stylish-e-commerce-app.appspot.com/fashion3.jpg",
+                "currency": "USD",
+                "price": 25,
+                "rate": 4.5,
+                "totalRate": 30
+            },
+            {
+                "id": "54",
+                "name": "table",
+                "description": "Casual T-shirt",
+                "image": "gs://stylish-e-commerce-app.appspot.com/fashion4.jpg",
+                "currency": "USD",
+                "price": 25,
+                "rate": 4.5,
+                "totalRate": 30
+            },
+            {
+                "id": "55",
+                "name": "bed",
+                "description": "Casual T-shirt",
+                "image": "gs://stylish-e-commerce-app.appspot.com/fashion5.jpg",
+                "currency": "USD",
+                "price": 25,
+                "rate": 4.5,
+                "totalRate": 30
+            }
+        ]
+    }
+]

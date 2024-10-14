@@ -65,6 +65,7 @@ class AuthRepository {
       if (result.user != null) {
         // Save user data in Firestore
         await saveUserData(result.user!);
+        
       }
       return result.user;
     } catch (e) {

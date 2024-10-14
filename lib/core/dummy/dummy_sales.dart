@@ -4,12 +4,15 @@ const String _base = 'assets/images/dummy';
 
 final List<SalesOfferModel> dummySales = List.generate(
   3,
-  (index) => const SalesOfferModel(
-    image: '$_base/offer.png',
+  (index) =>  SalesOfferModel(
+    image: '$_base/offer$index.png',
     title: '50-40% OFF',
     description: 'Now in (product)\nAll colors',
   ),
-); 
+);
+
+
+
 //   [
 //   SalesOfferModel(
 //     image: '$_base/offer.png',

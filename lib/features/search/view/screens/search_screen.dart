@@ -27,17 +27,17 @@ class _SearchScreenState extends State<SearchScreen> {
 
   void _onSearchChanged() {
     final query = _searchController.text.toLowerCase();
-    setState(() {
-      _searchResults = [
-        ...dummyCategories
-            .where((category) => category.name.toLowerCase().contains(query)),
-        ...dummyDod
-            .where((product) => product.name.toLowerCase().contains(query)),
-        ...dummySales.where((sale) => sale.title.toLowerCase().contains(query)),
-        ...dummyTrending
-            .where((product) => product.name.toLowerCase().contains(query)),
-      ];
-    });
+    // setState(() {
+    //   _searchResults = [
+    //     ...dummyCategories
+    //         .where((category) => category.name.toLowerCase().contains(query)),
+    //     ...dummyDod
+    //         .where((product) => product.name.toLowerCase().contains(query)),
+    //     ...dummySales.where((sale) => sale.title.toLowerCase().contains(query)),
+    //     ...dummyTrending
+    //         .where((product) => product.name.toLowerCase().contains(query)),
+    //   ];
+    // });
   }
 
   @override
