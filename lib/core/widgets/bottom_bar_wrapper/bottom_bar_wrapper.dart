@@ -7,7 +7,7 @@ import 'package:stylish_ecommerce_app/core/extensions/theme_extension.dart';
 import 'package:stylish_ecommerce_app/core/widgets/drawers/custom_drawer.dart';
 import 'package:stylish_ecommerce_app/features/products/home/view/screens/home_screen.dart';
 import 'package:stylish_ecommerce_app/features/settings/setting_screen.dart';
-
+'package:stylish_ecommerce_app/features/products/wishlist/view/screens/wishlist_screen.dart';
 import '../../../features/products/notifications/view/screens/notification_screen.dart';
 
 part 'widgets/custom_bottom_bar.dart';
@@ -29,9 +29,7 @@ class _BottomBarWrapperState extends State<BottomBarWrapper> {
     HomeScreen(
       rootKey: _rootKey,
     ),
-    const Center(
-      child: Text('WishList'),
-    ),
+WishlistScreen(rootKey: _rootKey),
      NotificationsTab(),
     const SettingScreen(),
   ];

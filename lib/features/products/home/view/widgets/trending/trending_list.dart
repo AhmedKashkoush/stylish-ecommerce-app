@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:stylish_ecommerce_app/core/widgets/scroll/list_scroll_bar.dart';
+import 'package:stylish_ecommerce_app/features/products/home/model/product_model.dart';
 import 'package:stylish_ecommerce_app/features/products/home/view/widgets/trending/trending_card.dart';
 
-import '../../../model/product.dart';
-
 class TrendingList extends StatefulWidget {
-  final List<Product> products;
+  final List<ProductModel> products;
   const TrendingList({
     super.key,
     required this.products,
@@ -17,15 +16,6 @@ class TrendingList extends StatefulWidget {
 
 class _TrendingListState extends State<TrendingList> {
   final PageController _controller = PageController(viewportFraction: 0.46);
-
-  @override
-  void initState() {
-    // TODO: implement initState
-    super.initState();
-    print("9999999999999999999999999999");
-    print(widget.products.first);
-  }
-
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -37,7 +27,6 @@ class _TrendingListState extends State<TrendingList> {
             padEnds: false,
             controller: _controller,
             itemBuilder: (_, index) => Padding(
-
               padding: EdgeInsetsDirectional.only(
                 end: index < widget.products.length - 1 ? 8.0 : 0,
               ),
