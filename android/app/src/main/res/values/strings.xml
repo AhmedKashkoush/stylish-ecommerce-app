@@ -1,4 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <resources>
     <string name="app_name">Stylish</string>
+
+        <string name="your_notification_channel_id">com.yourcompany.yourapp.notifications</string>
+        <string name="your_notification_channel_name">Your App Notifications</string>
+<!--        <string name="default_web_client_id">1091097233790-1j15v5mbf4vr3c8jdodbgejod0b8k1pg.apps.googleusercontent.com</string>-->
+    <string name="default_notification_channel_id">high_importance_channel</string>
+
+
 </resources>

@@ -20,7 +20,7 @@ class DodSection extends StatelessWidget {
           onTap: () => context.pushNamed(
             AppRoutes.products,
             arguments: {
-              'categories': dummyCategories,
+              'categories': dealOfTheDay,
               'initialTab': 'Deal Of The Day',
             },
           ),

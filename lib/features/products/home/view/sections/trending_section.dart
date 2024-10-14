@@ -23,7 +23,7 @@ class TrendingSection extends StatelessWidget {
           onTap: () => context.pushNamed(
             AppRoutes.products,
             arguments: {
-              'categories': dummyCategories,
+              'categories': trending,
               'initialTab': 'Trending',
             },
           ),

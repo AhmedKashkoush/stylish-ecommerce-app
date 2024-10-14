@@ -24,9 +24,9 @@ class _SignInScreenState extends State<SignInScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final isDarkTheme = Theme
-        .of(context)
-        .brightness == Brightness.dark;
+    // final isDarkTheme = Theme
+    //     .of(context)
+    //     .brightness == Brightness.dark;
 
 
     return Scaffold(
@@ -63,19 +63,21 @@ class _SignInScreenState extends State<SignInScreen> {
               ),
             ),
 
-          ),
-          const Padding(
+
+           Padding(
               padding: EdgeInsets.all(24.0),
               child: CustomTextField(
+                controller: emailController,
                 hintText: 'Username or Email',
                 prefixIcon: Icon(Icons.person),
               )),
-          const Padding(
+           Padding(
               padding: EdgeInsets.symmetric(horizontal: 24.0),
               child: CustomTextField(
+                controller: passwordController,
                 hintText: 'Password',
                 prefixIcon: Icon(Icons.lock),
-                suffixIcon: Icon(Icons.remove_red_eye_outlined),
+               // suffixIcon: Icon(Icons.remove_red_eye_outlined),
               )),
           
             Padding(
@@ -148,7 +150,7 @@ class _SignInScreenState extends State<SignInScreen> {
               },
             ),
 
-          ),
+
           const SizedBox(
             height: 50,
           ),

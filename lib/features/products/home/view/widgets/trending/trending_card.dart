@@ -3,8 +3,10 @@ import 'package:stylish_ecommerce_app/core/extensions/space_extension.dart';
 import 'package:stylish_ecommerce_app/core/extensions/theme_extension.dart';
 import 'package:stylish_ecommerce_app/features/products/home/model/product_model.dart';
 
+import '../../../model/product.dart';
+
 class TrendingCard extends StatelessWidget {
-  final ProductModel product;
+  final Product product;
   const TrendingCard({super.key, required this.product});
 
   @override
@@ -23,7 +25,7 @@ class TrendingCard extends StatelessWidget {
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(6),
                 image: DecorationImage(
-                  image: AssetImage(product.image),
+                  image: NetworkImage(product.image),
                   fit: BoxFit.cover,
                 ),
               ),
