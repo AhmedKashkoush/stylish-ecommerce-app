@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:stylish_ecommerce_app/core/extensions/space_extension.dart';
 import 'package:stylish_ecommerce_app/core/extensions/theme_extension.dart';
@@ -23,9 +24,13 @@ class WishlistItem extends StatelessWidget {
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(6),
             ),
-            child: Image.asset(
-              item.image,
-              fit: BoxFit.cover,
+            child: CachedNetworkImage(
+              imageUrl: item.image,
+              errorWidget: (context, url, error) => const Center(
+                child: Icon(
+                  Icons.error,
+                ),
+              ),
             ),
           ),
           Padding(

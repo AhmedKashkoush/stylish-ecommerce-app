@@ -1,29 +1,32 @@
 import 'package:flutter/material.dart';
-import 'package:stylish_ecommerce_app/config/routes/routes.dart';
-import 'package:stylish_ecommerce_app/core/dummy/dummy_wishlist.dart';
-import 'package:stylish_ecommerce_app/core/extensions/navigation_extension.dart';
-import 'package:stylish_ecommerce_app/core/extensions/theme_extension.dart';
-import 'package:stylish_ecommerce_app/core/widgets/app_bars/custom_app_bar.dart';
-import 'package:stylish_ecommerce_app/core/widgets/views/persistent_view.dart';
-import 'package:stylish_ecommerce_app/features/products/wishlist/view/widgets/empty_wishlist.dart';
-import 'package:stylish_ecommerce_app/features/products/wishlist/view/widgets/wishlist_widget.dart';
+import 'package:stylish_ecommerce_app/features/products/home/model/product_model.dart';
 
 class WishlistScreen extends StatelessWidget {
-  final GlobalKey<ScaffoldState> rootKey;
-  const WishlistScreen({super.key, required this.rootKey});
+  static List<ProductModel> wishlistItems = []; 
+
+  const WishlistScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppBar(
-        scaffoldKey: rootKey,
-        onSearchTap: () => context.pushNamed(AppRoutes.search),
+      appBar: AppBar(
+        title: const Text('My Wishlist'),
+        centerTitle: true,
+        backgroundColor: Colors.redAccent,
       ),
-      backgroundColor: context.theme.colorScheme.surface,
-      body: myDummyWishList.isEmpty
-          ? const EmptyWishlist()
-          : PersistentView(
-              child: WishlistWidget(items: myDummyWishList),
+      body: wishlistItems.isEmpty
+          ? const Center(child: Text('Your wishlist is empty'))
+          : ListView.builder(
+              itemCount: wishlistItems.length,
+              itemBuilder: (context, index) {
+                final product = wishlistItems[index];
+                return ListTile(
+                  leading: Image.network(product.image, width: 50, height: 50),
+                  title: Text(product.name),
+                  subtitle: Text('\$${product.price.toStringAsFixed(2)}'),
+                 
+                );
+              },
             ),
     );
   }

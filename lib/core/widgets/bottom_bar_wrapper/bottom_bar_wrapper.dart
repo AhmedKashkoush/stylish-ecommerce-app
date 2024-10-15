@@ -29,8 +29,8 @@ class _BottomBarWrapperState extends State<BottomBarWrapper> {
     HomeScreen(
       rootKey: _rootKey,
     ),
-WishlistScreen(rootKey: _rootKey),
-     NotificationsTab(),
+    const WishlistScreen(),
+    NotificationsTab(),
     const SettingScreen(),
   ];
   final List<String> _labels = [
