@@ -5,8 +5,10 @@ import 'package:stylish_ecommerce_app/core/extensions/navigation_extension.dart'
 import 'package:stylish_ecommerce_app/core/extensions/space_extension.dart';
 import 'package:stylish_ecommerce_app/features/products/home/model/category_model.dart';
 
+import '../../model/category.dart';
+
 class CategoryCard extends StatelessWidget {
-  final CategoryModel category;
+  final Category category;
   const CategoryCard({super.key, required this.category});
 
   @override
@@ -15,16 +17,21 @@ class CategoryCard extends StatelessWidget {
       onTap: () => context.pushNamed(
         AppRoutes.products,
         arguments: {
-          'categories': dummyCategories,
+          'categories': category,
           'initialTab': category.name,
         },
       ),
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          CircleAvatar(
-            radius: 28,
-            backgroundImage: AssetImage(category.image),
+          ClipRRect(
+            borderRadius: BorderRadius.circular(8.0),
+            child: Image.network(
+              category.image, // Assuming category has an image field
+              height: 50,
+              width: 50,
+              fit: BoxFit.cover,
+            ),
           ),
           4.height,
           Text(
