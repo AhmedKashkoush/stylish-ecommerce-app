@@ -1,8 +1,9 @@
+import 'package:stylish_ecommerce_app/features/products/home/model/product.dart';
 import 'package:stylish_ecommerce_app/features/products/home/model/product_model.dart';
 
 class OfferModel {
   final DateTime until;
-  final List<ProductModel> products;
+  final List<Product> products;
 
   const OfferModel({required this.until, required this.products});
 
@@ -10,7 +11,7 @@ class OfferModel {
     return OfferModel(
       until: DateTime.parse(json['until']),
       products: (json['products'] as List)
-          .map((e) => ProductModel.fromJson(e))
+          .map((e) => Product.fromJson(e))
           .toList(),
     );
   }
