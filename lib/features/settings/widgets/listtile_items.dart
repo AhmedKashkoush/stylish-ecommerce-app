@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:stylish_ecommerce_app/config/routes/routes.dart';
 import 'package:stylish_ecommerce_app/core/extensions/navigation_extension.dart';
+import 'package:stylish_ecommerce_app/features/auth/view_model/auth_cubit.dart';
 
 Widget buildProfileHeader(bool isDarkTheme) {
   return Row(
@@ -159,25 +161,38 @@ Widget buildPushNotificationsTile(bool isDarkTheme) {
 }
 
 Widget buildLogoutTile(bool isDarkTheme) {
-  return ListTile(
-    leading: const Image(
-      width: 40,
-      height: 40,
-      image: AssetImage(
-        'assets/images/logout.png',
-      ),
-    ),
-    trailing: Icon(
-      Icons.logout_rounded,
-      color: isDarkTheme ? Colors.white : Colors.black,
-    ),
-    title: Text(
-      "Logout",
-      style: TextStyle(
-        color: isDarkTheme ? Colors.white : Colors.black,
-        fontWeight: FontWeight.bold,
-      ),
-    ),
-    onTap: () {},
-  );
+  return
+    BlocConsumer<AuthCubit,AuthState>(
+      builder: (context,state) {
+        return ListTile(
+        leading: const Image(
+          width: 40,
+          height: 40,
+          image: AssetImage(
+            'assets/images/logout.png',
+          ),
+        ),
+        trailing: Icon(
+          Icons.logout_rounded,
+          color: isDarkTheme ? Colors.white : Colors.black,
+        ),
+        title: Text(
+          "Logout",
+          style: TextStyle(
+            color: isDarkTheme ? Colors.white : Colors.black,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        onTap: ()async {
+          await context.read<AuthCubit>().signOut();
+        },
+          );
+      },
+      listener: (BuildContext context, AuthState state) {
+        if(state is SignOutSuccess){
+          context.pushNamedAndRemoveUntil(AppRoutes.signIn);
+        }
+
+      },
+    );
 }

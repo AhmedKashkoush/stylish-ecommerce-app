@@ -1,7 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 import '../../../../../services/firebase_storage_servise.dart';
-import '../product.dart';
+import '../product_model.dart';
 
 class ProductRepository {
   final FirebaseFirestore _firestore;
@@ -9,7 +9,7 @@ class ProductRepository {
   ProductRepository( this._firestore);
 
 
-  Future<List<Product>> fetchProductsForCategory(String categoryId) async {
+  Future<List<ProductModel>> fetchProductsForCategory(String categoryId) async {
     try {
 
       // Get the 'products' sub-collection for the category
@@ -19,18 +19,17 @@ class ProductRepository {
           .collection('products')
           .get();
       // Fetch image URL for each product and convert each document to a Product object
-      List<Product> products = [];
+      List<ProductModel> products = [];
 
       for(var doc in snapshot.docs){
-        Product product = Product.fromFirestore(doc);
+        ProductModel product = ProductModel.fromFirestore(doc);
         // Fetch the download URL for the product image from Firebase Storage
-        print("RRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR");
-        print(product);
+
         String imageUrl = await FirebaseStorageService().getImageDownloadURL(product.image);
 
 
         // Replace the image path with the actual download URL
-        product = Product(
+        product = ProductModel(
           id: product.id,
           name: product.name,
           description: product.description,
@@ -40,6 +39,7 @@ class ProductRepository {
           rate: product.rate,
           totalRate: product.totalRate,
           sale: product.sale,
+          category: product.category,
         );
         products.add(product);
       }

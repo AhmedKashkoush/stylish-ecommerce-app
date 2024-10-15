@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:stylish_ecommerce_app/config/routes/routes.dart';
-import 'package:stylish_ecommerce_app/core/dummy/dummy_categories.dart';
 import 'package:stylish_ecommerce_app/core/extensions/navigation_extension.dart';
 import 'package:stylish_ecommerce_app/core/extensions/space_extension.dart';
-import 'package:stylish_ecommerce_app/features/products/home/model/category_model.dart';
+import 'package:stylish_ecommerce_app/features/products/home/view_model/category/category_cubit.dart';
 
-import '../../model/category.dart';
+import '../../model/category_model.dart';
 
 class CategoryCard extends StatelessWidget {
-  final Category category;
+  final CategoryModel category;
   const CategoryCard({super.key, required this.category});
 
   @override
@@ -17,7 +17,7 @@ class CategoryCard extends StatelessWidget {
       onTap: () => context.pushNamed(
         AppRoutes.products,
         arguments: {
-          'categories': category,
+          'categories': context.read<CategoryCubit>().categories,
           'initialTab': category.name,
         },
       ),

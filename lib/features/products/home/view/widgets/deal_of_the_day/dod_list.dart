@@ -3,10 +3,9 @@ import 'package:stylish_ecommerce_app/core/widgets/scroll/list_scroll_bar.dart';
 import 'package:stylish_ecommerce_app/features/products/home/model/product_model.dart';
 import 'package:stylish_ecommerce_app/features/products/home/view/widgets/deal_of_the_day/dod_card.dart';
 
-import '../../../model/product.dart';
 
 class DodList extends StatefulWidget {
-  final List<Product> products;
+  final List<ProductModel> products;
   const DodList({super.key, required this.products});
 
   @override

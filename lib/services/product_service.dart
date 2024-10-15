@@ -2,8 +2,8 @@
 import 'dart:convert';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/services.dart' show rootBundle;
-import '../features/products/home/model/category.dart';
-import '../features/products/home/model/product.dart';
+import '../features/products/home/model/category_model.dart';
+import '../features/products/home/model/product_model.dart';
 
  // Adjust the import path as necessary
 
@@ -40,11 +40,11 @@ class ProductService {
     }
   }
 
-  List<Category> parseCategories(String jsonString) {
+  List<CategoryModel> parseCategories(String jsonString) {
     final data = json.decode(jsonString) as List<dynamic>;
     return data.map((categoryJson) {
       final products = (categoryJson['products'] as List<dynamic>).map((productJson) {
-        return Product(
+        return ProductModel(
           name: productJson['name'],
           description: productJson['description'],
           image: productJson['image'],
@@ -54,10 +54,11 @@ class ProductService {
           totalRate: productJson['totalRate'],
           sale: productJson['sale']?.toDouble(),
           id: productJson['id'],
+          category: productJson['category'],
         );
       }).toList();
 
-      return Category(
+      return CategoryModel(
         id:categoryJson['id'],
         name: categoryJson['name'],
         image: categoryJson['image'],
@@ -66,7 +67,7 @@ class ProductService {
     }).toList();
   }
 
-  Future<void> uploadCategoriesToFirestore(List<Category> categories) async {
+  Future<void> uploadCategoriesToFirestore(List<CategoryModel> categories) async {
     final firestore = FirebaseFirestore.instance;
 
     for (final category in categories) {

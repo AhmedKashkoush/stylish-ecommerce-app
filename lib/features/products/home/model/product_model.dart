@@ -1,3 +1,5 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+
 class ProductModel {
   final String id, name, description, image, currency, category;
   final double price, rate;
@@ -44,4 +46,23 @@ class ProductModel {
         'totalRate': totalRate,
         'sale': sale,
       };
+
+  // Factory constructor to create a Product from Firestore data
+  factory ProductModel.fromFirestore(DocumentSnapshot doc) {
+    var data = doc.data() as Map<String, dynamic>;
+
+    return ProductModel(
+
+      id: doc.id,
+      name: data['name'] ?? '',
+      description: data['description'] ?? '',
+      image: data['image'] ?? '',
+      currency: data['currency'] ?? '',
+      price: (data['price'] ?? 0).toDouble(),
+      rate: (data['rate'] ?? 0).toDouble(),
+      totalRate: data['totalRate'] ?? 0,
+      sale: data['sale'],
+      category: data['category']??" ", // Sale might be null
+    );
+  }
 }

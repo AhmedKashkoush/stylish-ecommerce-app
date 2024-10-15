@@ -1,12 +1,18 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:stylish_ecommerce_app/core/constants/colors.dart';
 import 'package:stylish_ecommerce_app/core/extensions/theme_extension.dart';
 import 'package:stylish_ecommerce_app/features/products/all_products/view/widgets/tab_view.dart';
 import 'package:stylish_ecommerce_app/features/products/home/model/category_model.dart';
+import 'package:stylish_ecommerce_app/features/products/home/view_model/product/product_cubit.dart';
+
+import '../../../home/model/repositories/products_repositories.dart';
 
 class AllProductsScreen extends StatefulWidget {
   final List<CategoryModel> categories;
   final String initialTab;
+
   const AllProductsScreen({
     super.key,
     required this.categories,
@@ -64,10 +70,14 @@ class _AllProductsScreenState extends State<AllProductsScreen>
         controller: _tabController,
         children: _tabs
             .map(
-              (category) => TabView(
-                category: category,
+              (category) =>
+              BlocProvider<ProductCubit>(
+                create: (context) => ProductCubit(ProductRepository(FirebaseFirestore.instance)),
+                child: TabView(
+                  category: category,
+                ),
               ),
-            )
+        )
             .toList(),
       ),
     );

@@ -1,16 +1,32 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:stylish_ecommerce_app/core/dummy/dummy_dod.dart';
 import 'package:stylish_ecommerce_app/core/dummy/dummy_trending.dart';
 import 'package:stylish_ecommerce_app/features/products/all_products/view/widgets/product_card.dart';
 import 'package:stylish_ecommerce_app/features/products/home/model/product_model.dart';
+import 'package:stylish_ecommerce_app/features/products/home/view_model/product/product_cubit.dart';
 
-class TabView extends StatelessWidget {
+class TabView extends StatefulWidget {
   final String category;
+
   const TabView({super.key, required this.category});
 
   @override
+  State<TabView> createState() => _TabViewState();
+}
+
+class _TabViewState extends State<TabView> {
+
+  @override
+  void initState() {
+    print("#########${widget.category}");
+    context.read<ProductCubit>().fetchProducts(widget.category);
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
-    if (category.toLowerCase() == 'deal of the day') {
+    if (widget.category.toLowerCase() == 'deal of the day') {
       return ListView.separated(
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
         itemBuilder: (_, index) => ProductCard(product: dummyDod[index]),
@@ -18,7 +34,7 @@ class TabView extends StatelessWidget {
         itemCount: dummyDod.length,
       );
     }
-    if (category.toLowerCase() == 'trending') {
+    if (widget.category.toLowerCase() == 'trending') {
       return ListView.separated(
         padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
         itemBuilder: (_, index) => ProductCard(product: dummyTrending[index]),
@@ -26,15 +42,19 @@ class TabView extends StatelessWidget {
         itemCount: dummyTrending.length,
       );
     }
-    final List<ProductModel> products = [
-      ...dummyDod,
-      ...dummyTrending,
-    ].where((product) => product.category == category.toLowerCase()).toList();
-    return ListView.separated(
-      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
-      itemBuilder: (_, index) => ProductCard(product: products[index]),
-      separatorBuilder: (_, __) => const Divider(),
-      itemCount: products.length,
+    final List<ProductModel> products = context
+        .read<ProductCubit>()
+        .products;
+
+    return BlocBuilder<ProductCubit, ProductState>(
+      builder: (context, state) {
+        return ListView.separated(
+          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
+          itemBuilder: (_, index) => ProductCard(product: products[index]),
+          separatorBuilder: (_, __) => const Divider(),
+          itemCount: products.length,
+        );
+      },
     );
   }
 }

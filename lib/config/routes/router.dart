@@ -8,6 +8,7 @@ import 'package:stylish_ecommerce_app/features/cart/view/screens/cart_screen.dar
 
 import 'package:stylish_ecommerce_app/features/onboarding/view/screens/getting_started_screen.dart';
 import 'package:stylish_ecommerce_app/features/payment/view/screens/checkout_screen.dart';
+import 'package:stylish_ecommerce_app/features/products/all_products/view/screens/all_products_screen.dart';
 
 import 'package:stylish_ecommerce_app/features/profile/view/screens/profile_screen.dart';
 import 'package:stylish_ecommerce_app/features/search/view/screens/search_screen.dart';
@@ -71,6 +72,12 @@ class AppRouter {
       case AppRoutes.checkout:
         return _slideTransition(
           const CheckoutScreen(),
+          transitionType: _PageTransitionType.bottomToTop,
+        );
+      case AppRoutes.products:
+        final Map<String,dynamic> args = settings.arguments as Map<String,dynamic>;
+        return _slideTransition(
+           AllProductsScreen(categories: args['categories'] , initialTab: args['initialTab'], ),
           transitionType: _PageTransitionType.bottomToTop,
         );
 

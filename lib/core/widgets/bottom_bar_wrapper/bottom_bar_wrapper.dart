@@ -7,8 +7,8 @@ import 'package:stylish_ecommerce_app/core/extensions/theme_extension.dart';
 import 'package:stylish_ecommerce_app/core/widgets/drawers/custom_drawer.dart';
 import 'package:stylish_ecommerce_app/features/products/home/view/screens/home_screen.dart';
 import 'package:stylish_ecommerce_app/features/settings/setting_screen.dart';
-'package:stylish_ecommerce_app/features/products/wishlist/view/screens/wishlist_screen.dart';
 import '../../../features/products/notifications/view/screens/notification_screen.dart';
+import '../../../features/products/wishlist/view/screens/wishlist_screen.dart';
 
 part 'widgets/custom_bottom_bar.dart';
 part 'widgets/custom_nav_item.dart';

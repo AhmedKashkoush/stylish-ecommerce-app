@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:stylish_ecommerce_app/core/widgets/scroll/list_scroll_bar.dart';
 import 'package:stylish_ecommerce_app/features/products/home/view/widgets/trending/trending_card.dart';
 
-import '../../../model/product.dart';
+import '../../../model/product_model.dart';
 
 class TrendingList extends StatefulWidget {
-  final List<Product> products;
+  final List<ProductModel> products;
   const TrendingList({
     super.key,
     required this.products,

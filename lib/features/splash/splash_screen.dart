@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:stylish_ecommerce_app/config/routes/routes.dart';
 import 'package:stylish_ecommerce_app/core/constants/colors.dart';
@@ -15,6 +16,12 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
     Future.delayed(const Duration(seconds: 3), () {
+
+      final User? user = FirebaseAuth.instance.currentUser;
+      if(user != null){
+        context.pushReplacementNamed(AppRoutes.home);
+        return;
+      }
       context.pushReplacementNamed(AppRoutes.gettingStarted);
     });
     super.initState();

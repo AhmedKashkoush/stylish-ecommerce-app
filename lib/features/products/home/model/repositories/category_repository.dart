@@ -1,7 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 import '../../../../../services/firebase_storage_servise.dart';
-import '../category.dart';
 import '../category_model.dart';
 
 class CategoryRepository{
@@ -36,10 +35,10 @@ class CategoryRepository{
   // }
 
 
-  Future<List<Category>> fetchCategories() async {
+  Future<List<CategoryModel>> fetchCategories() async {
     try {
       QuerySnapshot snapshot = await _firestore.collection('categories').get();
-      List<Category> categories = [];
+      List<CategoryModel> categories = [];
 
       for (var doc in snapshot.docs) {
         // Get the image path from the document
@@ -49,10 +48,9 @@ class CategoryRepository{
 
 
         // Create Category object
-        categories.add(Category.fromFirestore(doc)..image = imageUrl);
+        categories.add(CategoryModel.fromFirestore(doc)..image = imageUrl);
       }
-      print("lllllllllllllllllllllllllllllllllllll");
-      print(categories.first.name);
+
       return categories;
     } catch (e) {
       throw Exception('Error fetching categories: $e');

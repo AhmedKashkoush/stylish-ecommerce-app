@@ -14,9 +14,9 @@ class HomeInitial extends HomeState {}
 class HomeLoading extends HomeState {}
 
 class HomeLoaded extends HomeState {
-  final List<Category> categories;
-  final List<Product> trendingProducts;
-  final List<Product> dealOfTheDayProducts;
+  final List<CategoryModel> categories;
+  final List<ProductModel> trendingProducts;
+  final List<ProductModel> dealOfTheDayProducts;
 
   const HomeLoaded( {
     required this.categories,

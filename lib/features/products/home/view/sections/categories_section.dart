@@ -4,10 +4,9 @@ import 'package:stylish_ecommerce_app/core/extensions/theme_extension.dart';
 import 'package:stylish_ecommerce_app/features/products/home/model/category_model.dart';
 import 'package:stylish_ecommerce_app/features/products/home/view/widgets/category_card.dart';
 
-import '../../model/category.dart';
 
 class CategoriesSection extends StatelessWidget {
-  final List<Category> categories;
+  final List<CategoryModel> categories;
   const CategoriesSection({super.key, required this.categories});
 
   @override

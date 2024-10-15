@@ -2,8 +2,10 @@ import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:meta/meta.dart';
 
-import '../../model/category.dart';
-import '../../model/product.dart';
+
+import '../../model/category_model.dart';
+
+import '../../model/product_model.dart';
 import '../category/category_cubit.dart';
 import '../product/product_cubit.dart';
 
@@ -48,7 +50,7 @@ class HomeCubit extends Cubit<HomeState> {
 
 // Helper method to fetch products for two sections
 
-  Future<void> fetchProductsForSections(List<Category> categories) async {
+  Future<void> fetchProductsForSections(List<CategoryModel> categories) async {
 
     try{
 
