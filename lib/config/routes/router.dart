@@ -8,11 +8,12 @@ import 'package:stylish_ecommerce_app/features/cart/view/screens/cart_screen.dar
 
 import 'package:stylish_ecommerce_app/features/onboarding/view/screens/getting_started_screen.dart';
 import 'package:stylish_ecommerce_app/features/payment/view/screens/checkout_screen.dart';
+import 'package:stylish_ecommerce_app/features/products/details/view/product_screen.dart';
 import 'package:stylish_ecommerce_app/features/products/all_products/view/screens/all_products_screen.dart';
+import 'package:stylish_ecommerce_app/features/products/home/model/product_model.dart';
 
 import 'package:stylish_ecommerce_app/features/profile/view/screens/profile_screen.dart';
 import 'package:stylish_ecommerce_app/features/search/view/screens/search_screen.dart';
-import 'package:stylish_ecommerce_app/features/settings/setting_screen.dart';
 
 import 'package:stylish_ecommerce_app/features/splash/splash_screen.dart';
 
@@ -39,6 +40,12 @@ class AppRouter {
       case AppRoutes.signIn:
         return MaterialPageRoute(
           builder: (context) => const SignInScreen(),
+        );
+      case AppRoutes.productDetails:
+        final ProductModel product = settings.arguments as ProductModel;
+        return MaterialPageRoute(
+
+          builder: (context) =>  ProductDetailsScreen(product: product),
         );
       case AppRoutes.signUp:
         return MaterialPageRoute(
