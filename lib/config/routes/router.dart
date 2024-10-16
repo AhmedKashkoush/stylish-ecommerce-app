@@ -20,7 +20,7 @@ import 'package:stylish_ecommerce_app/features/splash/splash_screen.dart';
 import '../../features/onboarding/view/screens/onboarding_screen.dart';
 
 class AppRouter {
-  static const String initialRoute = AppRoutes.splash;
+  static const String initialRoute = AppRoutes.signIn;
 
   static Route<dynamic>? onGenerateRoute(RouteSettings settings) {
     switch (settings.name) {
@@ -44,8 +44,7 @@ class AppRouter {
       case AppRoutes.productDetails:
         final ProductModel product = settings.arguments as ProductModel;
         return MaterialPageRoute(
-
-          builder: (context) =>  ProductDetailsScreen(product: product),
+          builder: (context) => ProductDetailsScreen(product: product),
         );
       case AppRoutes.signUp:
         return MaterialPageRoute(
@@ -59,7 +58,7 @@ class AppRouter {
         return MaterialPageRoute(
           builder: (context) => const BottomBarWrapper(),
         );
-     
+
       case AppRoutes.profile:
         return _slideTransition(
           const ProfileScreen(),
@@ -82,9 +81,13 @@ class AppRouter {
           transitionType: _PageTransitionType.bottomToTop,
         );
       case AppRoutes.products:
-        final Map<String,dynamic> args = settings.arguments as Map<String,dynamic>;
+        final Map<String, dynamic> args =
+            settings.arguments as Map<String, dynamic>;
         return _slideTransition(
-           AllProductsScreen(categories: args['categories'] , initialTab: args['initialTab'], ),
+          AllProductsScreen(
+            categories: args['categories'],
+            initialTab: args['initialTab'],
+          ),
           transitionType: _PageTransitionType.bottomToTop,
         );
 
