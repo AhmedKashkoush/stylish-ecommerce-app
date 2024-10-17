@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:stylish_ecommerce_app/features/products/wishlist/view/screens/wishlist_screen.dart';
 
 import '../../home/model/product_model.dart';
@@ -49,7 +50,7 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
         ],
       ),
       body: Padding(
-        padding: const EdgeInsets.all(16.0),
+        padding:  EdgeInsets.all(16.r),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -57,43 +58,43 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
             Center(
               child: Image.network(
                 widget.product.image,
-                height: 250,
-                width: 250,
+                height:250.h,
+                width:250.w,
                 fit: BoxFit.cover,
               ),
             ),
-            const SizedBox(height: 20),
+             SizedBox(height:20.h),
 
             Text(
               widget.product.name,
-              style: const TextStyle(
-                fontSize: 24,
+              style:  TextStyle(
+                fontSize: 24.sp,
                 fontWeight: FontWeight.bold,
               ),
             ),
-            const SizedBox(height: 10),
+             SizedBox(height:10.h),
 
             Text(
               '\$${widget.product.price.toStringAsFixed(2)}',
-              style: const TextStyle(
-                fontSize: 20,
+              style:  TextStyle(
+                fontSize: 20.sp,
                 fontWeight: FontWeight.w500,
                 color: Colors.green,
               ),
             ),
-            const SizedBox(height: 20),
+             SizedBox(height:20.h),
 
             // Product Description
             Text(
               widget.product.description,
-              style: const TextStyle(fontSize: 16, height: 1.5),
+              style:  TextStyle(fontSize: 16.sp, height:1.5.h),
             ),
             const Spacer(),
 
             // Add to Cart Button
             SizedBox(
               width: double.infinity,
-              height: 50,
+              height:50.h,
               child: ElevatedButton(
                 onPressed: () {},
                 style: ElevatedButton.styleFrom(
@@ -102,9 +103,9 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                     borderRadius: BorderRadius.circular(10),
                   ),
                 ),
-                child: const Text(
+                child:  Text(
                   'Add to Cart',
-                  style: TextStyle(fontSize: 18, color: Colors.white),
+                  style: TextStyle(fontSize: 18.sp, color: Colors.white),
                 ),
               ),
             ),

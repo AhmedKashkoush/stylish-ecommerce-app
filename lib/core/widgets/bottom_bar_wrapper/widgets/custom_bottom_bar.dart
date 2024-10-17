@@ -34,7 +34,7 @@ class CustomBottomBar extends StatelessWidget {
           return Expanded(
             child: MaterialButton(
               onPressed: () => onChangeTab(selectedIndex),
-              padding: const EdgeInsets.all(4),
+              padding:  EdgeInsets.all(4.r),
               shape: const StadiumBorder(),
               child: CustomNavItem(
                 icon: icons[selectedIndex],

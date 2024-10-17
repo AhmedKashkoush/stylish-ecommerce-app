@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:stylish_ecommerce_app/features/cart/view/widgets/order_details.dart';
 import 'package:stylish_ecommerce_app/features/cart/view/widgets/payment_container.dart';
 import 'package:stylish_ecommerce_app/features/cart/view/widgets/product_details.dart';
@@ -17,7 +18,7 @@ class CartScreen extends StatelessWidget {
         title:  Text(
           'Shopping Bag',
           style: TextStyle(
-            fontSize: 16,
+            fontSize: 16.sp,
             fontWeight: FontWeight.w600,            color: isDarkTheme ? Colors.white : Colors.black,
 
           ),
@@ -32,7 +33,7 @@ class CartScreen extends StatelessWidget {
           ),
         ],
       ),
-      body: const Padding(
+      body:  Padding(
         padding: EdgeInsets.only(top: 20),
         child: SingleChildScrollView(
           child: Column(
@@ -40,7 +41,7 @@ class CartScreen extends StatelessWidget {
             children: [
               ProductDetails(),
               Padding(
-                padding: EdgeInsets.all(24.0),
+                padding: EdgeInsets.all(24.0.r),
                 child: Divider(
                   color: Color(0xffCACACA),
                   thickness: 1,
@@ -48,7 +49,7 @@ class CartScreen extends StatelessWidget {
               ),
               OrderDetails(),
               Padding(
-                padding: EdgeInsets.all(24.0),
+                padding: EdgeInsets.all(24.0.r),
                 child: Divider(
                   color: Color(0xffCACACA),
                   thickness: 1,
@@ -56,7 +57,7 @@ class CartScreen extends StatelessWidget {
               ),
               TotalOrder(),
               SizedBox(
-                height: 53,
+                height:53.h,
               ),
               PaymentContainer(),
             ],

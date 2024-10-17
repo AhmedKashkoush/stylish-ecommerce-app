@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:stylish_ecommerce_app/features/settings/widgets/listtile_items.dart';
 
 class SettingScreen extends StatelessWidget {
@@ -15,12 +16,12 @@ class SettingScreen extends StatelessWidget {
       body: DefaultTextStyle(
         style: TextStyle(color: isDarkTheme ? Colors.white : Colors.black),
         child: SingleChildScrollView(
-          padding: const EdgeInsets.symmetric(vertical: 24, horizontal: 15),
+          padding:  EdgeInsets.symmetric(vertical:24.h, horizontal:15.w),
           child: Column(
             children: <Widget>[
-              const SizedBox(height: 30.0),
+               SizedBox(height:30.h),
               buildProfileHeader(isDarkTheme),
-              const SizedBox(height: 20.0),
+               SizedBox(height:20.h),
               buildLanguageTile(isDarkTheme),
               buildProfileSettingsTile(isDarkTheme,context),
               buildDarkModeTile(isDarkTheme),

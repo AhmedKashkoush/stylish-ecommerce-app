@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ColorContainer extends StatelessWidget {
   final String text;
@@ -8,8 +9,8 @@ class ColorContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     final isDarkTheme = Theme.of(context).brightness == Brightness.dark;
     return Container(
-      margin: const EdgeInsets.symmetric(horizontal: 8),
-      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
+      margin:  EdgeInsets.symmetric(horizontal:8.w),
+      padding:  EdgeInsets.symmetric(horizontal:8.w, vertical:2.h),
       decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(5),
           border: Border.all(),

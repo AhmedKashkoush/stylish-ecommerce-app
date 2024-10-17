@@ -29,7 +29,7 @@ class CustomNavItem extends StatelessWidget {
               color:
                   isActive ? AppColors.primary : context.theme.iconTheme.color!,
               fontWeight: FontWeight.w400,
-              fontSize: 12,
+              fontSize: 12.sp,
             ),
           ),
         ),

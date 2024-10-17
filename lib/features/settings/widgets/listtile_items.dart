@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:stylish_ecommerce_app/config/routes/routes.dart';
 import 'package:stylish_ecommerce_app/core/extensions/navigation_extension.dart';
 import 'package:stylish_ecommerce_app/features/auth/view_model/auth_cubit.dart';
@@ -8,8 +9,8 @@ Widget buildProfileHeader(bool isDarkTheme) {
   return Row(
     children: [
       Container(
-        width: 120,
-        height: 120,
+        width:120.w,
+        height:120.h,
         decoration: BoxDecoration(
           color: isDarkTheme ? Colors.black : Colors.white,
           shape: BoxShape.circle,
@@ -18,17 +19,17 @@ Widget buildProfileHeader(bool isDarkTheme) {
             fit: BoxFit.fill,
           ),
           border: Border.all(
-              color: isDarkTheme ? Colors.black : Colors.grey, width: 2.0),
+              color: isDarkTheme ? Colors.black : Colors.grey, width:2.w),
         ),
       ),
-      const SizedBox(width: 10.0),
-      const Expanded(
+       SizedBox(width:10.w),
+       Expanded(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             Text(
               "Fatma Atef",
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20.0),
+              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20.sp),
             ),
           ],
         ),
@@ -39,10 +40,10 @@ Widget buildProfileHeader(bool isDarkTheme) {
 
 Widget buildLanguageTile(bool isDarkTheme) {
   return ListTile(
-    leading: const Image(
-      width: 40,
-      height: 40,
-      image: AssetImage(
+    leading:  Image(
+      width:40.w,
+      height:40.h,
+      image: const AssetImage(
         'assets/images/lang.png',
       ),
     ),
@@ -74,10 +75,10 @@ void _goToProfile(BuildContext context) {
 
 Widget buildProfileSettingsTile(bool isDarkTheme, BuildContext context) {
   return ListTile(
-    leading: const Image(
-      width: 40,
-      height: 40,
-      image: AssetImage(
+    leading:  Image(
+      width:40.w,
+      height:40.h,
+      image: const AssetImage(
         'assets/images/user.png',
       ),
     ),
@@ -106,10 +107,10 @@ Widget buildProfileSettingsTile(bool isDarkTheme, BuildContext context) {
 
 Widget buildDarkModeTile(bool isDarkTheme) {
   return SwitchListTile(
-    secondary: const Image(
-      width: 40,
-      height: 40,
-      image: AssetImage(
+    secondary:  Image(
+      width:40.w,
+      height:40.h,
+      image: const AssetImage(
         'assets/images/dark.png',
       ),
     ),
@@ -134,10 +135,10 @@ Widget buildDarkModeTile(bool isDarkTheme) {
 
 Widget buildPushNotificationsTile(bool isDarkTheme) {
   return SwitchListTile(
-    secondary: const Image(
-      width: 40,
-      height: 40,
-      image: AssetImage(
+    secondary:  Image(
+      width:40.w,
+      height:40.h,
+      image: const AssetImage(
         'assets/images/notification.png',
       ),
     ),
@@ -165,10 +166,10 @@ Widget buildLogoutTile(bool isDarkTheme) {
     BlocConsumer<AuthCubit,AuthState>(
       builder: (context,state) {
         return ListTile(
-        leading: const Image(
-          width: 40,
-          height: 40,
-          image: AssetImage(
+        leading:  Image(
+          width:40.w,
+          height:40.h,
+          image: const AssetImage(
             'assets/images/logout.png',
           ),
         ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:stylish_ecommerce_app/features/products/home/model/product_model.dart';
 
 class WishlistScreen extends StatelessWidget {
@@ -21,7 +22,7 @@ class WishlistScreen extends StatelessWidget {
               itemBuilder: (context, index) {
                 final product = wishlistItems[index];
                 return ListTile(
-                  leading: Image.network(product.image, width: 50, height: 50),
+                  leading: Image.network(product.image, width:50.w, height:50.h),
                   title: Text(product.name),
                   subtitle: Text('\$${product.price.toStringAsFixed(2)}'),
                  

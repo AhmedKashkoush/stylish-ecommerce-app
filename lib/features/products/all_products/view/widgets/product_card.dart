@@ -1,5 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:stylish_ecommerce_app/core/extensions/space_extension.dart';
 import 'package:stylish_ecommerce_app/core/extensions/theme_extension.dart';
 import 'package:stylish_ecommerce_app/core/widgets/rating/star_rating_widget.dart';
@@ -14,7 +15,7 @@ class ProductCard extends StatelessWidget {
     return Card(
       child: Container(
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(6),
+          borderRadius: BorderRadius.circular(6.r),
           color: context.theme.scaffoldBackgroundColor,
         ),
         child: Row(
@@ -22,9 +23,9 @@ class ProductCard extends StatelessWidget {
           children: [
             Expanded(
               child: Container(
-                height: 140,
+                height:140.h.h,
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(6),
+                  borderRadius: BorderRadius.circular(6.r),
                   image: DecorationImage(
                     image: CachedNetworkImageProvider(product.image),
                     fit: BoxFit.cover,
@@ -35,7 +36,7 @@ class ProductCard extends StatelessWidget {
             Expanded(
               flex: 2,
               child: Padding(
-                padding: const EdgeInsets.all(6.0),
+                padding:  EdgeInsets.all(6.0.sp),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -43,8 +44,8 @@ class ProductCard extends StatelessWidget {
                       product.name,
                       maxLines: 2,
                       overflow: TextOverflow.ellipsis,
-                      style: const TextStyle(
-                        fontSize: 16,
+                      style:  TextStyle(
+                        fontSize: 16.sp.sp,
                         fontWeight: FontWeight.w500,
                       ),
                     ),
@@ -53,16 +54,16 @@ class ProductCard extends StatelessWidget {
                       product.description,
                       maxLines: 2,
                       overflow: TextOverflow.ellipsis,
-                      style: const TextStyle(
-                        fontSize: 10,
+                      style:  TextStyle(
+                        fontSize: 10.sp.sp,
                         fontWeight: FontWeight.w400,
                       ),
                     ),
                     6.height,
                     Text(
                       '${product.currency} ${product.sale != null ? (product.price - product.price * product.sale!) : product.price}',
-                      style: const TextStyle(
-                        fontSize: 12,
+                      style:  TextStyle(
+                        fontSize: 12.sp,
                         fontWeight: FontWeight.w500,
                       ),
                     ),
@@ -72,22 +73,22 @@ class ProductCard extends StatelessWidget {
                           4.width,
                           Text(
                             '${product.currency} ${product.price}',
-                            style: const TextStyle(
-                              fontSize: 12,
+                            style:  TextStyle(
+                              fontSize: 12.sp,
                               fontWeight: FontWeight.w300,
                               decoration: TextDecoration.lineThrough,
                               color: Colors.grey,
-                              height: 0.8,
+                              height:0.8.h,
                             ),
                           ),
                           10.width,
                           Text(
                             '${product.sale! * 100}% OFF',
-                            style: const TextStyle(
-                              fontSize: 10,
+                            style:  TextStyle(
+                              fontSize: 10.sp,
                               fontWeight: FontWeight.w400,
                               color: Colors.red,
-                              height: 0.8,
+                              height:0.8.h,
                             ),
                           ),
                         ],
@@ -99,8 +100,8 @@ class ProductCard extends StatelessWidget {
                         10.width,
                         Text(
                           '${product.totalRate}',
-                          style: const TextStyle(
-                            fontSize: 10,
+                          style:  TextStyle(
+                            fontSize: 10.sp,
                             fontWeight: FontWeight.w400,
                             color: Colors.grey,
                           ),

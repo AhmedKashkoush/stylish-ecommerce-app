@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:stylish_ecommerce_app/features/profile/view/widgets/shared_widget.dart';
 
 class BusinessDetails extends StatelessWidget {
@@ -24,11 +25,11 @@ class BusinessDetails extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const SizedBox(height: 20),
+         SizedBox(height:20.h),
         Text(
           'Business Address Details',
           style: TextStyle(
-            fontSize: 18,
+            fontSize: 18.sp,
             fontWeight: FontWeight.w600,
             color: isDarkTheme ? Colors.white : Colors.black,
           ),
@@ -63,7 +64,7 @@ class BusinessDetails extends StatelessWidget {
           textController: countryController,
           keyboardType: TextInputType.text,
         ),
-        const SizedBox(height: 25),
+         SizedBox(height:25.h),
         Divider(
           thickness: 0.8,
           color: isDarkTheme ? Colors.white54 : const Color(0xffC4C4C4),

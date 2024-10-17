@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:stylish_ecommerce_app/features/profile/view/widgets/text_field.dart';
 
 class SharedWidget extends StatelessWidget {
@@ -22,16 +23,16 @@ class SharedWidget extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const SizedBox(height: 20),
+         SizedBox(height:20.h),
         Text(
           text,
           style: TextStyle(
-            fontSize: 14,
+            fontSize: 14.sp,
             fontWeight: FontWeight.w400,
             color: isDarkTheme ? Colors.white : Colors.black,
           ),
         ),
-        const SizedBox(height: 15),
+         SizedBox(height:15.h),
         TextForm(
           hintText: hintText,
           labelText: text,

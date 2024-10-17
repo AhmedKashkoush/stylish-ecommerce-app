@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:stylish_ecommerce_app/features/profile/view/widgets/shared_widget.dart';
 
 class BankDetails extends StatelessWidget {
@@ -20,11 +21,11 @@ class BankDetails extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const SizedBox(height: 20),
+         SizedBox(height:20.h),
         Text(
           'Bank Account Details',
           style: TextStyle(
-            fontSize: 18,
+            fontSize: 18.sp,
             fontWeight: FontWeight.w600,
             color: isDarkTheme ? Colors.white : Colors.black,
           ),
@@ -47,7 +48,7 @@ class BankDetails extends StatelessWidget {
           keyboardType: TextInputType.text,
           textController: ifscController,
         ),
-        const SizedBox(height: 25),
+         SizedBox(height:25.h),
       ],
     );
   }

@@ -13,10 +13,10 @@ class RemainingTimeWidget extends StatelessWidget {
     return Row(
       mainAxisSize: MainAxisSize.min,
       children: [
-        const Icon(
+         Icon(
           Icons.alarm,
           color: Colors.white,
-          size: 12,
+          size: 12.sp,
         ),
         4.width,
         ValueListenableBuilder(
@@ -26,9 +26,9 @@ class RemainingTimeWidget extends StatelessWidget {
               value == null
                   ? '00h 00m 00s'
                   : '${value.inHours.toString().padLeft(2, '0')}h ${(value.inMinutes % 60).toString().padLeft(2, '0')}m ${(value.inSeconds % 60).toString().padLeft(2, '0')}s remaining',
-              style: const TextStyle(
+              style:  TextStyle(
                 color: Colors.white,
-                fontSize: 12,
+                fontSize: 12.sp.sp,
               ),
             );
           },

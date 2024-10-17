@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class TotalOrder extends StatelessWidget {
   const TotalOrder({super.key});
@@ -7,7 +8,7 @@ class TotalOrder extends StatelessWidget {
   Widget build(BuildContext context) {
     final isDarkTheme = Theme.of(context).brightness == Brightness.dark;
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 17),
+      padding:  EdgeInsets.symmetric(horizontal:17.w),
       child: Column(
         children: [
           Row(
@@ -16,7 +17,7 @@ class TotalOrder extends StatelessWidget {
               Text(
                 'Order Total',
                 style: TextStyle(
-                  fontSize: 17,
+                  fontSize: 17.sp,
                   fontWeight: FontWeight.w500,
                   color: isDarkTheme ? Colors.white : Colors.black,
                 ),
@@ -24,15 +25,15 @@ class TotalOrder extends StatelessWidget {
               Text(
                 'EGP 7,000.00',
                 style: TextStyle(
-                  fontSize: 16,
+                  fontSize: 16.sp,
                   fontWeight: FontWeight.w600,
                   color: isDarkTheme ? Colors.white : Colors.black,
                 ),
               ),
             ],
           ),
-          const SizedBox(
-            height: 10,
+           SizedBox(
+            height:10.h,
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.start,
@@ -40,18 +41,18 @@ class TotalOrder extends StatelessWidget {
               Text(
                 'EMI Available',
                 style: TextStyle(
-                  fontSize: 16,
+                  fontSize: 16.sp,
                   fontWeight: FontWeight.w400,
                   color: isDarkTheme ? Colors.white : Colors.black,
                 ),
               ),
-              const SizedBox(
-                width: 15,
+               SizedBox(
+                width:15.w,
               ),
               Text(
                 'Details',
                 style: TextStyle(
-                  fontSize: 12,
+                  fontSize: 12.sp,
                   color:
                       isDarkTheme ? Colors.redAccent : const Color(0xffF83758),
                   fontWeight: FontWeight.w600,

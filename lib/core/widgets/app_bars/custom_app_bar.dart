@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hugeicons/hugeicons.dart';
 import 'package:stylish_ecommerce_app/config/routes/routes.dart';
 import 'package:stylish_ecommerce_app/core/extensions/navigation_extension.dart';
@@ -41,9 +42,9 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
           // 10.w,
           GestureDetector(
             onTap: () => onAvatarTap(context),
-            child: const Padding(
-              padding: EdgeInsets.all(8.0),
-              child: CircleAvatar(
+            child:  Padding(
+              padding: EdgeInsets.all(8.0.r),
+              child: const CircleAvatar(
                 backgroundImage: AssetImage('assets/images/avatar.png'),
               ),
             ),
@@ -53,7 +54,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
         bottom: PreferredSize(
           preferredSize: const Size.fromHeight(kToolbarHeight),
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16.0),
+            padding:  EdgeInsets.symmetric(horizontal:16.w),
             child: CustomSearchBar(
               onTap: onSearchTap,
             ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class TextForm extends StatelessWidget {
   const TextForm({
@@ -24,25 +25,25 @@ class TextForm extends StatelessWidget {
       decoration: InputDecoration(
         hintText: hintText,
         hintStyle: TextStyle(
-          fontSize: 13,
+          fontSize: 13.sp,
           color: isDarkTheme ? Colors.white70 : Colors.black,
           fontWeight: FontWeight.w600,
         ),
         border: OutlineInputBorder(
           borderSide: BorderSide(
-            width: 1,
+            width:1,
             color: isDarkTheme ? Colors.grey : const Color(0xffC8C8C8),
           ),
           borderRadius: BorderRadius.circular(8),
         ),
         focusedBorder: OutlineInputBorder(
           borderSide: BorderSide(
-            width: 1,
+            width:1,
             color: isDarkTheme ? Colors.grey : const Color(0xffC8C8C8),
           ),
           borderRadius: BorderRadius.circular(8),
         ),
-        contentPadding: const EdgeInsets.symmetric(horizontal: 16),
+        contentPadding:  EdgeInsets.symmetric(horizontal:16.w),
       ),
       validator: (value) {
         if (value == null || value.isEmpty) {

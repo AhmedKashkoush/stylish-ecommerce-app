@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 // ignore: must_be_immutable
 class OrderListTile extends StatelessWidget {
@@ -30,23 +31,23 @@ class OrderListTile extends StatelessWidget {
           padding: EdgeInsets.only(top: padding),
           child: ListTile(
               leading: Container(
-                width: 65,
-                height: 90,
-                padding: const EdgeInsets.all(5),
+                width:65.w,
+                height:90.h,
+                padding:  EdgeInsets.all(5.r),
                 decoration: BoxDecoration(
                   color: imgColor,
                   borderRadius: BorderRadius.circular(10),
                 ),
                 child: Image.asset(
                   img,
-                  width: 40,
-                  height: 40,
+                  width:40.w,
+                  height:40.h,
                 ),
               ),
               title: Text(
                 title,
                 style: TextStyle(
-                  fontSize: 17,
+                  fontSize: 17.sp,
                   fontWeight: FontWeight.w500,
                   color: isDarkTheme ? Colors.white : Colors.black,
                 ),
@@ -55,7 +56,7 @@ class OrderListTile extends StatelessWidget {
                   ? Text(
                       subTitle!,
                       style: TextStyle(
-                        fontSize: 14,
+                        fontSize: 14.sp,
                         fontWeight: FontWeight.w400,
                         color: isDarkTheme ? Colors.white : Colors.black,
                       ),

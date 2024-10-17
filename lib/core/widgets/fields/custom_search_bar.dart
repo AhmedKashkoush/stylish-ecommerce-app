@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:stylish_ecommerce_app/core/constants/strings.dart';
 import 'package:stylish_ecommerce_app/core/extensions/theme_extension.dart';
 
@@ -56,9 +57,9 @@ class _CustomSearchBarState extends State<CustomSearchBar> {
           hintStyle: TextStyle(
             color: context.theme.hintColor.withOpacity(0.3),
           ),
-          contentPadding: const EdgeInsets.symmetric(horizontal: 16.0),
+          contentPadding:  EdgeInsets.symmetric(horizontal:16.w),
           prefixIcon: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 8.0),
+            padding:  EdgeInsets.symmetric(horizontal:8.w),
             child: widget.canPop
                 ? const BackButton()
                 : const Icon(

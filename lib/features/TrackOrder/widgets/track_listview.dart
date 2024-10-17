@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:stylish_ecommerce_app/features/TrackOrder/widgets/order_listtile.dart';
 
 // ignore: must_be_immutable
@@ -50,7 +51,7 @@ class TrackListview extends StatelessWidget {
           child: Image.asset('assets/images/track.png'),
         ),
         Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 24),
+          padding:  EdgeInsets.symmetric(horizontal:24.w),
           child: Image.asset(
             'assets/images/map.png',
           ),

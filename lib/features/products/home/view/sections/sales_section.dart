@@ -1,10 +1,8 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
-import 'package:smooth_page_indicator/smooth_page_indicator.dart';
-import 'package:stylish_ecommerce_app/core/constants/colors.dart';
-import 'package:stylish_ecommerce_app/core/dummy/dummy_sales.dart';
+
 import 'package:stylish_ecommerce_app/core/extensions/space_extension.dart';
-import 'package:stylish_ecommerce_app/core/extensions/theme_extension.dart';
+
 import 'package:stylish_ecommerce_app/features/products/home/model/sales_offer_model.dart';
 import 'package:stylish_ecommerce_app/features/products/home/view/widgets/sales_offer_card.dart';
 

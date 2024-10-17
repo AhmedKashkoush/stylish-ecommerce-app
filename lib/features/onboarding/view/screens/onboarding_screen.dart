@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:stylish_ecommerce_app/config/routes/routes.dart';
 import 'package:stylish_ecommerce_app/core/constants/strings.dart';
@@ -26,8 +27,8 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
     return Scaffold(
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.symmetric(
-                        horizontal: 20, vertical: 20),
+          padding:  EdgeInsets.symmetric(
+                        horizontal:20.w, vertical:20.h),
           child: Column(
             children: [
               Row(
@@ -38,19 +39,19 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                     children: [
                       Text(
                         "${currentIndex + 1}",
-                        style: const TextStyle(
+                        style:  TextStyle(
                           color: AppColors.backgroundDark,
-                          height: 1.5,
-                          fontSize: 15,
+                          height:1.5.h,
+                          fontSize: 15.sp,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
                       Text(
                         "/${onBoardingList.length}",
-                        style: const TextStyle(
+                        style:  TextStyle(
                           color: AppColors.grey,
-                          height: 1.5,
-                          fontSize: 15,
+                          height:1.5.h,
+                          fontSize: 15.sp,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
@@ -59,12 +60,12 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                   if (currentIndex < onBoardingList.length - 1)
                     InkWell(
                       onTap: () => _goToSignIn(context),
-                      child: const Text(
+                      child:  Text(
                         AppStrings.skip,
                         style: TextStyle(
                           color: AppColors.backgroundDark,
-                          height: 1.5,
-                          fontSize: 15,
+                          height:1.5.h,
+                          fontSize: 15.sp,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
@@ -87,8 +88,8 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                     
                         Center(
                           child: SizedBox(
-                              height: 300,
-                              width: 300,
+                              height:300.h,
+                              width:300.w,
                               child: Image.asset(onBoardingList[i].image)),
                         ),
                     
@@ -97,20 +98,20 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                         Text(
                           onBoardingList[currentIndex].title,
                           textAlign: TextAlign.center,
-                          style: const TextStyle(
+                          style:  TextStyle(
                             color: AppColors.backgroundDark,
-                            height: 2.5,
-                            fontSize: 20,
+                            height:2.5.h,
+                            fontSize: 20.sp,
                             fontWeight: FontWeight.w800,
                           ),
                         ),
                         Text(
                           onBoardingList[currentIndex].description,
                           textAlign: TextAlign.center,
-                          style: const TextStyle(
+                          style:  TextStyle(
                             color: AppColors.grey,
-                            height: 1.5,
-                            fontSize: 13,
+                            height:1.5.h,
+                            fontSize: 13.sp,
                             fontWeight: FontWeight.bold,
                           ),
                         ),
@@ -138,8 +139,8 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                         color: currentIndex == 0
                             ? context.theme.scaffoldBackgroundColor
                             : AppColors.grey,
-                        height: 1.5,
-                        fontSize: 15,
+                        height:1.5.h,
+                        fontSize: 15.sp,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
@@ -171,10 +172,10 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                       currentIndex < onBoardingList.length - 1
                           ? AppStrings.next
                           : AppStrings.getStarted,
-                      style: const TextStyle(
+                      style:  TextStyle(
                         color: AppColors.primary,
-                        height: 1.5,
-                        fontSize: 15,
+                        height:1.5.h,
+                        fontSize: 15.sp,
                         fontWeight: FontWeight.bold,
                       ),
                     ),
@@ -202,7 +203,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
 
   Container buildDot(int index, BuildContext context) {
     return Container(
-      height: 10,
+      height:10.h,
       width: currentIndex == index ? 25 : 10,
       margin: const EdgeInsets.only(right: 5),
       decoration: BoxDecoration(

@@ -11,18 +11,18 @@ class RatingsFilterSection extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        const Text(
+       Text(
           'Rating:',
           style: TextStyle(
-            fontSize: 14,
+            fontSize: 14.sp,
             fontWeight: FontWeight.w600,
           ),
         ),
         5.width,
-        const Text(
+         Text(
           '0',
           style: TextStyle(
-            fontSize: 14,
+            fontSize: 14.sp,
             fontWeight: FontWeight.w600,
           ),
         ),
@@ -46,10 +46,10 @@ class RatingsFilterSection extends StatelessWidget {
                 );
               }),
         ),
-        const Text(
+         Text(
           '5',
           style: TextStyle(
-            fontSize: 14,
+            fontSize: 14.sp,
             fontWeight: FontWeight.w600,
           ),
         ),

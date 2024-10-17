@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:stylish_ecommerce_app/core/extensions/navigation_extension.dart';
 import 'package:stylish_ecommerce_app/core/widgets/buttons/google_btn.dart';
@@ -55,27 +56,28 @@ class _SignUpScreenState extends State<SignUpScreen> {
         },
         child: ListView(
           children: [
-            const Padding(
-              padding: EdgeInsets.only(left: 22.0, top: 22, bottom: 18),
+             Padding(
+              padding: const EdgeInsets.only(left: 22.0, top: 22, bottom: 18),
               child: Text(
                 "Create an\n Account",
                 style: TextStyle(
                   // fontFamily: "Montserrat",
-                  fontSize: 36,
+                  fontSize: 36.sp,
                   // color: Colors.black,
                   fontWeight: FontWeight.bold,
                 ),
               ),
             ),
             Padding(
-                padding: const EdgeInsets.all(24.0),
+                padding:  EdgeInsets.all(24.0.r),
                 child: CustomTextField(
                   hintText: ' Email',
+                  isVisible: false,
                   prefixIcon: const Icon(Icons.person),
                   controller: emailController,
                 )),
             Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 24.0),
+                padding:  EdgeInsets.symmetric(horizontal:24.w),
                 child: CustomTextField(
                   hintText: 'Password',
                   isPssword: true,
@@ -85,7 +87,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 )),
             Padding(
                 padding:
-                const EdgeInsets.symmetric(horizontal: 24.0, vertical: 24),
+                 EdgeInsets.symmetric(horizontal:24.w, vertical:24.h),
                 child: CustomTextField(
                   isPssword: true,
                   hintText: 'Confirm Password',
@@ -123,7 +125,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
 
             Padding(
               padding:
-              const EdgeInsets.symmetric(horizontal: 24.0, vertical: 8),
+               EdgeInsets.symmetric(horizontal:24.w, vertical:8.h),
               child: BlocBuilder<AuthCubit, AuthState>(
                 builder: (context, state) {
                   if (state is SignUpLoading) {
@@ -134,9 +136,9 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     style: ElevatedButton.styleFrom(
                       backgroundColor: const Color(0xffF83758),
                       // Red background color
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 24.0, vertical: 12.0),
-                      textStyle: const TextStyle(fontSize: 22),
+                      padding:  EdgeInsets.symmetric(
+                          horizontal:24.w, vertical:12.h),
+                      textStyle:  TextStyle(fontSize: 22.sp),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(
                           10.0,
@@ -152,8 +154,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
 
               ),
             ),
-            const SizedBox(
-              height: 50,
+             SizedBox(
+              height:50.h,
             ),
             Column(
               children: [
@@ -162,11 +164,11 @@ class _SignUpScreenState extends State<SignUpScreen> {
                   style: TextStyle(
                     color: isDarkTheme ? Colors.white : Colors.grey.shade700,
                     // fontFamily: "Montserrat",
-                    fontSize: 14,
+                    fontSize: 14.sp,
                   ),
                 ),
-                const SizedBox(
-                  height: 10,
+                 SizedBox(
+                  height:10.h,
                 ),
                 BlocBuilder<AuthCubit, AuthState>(
                   builder: (context, state) {
@@ -175,8 +177,8 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     );
                   },
                 ),
-                const SizedBox(
-                  height: 10,
+                 SizedBox(
+                  height:10.h,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -188,23 +190,23 @@ class _SignUpScreenState extends State<SignUpScreen> {
                           isDarkTheme ? Colors.white : Colors.grey.shade700,
                           // color: Colors.black,
                           // fontFamily: "Montserrat",
-                          fontSize: 14),
+                          fontSize: 14.sp),
                     ),
                     InkWell(
                       onTap: () {
                         context.pushReplacementNamed(AppRoutes.signIn);
                       },
-                      child: const Text(
+                      child:  Text(
                         "Login ",
                         style: TextStyle(
                           decoration: TextDecoration.underline,
                           decorationColor: Colors.red,
                           // Optional: Set color of the underline
                           decorationThickness: 2.0,
-                          color: Color(0xffF83758),
+                          color: const Color(0xffF83758),
                           // fontFamily: "Montserrat",
                           fontWeight: FontWeight.w700,
-                          fontSize: 14,
+                          fontSize: 14.sp,
                         ),
                       ),
                     ),

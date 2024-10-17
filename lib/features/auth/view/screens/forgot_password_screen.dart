@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:stylish_ecommerce_app/config/routes/routes.dart';
 
 import '../../../../core/widgets/fields/custom_text_field.dart';
@@ -50,8 +51,8 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
         },
         child: ListView(
           children: [
-            const Padding(
-              padding: EdgeInsetsDirectional.only(
+             Padding(
+              padding: const EdgeInsetsDirectional.only(
                 start: 22.0,
                 top: 22,
                 bottom: 18,
@@ -60,34 +61,34 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                 "Forgot \nPassword?",
                 style: TextStyle(
                   // fontFamily: "Montserrat",
-                  fontSize: 36,
+                  fontSize: 36.sp,
                   //   color: Colors.black,
                   fontWeight: FontWeight.bold,
                 ),
               ),
             ),
             Padding(
-              padding: const EdgeInsets.all(24.0),
+              padding:  EdgeInsets.all(24.0.r),
               child:
               CustomTextField(
                 hintText: "Enter your email address",
                 controller: emailController,
                 prefixIcon: const Icon(Icons.email),),
             ),
-            const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 24.0, vertical: 12),
+             Padding(
+              padding: EdgeInsets.symmetric(horizontal:24.w, vertical:12.h),
               child: Text(
                 "We will send you a message to set or reset your new password",
                 style: TextStyle(
                   //  color: Colors.grey.shade700,
                   // fontFamily: "Montserrat",
-                  fontSize: 12,
+                  fontSize: 12.sp,
                 ),
               ),
             ),
             Padding(
-              padding: const EdgeInsets.symmetric(
-                  horizontal: 24.0, vertical: 8),
+              padding:  EdgeInsets.symmetric(
+                  horizontal:24.w, vertical:8.h),
               child: BlocBuilder<AuthCubit, AuthState>(
                 builder: (context, state) {
                   if (state is ForgotPasswordLoading) {
@@ -98,9 +99,9 @@ class _ForgotPasswordScreenState extends State<ForgotPasswordScreen> {
                     style: ElevatedButton.styleFrom(
                       backgroundColor: const Color(0xffF83758),
                       // Red background color
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 24.0, vertical: 12.0),
-                      textStyle: const TextStyle(fontSize: 22),
+                      padding:  EdgeInsets.symmetric(
+                          horizontal:24.w, vertical:12.h),
+                      textStyle:  TextStyle(fontSize: 22.sp),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(
                           10.0,

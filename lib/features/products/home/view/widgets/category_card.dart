@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:stylish_ecommerce_app/config/routes/routes.dart';
 import 'package:stylish_ecommerce_app/core/extensions/navigation_extension.dart';
 import 'package:stylish_ecommerce_app/core/extensions/space_extension.dart';
@@ -25,20 +26,20 @@ class CategoryCard extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         children: [
           ClipRRect(
-            borderRadius: BorderRadius.circular(8.0),
+            borderRadius: BorderRadius.circular(50.0.r),
             child: Image.network(
               category.image, // Assuming category has an image field
-              height: 50,
-              width: 50,
+              height:50.h.h,
+              width:50.w.w,
               fit: BoxFit.cover,
             ),
           ),
           4.height,
           Text(
             category.name,
-            style: const TextStyle(
-              fontSize: 10,
-              fontWeight: FontWeight.w400,
+            style:  TextStyle(
+              fontSize: 10.sp.sp,
+              fontWeight: FontWeight.w500,
             ),
           ),
         ],

@@ -24,7 +24,7 @@ class GoogleBtn extends StatelessWidget {
         borderWidth: 1,
         margin: EdgeInsets.zero,
         buttonColor: isDarkTheme? Colors.white:Colors.transparent,
-        // padding: EdgeInsets.symmetric(horizontal: 7,),
+        // padding: EdgeInsets.symmetric(horizontal:7.w,),
         buttonType: AuthButtonType.secondary,
 
         iconType: AuthIconType.secondary,

@@ -1,5 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:stylish_ecommerce_app/core/extensions/space_extension.dart';
 import 'package:stylish_ecommerce_app/core/extensions/theme_extension.dart';
 import 'package:stylish_ecommerce_app/core/widgets/rating/star_rating_widget.dart';
@@ -34,7 +35,7 @@ class WishlistItem extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.all(6.0),
+            padding:  EdgeInsets.all(6.0.r),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -42,8 +43,8 @@ class WishlistItem extends StatelessWidget {
                   item.name,
                   maxLines: 2,
                   overflow: TextOverflow.ellipsis,
-                  style: const TextStyle(
-                    fontSize: 16,
+                  style:  TextStyle(
+                    fontSize: 16.sp,
                     fontWeight: FontWeight.w500,
                   ),
                 ),
@@ -52,16 +53,16 @@ class WishlistItem extends StatelessWidget {
                   item.description,
                   maxLines: 2,
                   overflow: TextOverflow.ellipsis,
-                  style: const TextStyle(
-                    fontSize: 10,
+                  style:  TextStyle(
+                    fontSize: 10.sp,
                     fontWeight: FontWeight.w400,
                   ),
                 ),
                 6.height,
                 Text(
                   '${item.currency} ${item.sale != null ? (item.price - item.price * item.sale!) : item.price}',
-                  style: const TextStyle(
-                    fontSize: 12,
+                  style:  TextStyle(
+                    fontSize: 12.sp,
                     fontWeight: FontWeight.w500,
                   ),
                 ),
@@ -71,22 +72,22 @@ class WishlistItem extends StatelessWidget {
                       4.width,
                       Text(
                         '${item.currency} ${item.price}',
-                        style: const TextStyle(
-                          fontSize: 12,
+                        style:  TextStyle(
+                          fontSize: 12.sp,
                           fontWeight: FontWeight.w300,
                           decoration: TextDecoration.lineThrough,
                           color: Colors.grey,
-                          height: 0.8,
+                          height:0.8.h,
                         ),
                       ),
                       10.width,
                       Text(
                         '${item.sale! * 100}% OFF',
-                        style: const TextStyle(
-                          fontSize: 10,
+                        style:  TextStyle(
+                          fontSize: 10.sp,
                           fontWeight: FontWeight.w400,
                           color: Colors.red,
-                          height: 0.8,
+                          height:0.8.h,
                         ),
                       ),
                     ],
@@ -98,8 +99,8 @@ class WishlistItem extends StatelessWidget {
                     10.width,
                     Text(
                       '${item.totalRate}',
-                      style: const TextStyle(
-                        fontSize: 10,
+                      style:  TextStyle(
+                        fontSize: 10.sp,
                         fontWeight: FontWeight.w400,
                         color: Colors.grey,
                       ),

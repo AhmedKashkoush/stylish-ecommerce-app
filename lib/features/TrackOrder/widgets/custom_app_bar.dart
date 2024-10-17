@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CustomBar extends StatelessWidget {
   const CustomBar({super.key, required this.textBar});
@@ -14,8 +15,8 @@ class CustomBar extends StatelessWidget {
       ),
       child: Text(
         textBar,
-        style: const TextStyle(
-          fontSize: 26,
+        style:  TextStyle(
+          fontSize: 26.sp,
           fontWeight: FontWeight.w600,
           color: Colors.white,
         ),

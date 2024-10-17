@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:stylish_ecommerce_app/core/widgets/scroll/list_scroll_bar.dart';
 import 'package:stylish_ecommerce_app/features/products/home/view/widgets/trending/trending_card.dart';
 
@@ -29,7 +30,7 @@ class _TrendingListState extends State<TrendingList> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 186,
+      height:186.h,
       child: Stack(
         alignment: Alignment.center,
         children: [

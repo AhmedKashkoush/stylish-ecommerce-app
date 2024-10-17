@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:stylish_ecommerce_app/core/extensions/space_extension.dart';
 import 'package:stylish_ecommerce_app/core/extensions/theme_extension.dart';
 
@@ -20,7 +21,7 @@ class ActionButton extends StatelessWidget {
     return GestureDetector(
       onTap: onPressed,
       child: Container(
-        padding: const EdgeInsets.all(4.0),
+        padding:  EdgeInsets.all(4.0.r),
         decoration: BoxDecoration(
           color: color ?? context.theme.scaffoldBackgroundColor,
           borderRadius: BorderRadius.circular(6.0),
@@ -30,8 +31,8 @@ class ActionButton extends StatelessWidget {
           children: [
             Text(
               label,
-              style: const TextStyle(
-                fontSize: 12,
+              style:  TextStyle(
+                fontSize: 12.sp,
                 fontWeight: FontWeight.w400,
               ),
             ),

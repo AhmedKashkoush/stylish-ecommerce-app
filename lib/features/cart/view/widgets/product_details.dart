@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ProductDetails extends StatelessWidget {
   const ProductDetails({super.key});
@@ -17,46 +18,46 @@ class ProductDetails extends StatelessWidget {
             Text(
               'Women\'s Casual Wear',
               style: TextStyle(
-                fontSize: 16,
+                fontSize: 16.sp,
                 fontWeight: FontWeight.w600,
                 color: isDarkTheme ? Colors.white : Colors.black,
               ),
             ),
-            const SizedBox(
-              height: 10,
+             SizedBox(
+              height:10.h,
             ),
             Text(
               'Checked Single-Breasted Blazer',
               style: TextStyle(
-                fontSize: 13,
+                fontSize: 13.sp,
                 fontWeight: FontWeight.w500,
                 color: isDarkTheme ? Colors.white : Colors.black,
               ),
             ),
-            const SizedBox(
-              height: 10,
+             SizedBox(
+              height:10.h,
             ),
             const MyDropdownMenu(),
-            const SizedBox(
-              height: 10,
+             SizedBox(
+              height:10.h,
             ),
             Row(
               children: [
                 Text(
                   'Delivery by',
                   style: TextStyle(
-                    fontSize: 13,
+                    fontSize: 13.sp,
                     color: isDarkTheme ? Colors.white : Colors.black,
                     fontWeight: FontWeight.w500,
                   ),
                 ),
-                const SizedBox(
-                  width: 10,
+                 SizedBox(
+                  width:10.w,
                 ),
                 Text(
                   '10 May 2XXX',
                   style: TextStyle(
-                    fontSize: 16,
+                    fontSize: 16.sp,
                     fontWeight: FontWeight.w600,
                     color: isDarkTheme ? Colors.white : Colors.black,
                   ),
@@ -106,7 +107,7 @@ class MyDropdownMenuState extends State<MyDropdownMenu> {
             );
           }).toList(),
         ),
-        const SizedBox(width: 30),
+         SizedBox(width:30.w),
         DropdownButton<int>(
           value: dropdownQty,
           icon: const Icon(Icons.arrow_drop_down),

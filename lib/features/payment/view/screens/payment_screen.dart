@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:stylish_ecommerce_app/core/extensions/space_extension.dart';
 
 import '../../../../core/constants/colors.dart';
@@ -24,14 +25,14 @@ class _PaymentScreenState extends State<PaymentScreen> {
         //     size: 18,
         //   ),
         // ),
-        title: const Text(
+        title:  Text(
           'Checkout',
-          style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+          style: TextStyle(fontSize: 18.sp, fontWeight: FontWeight.bold),
         ),
         centerTitle: true,
       ),
       body: Padding(
-        padding: const EdgeInsets.all(20.0),
+        padding:  EdgeInsets.all(20.0.r),
         child: Column(
           children: [
             const CustomRow(
@@ -51,12 +52,12 @@ class _PaymentScreenState extends State<PaymentScreen> {
               color: AppColors.grey,
             ),
             10.height,
-            const Align(
+             Align(
               alignment: AlignmentDirectional.topStart,
               child: Text(
                 "Payment",
                 style: TextStyle(
-                  fontSize: 18,
+                  fontSize: 18.sp,
                   fontWeight: FontWeight.w600,
                 ),
               ),
@@ -73,11 +74,11 @@ class _PaymentScreenState extends State<PaymentScreen> {
 
                   Image.asset(AppImages.visa),
 
-                  const Text(
+                   Text(
                     "*********2109",
                     style: TextStyle(
                       color: AppColors.grey,
-                      fontSize: 15,
+                      fontSize: 15.sp,
                       fontWeight: FontWeight.w500,
                     ),
                   ),
@@ -88,12 +89,12 @@ class _PaymentScreenState extends State<PaymentScreen> {
             CustomContainer(
               // function: selectedWay(),
               isSelected: !isSelected,
-              child: const Row(
+              child:  Row(
                 children: [
                   Text(
                     "Pay On Delivery",
                     style: TextStyle(
-                      fontSize: 16,
+                      fontSize: 16.sp,
                       fontWeight: FontWeight.w600,
                     ),
                   ),
@@ -151,7 +152,7 @@ class CustomElevatedButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       width: double.infinity,
-      height: 59,
+      height:59.h,
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
           backgroundColor: AppColors.primary,
@@ -184,10 +185,10 @@ class CustomElevatedButton extends StatelessWidget {
                   ],
                 ),
                 8.height ,
-                const Text('Payment done successfully.' , 
+                 Text('Payment done successfully.' , 
           textAlign: TextAlign.center,
           style: TextStyle(
-            fontSize: 14, 
+            fontSize: 14.sp, 
             fontWeight: FontWeight.w600
           ),
           ),
@@ -195,11 +196,11 @@ class CustomElevatedButton extends StatelessWidget {
             )),
           );
         },
-        child: const Text(
+        child:  Text(
           "Continue",
           style: TextStyle(
             color: AppColors.backgroundLight,
-            fontSize: 18,
+            fontSize: 18.sp,
             fontWeight: FontWeight.w700,
           ),
         ),
@@ -224,8 +225,8 @@ class CustomContainer extends StatelessWidget {
     return GestureDetector(
       onTap: () {},
       child: Container(
-        padding: const EdgeInsets.all(10),
-        height: 59,
+        padding:  EdgeInsets.all(10.r),
+        height:59.h,
         width: double.infinity,
         decoration: BoxDecoration(
 
@@ -268,7 +269,7 @@ class CustomRow extends StatelessWidget {
             text1,
             style: TextStyle(
               color: color,
-              fontSize: 18,
+              fontSize: 18.sp,
               fontWeight: FontWeight.w500,
             ),
           ),
@@ -276,7 +277,7 @@ class CustomRow extends StatelessWidget {
             text2,
             style: TextStyle(
               color: color,
-              fontSize: 16,
+              fontSize: 16.sp,
               fontWeight: FontWeight.w500,
             ),
           ),

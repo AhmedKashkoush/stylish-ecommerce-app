@@ -16,7 +16,7 @@ class AllProductsScreen extends StatefulWidget {
   const AllProductsScreen({
     super.key,
     required this.categories,
-    this.initialTab = 'Deal Of The Day',
+    this.initialTab = 'Deal Of The Day 5 ',
   });
 
   @override

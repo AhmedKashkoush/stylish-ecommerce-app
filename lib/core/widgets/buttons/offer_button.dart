@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hugeicons/hugeicons.dart';
 import 'package:stylish_ecommerce_app/core/constants/colors.dart';
 import 'package:stylish_ecommerce_app/core/widgets/icons/custom_icon.dart';
@@ -61,6 +62,6 @@ class OfferButton extends StatelessWidget {
   Color _buildBackgroundColor() => AppColors.primary;
 
   RoundedRectangleBorder _buildBorder() => RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(6),
+        borderRadius: BorderRadius.circular(6.r),
       );
 }

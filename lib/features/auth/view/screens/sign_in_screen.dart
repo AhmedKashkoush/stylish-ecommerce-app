@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'package:stylish_ecommerce_app/core/extensions/navigation_extension.dart';
 import 'package:stylish_ecommerce_app/core/widgets/buttons/google_btn.dart';
@@ -51,48 +52,51 @@ class _SignInScreenState extends State<SignInScreen> {
         },
         child: ListView(
           children: [
-            const Padding(
-              padding: EdgeInsets.only(left: 22.0, top: 22, bottom: 18),
+             Padding(
+              padding: const EdgeInsets.only(left: 22.0, top: 22, bottom: 18),
               child: Text(
                 "Welcome \n Back!",
                 style: TextStyle(
                   // fontFamily: "Montserrat",
-                    fontSize: 36,
+                    fontSize: 36.sp,
                     //color: Colors.black,
                     fontWeight: FontWeight.bold),
               ),
             ),
 
 
-           Padding(
-              padding: EdgeInsets.all(24.0),
-              child: CustomTextField(
-                controller: emailController,
-                hintText: 'Username or Email',
-                prefixIcon: Icon(Icons.person),
-              )),
-           Padding(
-              padding: EdgeInsets.symmetric(horizontal: 24.0),
-              child: CustomTextField(
-                controller: passwordController,
-                hintText: 'Password',
-                prefixIcon: Icon(Icons.lock),
-               // suffixIcon: Icon(Icons.remove_red_eye_outlined),
-              )),
+          //  Padding(
+          //     padding:  EdgeInsets.all(24.0.r),
+          //     child: CustomTextField(
+          //       controller: emailController,
+          //       hintText: 'Username or Email',
+          //       isPssword: false,
+          //       prefixIcon: const Icon(Icons.person),
+          //     )),
+          //  Padding(
+          //     padding:  EdgeInsets.symmetric(horizontal:24.w),
+          //     child: CustomTextField(
+          //       controller: passwordController,
+          //       hintText: 'Password',
+          //       prefixIcon: const Icon(Icons.lock),
+          //      // suffixIcon: Icon(Icons.remove_red_eye_outlined),
+          //     )),
           
             Padding(
-                padding: const EdgeInsets.all(24.0),
+                padding:  EdgeInsets.all(24.0.r),
                 child: CustomTextField(
                   hintText: ' Email',
+                  isPssword: false,
+                   isVisible: false,
                   controller: emailController,
-                  prefixIcon: const Icon(Icons.person),
+                  prefixIcon:  Icon(Icons.person , size: 20.sp,),
                 )),
             Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 24.0),
+                padding:  EdgeInsets.symmetric(horizontal:24.w),
                 child: CustomTextField(
                   isPssword: true,
                   hintText: 'Password',
-                  prefixIcon: const Icon(Icons.lock),
+                  prefixIcon:  Icon(Icons.lock  , size: 20.sp,),
                 //  suffixIcon: const Icon(
                  //   Icons.remove_red_eye_outlined,
                  // ),
@@ -104,14 +108,14 @@ class _SignInScreenState extends State<SignInScreen> {
                 onTap: () {
                   context.pushNamed(AppRoutes.forgotPassword);
                 },
-                child: const Align(
+                child:  Align(
                   alignment: Alignment.centerRight,
                   child: Text(
                     "Forgot Password?",
                     style: TextStyle(
-                      color: Color(0xffF83758),
+                      color: const Color(0xffF83758),
                       // fontFamily: "Montserrat",
-                      fontSize: 12,
+                      fontSize: 12.sp,
                     ),
 
                   ),
@@ -126,15 +130,15 @@ class _SignInScreenState extends State<SignInScreen> {
                       child: CircularProgressIndicator()); // Show a loading indicator during sign-in
                 }
                 return Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 18.0),
+                  padding:  EdgeInsets.symmetric(horizontal:18.w),
                   child: ElevatedButton(
                     onPressed: _signIn,
                     style: ElevatedButton.styleFrom(
                       backgroundColor: const Color(0xffF83758),
                       // Red background color
-                      padding: const EdgeInsets.symmetric(
-                          horizontal: 24.0, vertical: 12.0),
-                      textStyle: const TextStyle(fontSize: 22),
+                      padding:  EdgeInsets.symmetric(
+                          horizontal:24.w, vertical:12.h),
+                      textStyle:  TextStyle(fontSize: 22.sp),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(
                           10.0,
@@ -151,21 +155,21 @@ class _SignInScreenState extends State<SignInScreen> {
             ),
 
 
-          const SizedBox(
-            height: 50,
+           SizedBox(
+            height:50.h,
           ),
      
             Column(
               children: [
-                const Text(
+                 Text(
                   "- OR Continue with -",
                   style: TextStyle(
                     // color: Colors.black,
                     // fontFamily: "Montserrat",
-                      fontSize: 14),
+                      fontSize: 14.sp),
                 ),
-                const SizedBox(
-                  height: 10,
+                 SizedBox(
+                  height:10.h,
                 ),
                 BlocBuilder<AuthCubit, AuthState>(
                   builder: (context, state) {
@@ -176,35 +180,35 @@ class _SignInScreenState extends State<SignInScreen> {
                     );
                   },
                 ),
-                const SizedBox(
-                  height: 10,
+                 SizedBox(
+                  height:10.h,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    const Text(
+                     Text(
                       "Create An Account ",
 
                       style: TextStyle(
                         //   color: Colors.black,
                         // fontFamily: "Montserrat",
-                          fontSize: 14),
+                          fontSize: 14.sp),
                     ),
                     InkWell(
                       onTap: () {
                         context.pushReplacementNamed(AppRoutes.signUp);
                       },
-                      child: const Text(
+                      child:  Text(
                         "Sign Up ",
                         style: TextStyle(
                             decoration: TextDecoration.underline,
                             decorationColor: Colors.red,
                             // Optional: Set color of the underline
                             decorationThickness: 2.0,
-                            color: Color(0xffF83758),
+                            color: const Color(0xffF83758),
                             // fontFamily: "Montserrat",
                             fontWeight: FontWeight.w700,
-                            fontSize: 14),
+                            fontSize: 14.sp),
                       ),
                     ),
                   ],

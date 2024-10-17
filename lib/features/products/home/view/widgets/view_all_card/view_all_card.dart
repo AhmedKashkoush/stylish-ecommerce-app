@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:stylish_ecommerce_app/core/constants/colors.dart';
 import 'package:stylish_ecommerce_app/core/extensions/space_extension.dart';
 import 'package:stylish_ecommerce_app/core/widgets/buttons/offer_button.dart';
@@ -61,12 +62,12 @@ class _ViewAllCardState extends State<ViewAllCard> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.all(8),
+      padding:  EdgeInsets.all(8.sp),
       decoration: BoxDecoration(
         color: widget.type == ViewAllCardType.dealOfTheDay
             ? AppColors.secondary
             : AppColors.primary,
-        borderRadius: BorderRadius.circular(6),
+        borderRadius: BorderRadius.circular(6.r),
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,

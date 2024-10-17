@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class OrderDetails extends StatelessWidget {
   const OrderDetails({super.key});
@@ -7,20 +8,20 @@ class OrderDetails extends StatelessWidget {
   Widget build(BuildContext context) {
     final isDarkTheme = Theme.of(context).brightness == Brightness.dark;
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 17),
+      padding:  EdgeInsets.symmetric(horizontal:17.w),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
             'Order Payment Details',
             style: TextStyle(
-              fontSize: 17,
+              fontSize: 17.sp,
               fontWeight: FontWeight.w600,
               color: isDarkTheme ? Colors.white : Colors.black,
             ),
           ),
-          const SizedBox(
-            height: 20,
+           SizedBox(
+            height:20.h,
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -28,7 +29,7 @@ class OrderDetails extends StatelessWidget {
               Text(
                 'Order Amounts',
                 style: TextStyle(
-                  fontSize: 16,
+                  fontSize: 16.sp,
                   fontWeight: FontWeight.w500,
                   color: isDarkTheme ? Colors.white : Colors.black,
                 ),
@@ -36,15 +37,15 @@ class OrderDetails extends StatelessWidget {
               Text(
                 'EGP 7,000.00',
                 style: TextStyle(
-                  fontSize: 16,
+                  fontSize: 16.sp,
                   fontWeight: FontWeight.w600,
                   color: isDarkTheme ? Colors.white : Colors.black,
                 ),
               ),
             ],
           ),
-          const SizedBox(
-            height: 10,
+           SizedBox(
+            height:10.h,
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -52,7 +53,7 @@ class OrderDetails extends StatelessWidget {
               Text(
                 'Delivery Fee',
                 style: TextStyle(
-                  fontSize: 14,
+                  fontSize: 14.sp,
                   fontWeight: FontWeight.w500,
                   color: isDarkTheme ? Colors.white : Colors.black,
                 ),
@@ -60,7 +61,7 @@ class OrderDetails extends StatelessWidget {
                Text(
                 'Free',
                 style: TextStyle(
-                  fontSize: 14,
+                  fontSize: 14.sp,
  color:
                       isDarkTheme ? Colors.redAccent : const Color(0xffF83758),
                                fontWeight: FontWeight.w600,

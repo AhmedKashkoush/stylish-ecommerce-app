@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:stylish_ecommerce_app/core/extensions/theme_extension.dart';
 
 import '../../../../core/constants/images.dart';
@@ -19,10 +20,10 @@ class CheckoutScreen extends StatelessWidget {
       appBar: AppBar(
         centerTitle: true,
         backgroundColor: Colors.transparent,
-        title: const Text(
+        title:  Text(
           'Checkout',
           style: TextStyle(
-            fontSize: 16,
+            fontSize: 16.sp,
             // color: isDarkTheme ? Colors.white : Colors.black,
             fontWeight: FontWeight.w600,
           ),
@@ -31,31 +32,31 @@ class CheckoutScreen extends StatelessWidget {
       body: Column(
         children: [
           const Divider(),
-          const Padding(
-            padding: EdgeInsets.symmetric(horizontal: 18.0, vertical: 10),
+           Padding(
+            padding: EdgeInsets.symmetric(horizontal:18.w, vertical:10.h),
             child: Row(
               children: [
-                Icon(Icons.location_on),
+                const Icon(Icons.location_on),
                 Text(
                   "Delivery Address",
                   style: TextStyle(
                       //  color: isDarkTheme ? Colors.white : Colors.black,
 
                       fontWeight: FontWeight.w600,
-                      fontSize: 15),
+                      fontSize: 15.sp),
                 )
               ],
             ),
           ),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 18.0, vertical: 10),
+            padding:  EdgeInsets.symmetric(horizontal:18.w, vertical:10.h),
             child: Row(
               children: [
                 Expanded(
                   flex: 4,
                   child: Container(
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: 14, vertical: 14),
+                    padding:  EdgeInsets.symmetric(
+                        horizontal:14.w, vertical:14.h),
                     // height: height/4.5,
                     decoration: BoxDecoration(
                         color: context.theme.scaffoldBackgroundColor,
@@ -81,40 +82,40 @@ class CheckoutScreen extends StatelessWidget {
                               Icons.edit_document,
                               color: Colors.grey.shade700,
                             ),
-                            const SizedBox(
-                              width: 8,
+                             SizedBox(
+                              width:8.w,
                             )
                           ],
                           // mainAxisSize: MainAxisSize.max,
                         ),
-                        const Text(
+                         Text(
                           "Address:",
                           style: TextStyle(
-                              fontSize: 16,
+                              fontSize: 16.sp,
                               //  color:  Colors.black,
 
                               fontWeight: FontWeight.w600),
                         ),
-                        const Text(
+                         Text(
                           "216 st paul's Rd,London N1 2ll UK",
                           style: TextStyle(
-                              fontSize: 14,
+                              fontSize: 14.sp,
                               // color:  Colors.black,
 
                               fontWeight: FontWeight.w400),
                         ),
-                        const Text(
+                         Text(
                           "Contact:",
                           style: TextStyle(
-                              fontSize: 16,
+                              fontSize: 16.sp,
                               // color:  Colors.black,
 
                               fontWeight: FontWeight.w600),
                         ),
-                        const Text(
+                         Text(
                           "2+44-7843323",
                           style: TextStyle(
-                              fontSize: 14,
+                              fontSize: 14.sp,
                               // color: Colors.black,
 
                               fontWeight: FontWeight.w400),
@@ -123,14 +124,14 @@ class CheckoutScreen extends StatelessWidget {
                     ),
                   ),
                 ),
-                const SizedBox(
-                  width: 10,
+                 SizedBox(
+                  width:10.w,
                 ),
                 Expanded(
                     flex: 2,
                     child: Container(
                       padding: EdgeInsets.symmetric(
-                          horizontal: 15, vertical: width * 0.13),
+                          horizontal:15.w, vertical: width * 0.13.h),
                       // height: height/4.5,
 
                       decoration: BoxDecoration(
@@ -159,7 +160,7 @@ class CheckoutScreen extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 18.0, vertical: 10),
+            padding:  EdgeInsets.symmetric(horizontal:18.w, vertical:10.h),
             child: Row(
               children: [
                 Text(
@@ -167,7 +168,7 @@ class CheckoutScreen extends StatelessWidget {
                   style: TextStyle(
                       color: isDarkTheme ? Colors.white : Colors.black,
                       fontWeight: FontWeight.w600,
-                      fontSize: 15),
+                      fontSize: 15.sp),
                 )
               ],
             ),
@@ -195,7 +196,7 @@ class CheckoutScreen extends StatelessWidget {
                     Row(
                       children: [
                         Padding(
-                          padding: const EdgeInsets.all(8.0),
+                          padding:  EdgeInsets.all(8.0.r),
                           child: ClipRRect(
                             borderRadius: BorderRadius.circular(15),
                             child: Image.asset(AppImages.dress),
@@ -204,33 +205,33 @@ class CheckoutScreen extends StatelessWidget {
                           //   child: Image.asset(AppImages.logo),),
                         ),
                         Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                          padding:  EdgeInsets.symmetric(horizontal:8.w),
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.start,
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              const Text(
+                               Text(
                                 "Women's Casual Wear ",
                                 style: TextStyle(
-                                    fontSize: 16,
+                                    fontSize: 16.sp,
                                     //     color:  Colors.black,
 
                                     fontWeight: FontWeight.w600),
                               ),
-                              const Row(
+                               Row(
                                 children: [
                                   Text(
                                     "Variations: ",
                                     style: TextStyle(
-                                        fontSize: 15,
+                                        fontSize: 15.sp,
                                         //  color:  Colors.black,
 
                                         fontWeight: FontWeight.w500),
                                   ),
-                                  ColorContainer(
+                                  const ColorContainer(
                                     text: "Red",
                                   ),
-                                  ColorContainer(
+                                  const ColorContainer(
                                     text: "Black",
                                   ),
                                 ],
@@ -255,7 +256,7 @@ class CheckoutScreen extends StatelessWidget {
                                   //   itemSize: 50.0,
                                   //   direction: Axis.horizontal,
                                   // ),
-                                  // SizedBox(height: 20),
+                                  // SizedBox(height:20.h),
 
                                   // Capturing user input for rating
                                   RatingBar.builder(
@@ -265,8 +266,8 @@ class CheckoutScreen extends StatelessWidget {
                                     direction: Axis.horizontal,
                                     allowHalfRating: true,
                                     itemCount: 5,
-                                    itemPadding: const EdgeInsets.symmetric(
-                                        horizontal: 1.0),
+                                    itemPadding:  EdgeInsets.symmetric(
+                                        horizontal:1.w),
                                     itemBuilder: (context, _) => const Icon(
                                       Icons.star,
                                       color: Colors.amber,
@@ -283,13 +284,13 @@ class CheckoutScreen extends StatelessWidget {
                         )
                       ],
                     ),
-                    const Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 8.0),
-                      child: Divider(),
+                     Padding(
+                      padding: EdgeInsets.symmetric(horizontal:8.w),
+                      child: const Divider(),
                     ),
-                    const Padding(
+                     Padding(
                       padding:
-                          EdgeInsets.symmetric(horizontal: 18.0, vertical: 10),
+                          EdgeInsets.symmetric(horizontal:18.w, vertical:10.h),
                       child: Row(
                         children: [
                           Text(
@@ -297,14 +298,14 @@ class CheckoutScreen extends StatelessWidget {
                             style: TextStyle(
                                 // color: Colors.black,
 
-                                fontSize: 16,
+                                fontSize: 16.sp,
                                 fontWeight: FontWeight.w600),
                           ),
-                          Spacer(),
+                          const Spacer(),
                           Text(
                             "\$ 34.00",
                             style: TextStyle(
-                                fontSize: 16,
+                                fontSize: 16.sp,
                                 //  color:  Colors.black,
 
                                 fontWeight: FontWeight.w600),

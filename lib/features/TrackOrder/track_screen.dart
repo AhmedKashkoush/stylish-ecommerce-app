@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:stylish_ecommerce_app/features/TrackOrder/widgets/track_listview.dart';
 
 class TrackOrderScreen extends StatelessWidget {
@@ -14,15 +15,15 @@ class TrackOrderScreen extends StatelessWidget {
         title: Text(
           'Delivery Status',
           style: TextStyle(
-            fontSize: 18,
+            fontSize: 18.sp,
             color: isDarkTheme ? Colors.white : Colors.black,
             fontWeight: FontWeight.w600,
           ),
         ),
       ),
-      body: const Padding(
-        padding: EdgeInsets.symmetric(vertical: 20),
-        child: Column(
+      body:  Padding(
+        padding: EdgeInsets.symmetric(vertical:20.h),
+        child: const Column(
           children: [
             TrackListview(),
           ],

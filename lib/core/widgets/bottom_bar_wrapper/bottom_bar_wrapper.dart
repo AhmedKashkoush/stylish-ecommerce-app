@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hugeicons/hugeicons.dart';
 import 'package:stylish_ecommerce_app/config/routes/routes.dart';
 import 'package:stylish_ecommerce_app/core/constants/colors.dart';
@@ -30,7 +31,7 @@ class _BottomBarWrapperState extends State<BottomBarWrapper> {
       rootKey: _rootKey,
     ),
     const WishlistScreen(),
-    NotificationsTab(),
+    const NotificationsTab(),
     const SettingScreen(),
   ];
   final List<String> _labels = [
