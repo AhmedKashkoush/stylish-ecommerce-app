@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:stylish_ecommerce_app/core/constants/colors.dart';
 import 'package:stylish_ecommerce_app/core/dummy/dummy_categories.dart';
 import 'package:stylish_ecommerce_app/core/extensions/navigation_extension.dart';
@@ -51,7 +52,7 @@ class _FilterBottomSheetState extends State<FilterBottomSheet> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(12.0),
+      padding:  EdgeInsets.all(12.0.r),
       child: Column(
         mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -106,10 +107,10 @@ class _FilterBottomSheetState extends State<FilterBottomSheet> {
                     ),
                   if (filters.contains(_labels.last.toLowerCase())) ...[
                     5.height,
-                    const Text(
+                     Text(
                       'Categories:',
                       style: TextStyle(
-                        fontSize: 14,
+                        fontSize: 14.sp,
                         fontWeight: FontWeight.w600,
                       ),
                     ),
@@ -139,8 +140,8 @@ class _FilterBottomSheetState extends State<FilterBottomSheet> {
                 ),
                 child: Text(
                   'Show Results ${items.isNotEmpty ? '(${items.length})' : ''}',
-                  style: const TextStyle(
-                    fontSize: 15,
+                  style:  TextStyle(
+                    fontSize: 15.sp,
                     fontWeight: FontWeight.w600,
                     color: Colors.white,
                   ),

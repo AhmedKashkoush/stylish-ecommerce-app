@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:stylish_ecommerce_app/features/profile/view/widgets/profile_header.dart';
 import 'package:stylish_ecommerce_app/features/profile/view/widgets/shared_widget.dart';
 
@@ -18,11 +19,11 @@ class PersonalDetails extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         const ProfileHeader(),
-        const SizedBox(height: 20),
+         SizedBox(height:20.h),
         Text(
           'Personal Details',
           style: TextStyle(
-            fontSize: 18,
+            fontSize: 18.sp,
             fontWeight: FontWeight.w600,
             color: isDarkTheme ? Colors.white : Colors.black,
           ),
@@ -33,7 +34,7 @@ class PersonalDetails extends StatelessWidget {
           textController: emailController,
           keyboardType: TextInputType.emailAddress,
         ),
-        const SizedBox(height: 10),
+         SizedBox(height:10.h),
         Align(
           alignment: Alignment.topRight,
           child: Stack(
@@ -41,7 +42,7 @@ class PersonalDetails extends StatelessWidget {
               Text(
                 'Change Password',
                 style: TextStyle(
-                  fontSize: 12,
+                  fontSize: 12.sp,
                   fontWeight: FontWeight.w500,
                   color: isDarkTheme
                       ? const Color.fromARGB(255, 240, 121, 121)
@@ -53,7 +54,7 @@ class PersonalDetails extends StatelessWidget {
                 left: 0,
                 right: 0,
                 child: Container(
-                  height: 1,
+                  height:1.h,
                   color: isDarkTheme
                       ? const Color.fromARGB(255, 240, 121, 121)
                       : const Color(0xffF83758),
@@ -62,7 +63,7 @@ class PersonalDetails extends StatelessWidget {
             ],
           ),
         ),
-        const SizedBox(height: 25),
+         SizedBox(height:25.h),
         Divider(
           thickness: 0.8,
           color: isDarkTheme ? Colors.white54 : const Color(0xffC4C4C4),

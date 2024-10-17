@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:stylish_ecommerce_app/core/extensions/navigation_extension.dart';
 import 'package:stylish_ecommerce_app/config/routes/routes.dart';
 
@@ -36,36 +37,36 @@ class GettingStartedScreen extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 15),
+            padding:  EdgeInsets.symmetric(horizontal:50.w, vertical:15.h),
             child: Align(
               alignment: AlignmentDirectional.center,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
-                  const SizedBox(
-                    width: 240,
+                   SizedBox(
+                    width:240.w,
                     child: Text(
                       AppStrings.getStartedTitle,
                       textAlign: TextAlign.center,
                       style: TextStyle(
                           color: AppColors.backgroundLight,
-                          fontSize: 28,
+                          fontSize: 28.sp,
                           fontWeight: FontWeight.bold),
                     ),
                   ),
-                  const SizedBox(
-                    height: 10,
+                   SizedBox(
+                    height:10.h,
                   ),
-                  const Text(
+                   Text(
                     AppStrings.getStartedParagraph,
                     textAlign: TextAlign.center,
                     style: TextStyle(
                         color: AppColors.backgroundLight,
-                        fontSize: 14,
+                        fontSize: 14.sp,
                         fontWeight: FontWeight.w300),
                   ),
-                  const SizedBox(
-                    height: 30,
+                   SizedBox(
+                    height:30.h,
                   ),
                   InkWell(
                     onTap: () {
@@ -74,25 +75,25 @@ class GettingStartedScreen extends StatelessWidget {
                     borderRadius: BorderRadius.circular(5),
                     child: Container(
                       width: double.infinity,
-                      height: 55,
+                      height:55.h,
                       decoration: BoxDecoration(
                         color: AppColors.primary,
                         borderRadius: BorderRadius.circular(5),
                       ),
-                      child: const Center(
+                      child:  Center(
                         child: Text(
                           AppStrings.getStarted,
                           style: TextStyle(
                             color: AppColors.backgroundLight,
-                            fontSize: 18,
+                            fontSize: 18.sp,
                             fontWeight: FontWeight.bold,
                           ),
                         ),
                       ),
                     ),
                   ),
-                  const SizedBox(
-                    height: 15,
+                   SizedBox(
+                    height:15.h,
                   ),
                 ],
               ),

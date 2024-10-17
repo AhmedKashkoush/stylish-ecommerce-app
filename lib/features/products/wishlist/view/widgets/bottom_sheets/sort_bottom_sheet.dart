@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:stylish_ecommerce_app/core/constants/colors.dart';
 import 'package:stylish_ecommerce_app/core/extensions/navigation_extension.dart';
 import 'package:stylish_ecommerce_app/core/extensions/theme_extension.dart';
@@ -15,7 +16,7 @@ class SortBottomSheet extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(12.0),
+      padding:  EdgeInsets.all(12.r),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisSize: MainAxisSize.min,
@@ -46,8 +47,8 @@ class SortBottomSheet extends StatelessWidget {
                   : null,
               title: Text(
                 sortOptions[index],
-                style: const TextStyle(
-                  fontSize: 14,
+                style:  TextStyle(
+                  fontSize: 14.sp,
                   fontWeight: FontWeight.w600,
                 ),
               ),

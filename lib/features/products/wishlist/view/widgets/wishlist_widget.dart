@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:stylish_ecommerce_app/features/products/home/model/product_model.dart';
 import 'package:stylish_ecommerce_app/features/products/wishlist/view/widgets/action_bar.dart';
@@ -35,14 +36,14 @@ class _WishlistWidgetState extends State<WishlistWidget> {
     return Column(
       children: [
         Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
+          padding:  EdgeInsets.symmetric(horizontal:20.w, vertical:16.h),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Text(
                 '${widget.items.length} Items',
-                style: const TextStyle(
-                  fontSize: 18,
+                style:  TextStyle(
+                  fontSize: 18.sp,
                   fontWeight: FontWeight.w600,
                 ),
               ),
@@ -58,13 +59,13 @@ class _WishlistWidgetState extends State<WishlistWidget> {
           child: widget.items.isEmpty
               ? const EmptyWishlist()
               : MasonryGridView.builder(
-                  padding: const EdgeInsets.symmetric(horizontal: 12),
+                  padding:  EdgeInsets.symmetric(horizontal:12.w),
                   gridDelegate: SliverSimpleGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: isPortrait ? 2 : 3,
                   ),
                   itemCount: widget.items.length,
                   itemBuilder: (context, index) => Padding(
-                    padding: const EdgeInsets.all(8.0),
+                    padding:  EdgeInsets.all(8.0.r),
                     child: WishlistItem(item: widget.items[index]),
                   ),
                 ),

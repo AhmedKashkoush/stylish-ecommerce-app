@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:stylish_ecommerce_app/core/dummy/dummy_dod.dart';
 import 'package:stylish_ecommerce_app/core/dummy/dummy_trending.dart';
 import 'package:stylish_ecommerce_app/features/products/all_products/view/widgets/product_card.dart';
@@ -28,7 +29,7 @@ class _TabViewState extends State<TabView> {
   Widget build(BuildContext context) {
     if (widget.category.toLowerCase() == 'deal of the day') {
       return ListView.separated(
-        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
+        padding:  EdgeInsets.symmetric(horizontal:20.w, vertical:16.h),
         itemBuilder: (_, index) => ProductCard(product: dummyDod[index]),
         separatorBuilder: (_, __) => const Divider(),
         itemCount: dummyDod.length,
@@ -36,7 +37,7 @@ class _TabViewState extends State<TabView> {
     }
     if (widget.category.toLowerCase() == 'trending') {
       return ListView.separated(
-        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
+        padding:  EdgeInsets.symmetric(horizontal:20.w, vertical:16.h),
         itemBuilder: (_, index) => ProductCard(product: dummyTrending[index]),
         separatorBuilder: (_, __) => const Divider(),
         itemCount: dummyTrending.length,
@@ -49,7 +50,7 @@ class _TabViewState extends State<TabView> {
     return BlocBuilder<ProductCubit, ProductState>(
       builder: (context, state) {
         return ListView.separated(
-          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
+          padding:  EdgeInsets.symmetric(horizontal:20.w, vertical:16.h),
           itemBuilder: (_, index) => ProductCard(product: products[index]),
           separatorBuilder: (_, __) => const Divider(),
           itemCount: products.length,

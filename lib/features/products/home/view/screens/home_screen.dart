@@ -1,13 +1,14 @@
-import 'dart:convert';
 
-import 'package:firebase_messaging/firebase_messaging.dart';
+
+
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
+
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:stylish_ecommerce_app/config/routes/routes.dart';
-import 'package:stylish_ecommerce_app/core/dummy/dummy_dod.dart';
+
 import 'package:stylish_ecommerce_app/core/dummy/dummy_sales.dart';
-import 'package:stylish_ecommerce_app/core/dummy/dummy_trending.dart';
+
 import 'package:stylish_ecommerce_app/core/extensions/navigation_extension.dart';
 import 'package:stylish_ecommerce_app/core/extensions/space_extension.dart';
 import 'package:stylish_ecommerce_app/core/extensions/theme_extension.dart';
@@ -57,12 +58,12 @@ class _HomeScreenState extends State<HomeScreen> {
 
 
               return ListView(
-                padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
+                padding:  EdgeInsets.symmetric(horizontal:20.w, vertical:16.h),
                 children: [
-                  const Text(
+                   Text(
                     'All Featured',
                     style: TextStyle(
-                      fontSize: 20,
+                      fontSize: 18.sp.sp,
                       fontWeight: FontWeight.bold,
                     ),
                   ),

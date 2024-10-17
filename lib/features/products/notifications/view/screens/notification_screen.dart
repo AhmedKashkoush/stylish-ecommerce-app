@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hive/hive.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 
 class NotificationsTab extends StatelessWidget {
+  const NotificationsTab({super.key});
+
   @override
   Widget build(BuildContext context) {
     var notificationsBox = Hive.box('notifications');
@@ -10,7 +13,7 @@ class NotificationsTab extends StatelessWidget {
     print(notificationsBox.length);
     return Scaffold(
       appBar: AppBar(
-        title: Text('Notifications'),
+        title: const Text('Notifications'),
         centerTitle: true,
         backgroundColor: Colors.redAccent, // Use a suitable accent color
       ),
@@ -20,11 +23,11 @@ class NotificationsTab extends StatelessWidget {
           if (box.isEmpty) {
             return Center(
               child: Padding(
-                padding: const EdgeInsets.all(16.0),
+                padding:  EdgeInsets.all(16.0.r),
                 child: Text(
                   'No notifications received yet.',
                   style: TextStyle(
-                    fontSize: 18,
+                    fontSize: 18.sp,
                     color: Colors.grey[600],
                   ),
                   textAlign: TextAlign.center,
@@ -34,7 +37,7 @@ class NotificationsTab extends StatelessWidget {
           }
 
           return Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 8.0),
+            padding:  EdgeInsets.symmetric(horizontal:10.w, vertical:8.h),
             child: ListView.builder(
               itemCount: box.length,
 
@@ -49,7 +52,7 @@ class NotificationsTab extends StatelessWidget {
                       borderRadius: BorderRadius.circular(15),
                     ),
                     child: ListTile(
-                      contentPadding: const EdgeInsets.symmetric(vertical: 12.0, horizontal: 16.0),
+                      contentPadding:  EdgeInsets.symmetric(vertical:12.h, horizontal:16.w),
                       leading: const Icon(
                         Icons.notifications,
                         color: Colors.redAccent, // Accent color to match the theme
@@ -57,8 +60,8 @@ class NotificationsTab extends StatelessWidget {
                       ),
                       title: Text(
                         notification['title'],
-                        style: const TextStyle(
-                          fontSize: 16,
+                        style:  TextStyle(
+                          fontSize: 16.sp,
                           fontWeight: FontWeight.bold,
                           color: Colors.black87,
                         ),
@@ -66,19 +69,19 @@ class NotificationsTab extends StatelessWidget {
                       subtitle: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          SizedBox(height: 5),
+                          SizedBox(height:5.h),
                           Text(
                             notification['body'],
                             style: TextStyle(
-                              fontSize: 14,
+                              fontSize: 14.sp,
                               color: Colors.black54,
                             ),
                           ),
-                          SizedBox(height: 5),
+                          SizedBox(height:5.h),
                           Text(
                             _formatTimestamp(notification['timestamp']),
                             style: TextStyle(
-                              fontSize: 12,
+                              fontSize: 12.sp,
                               color: Colors.grey,
                             ),
                           ),

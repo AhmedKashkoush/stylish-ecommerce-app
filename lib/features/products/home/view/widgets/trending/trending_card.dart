@@ -1,5 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:stylish_ecommerce_app/config/routes/routes.dart';
 import 'package:stylish_ecommerce_app/core/extensions/space_extension.dart';
 import 'package:stylish_ecommerce_app/core/extensions/theme_extension.dart';
@@ -26,7 +27,7 @@ class TrendingCard extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             SizedBox(
-              height: 100,
+              height:100.h,
               child: Container(
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(6),
@@ -39,7 +40,7 @@ class TrendingCard extends StatelessWidget {
             ),
             Expanded(
               child: Padding(
-                padding: const EdgeInsets.all(6.0),
+                padding:  EdgeInsets.all(6.0.r),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -47,16 +48,16 @@ class TrendingCard extends StatelessWidget {
                       product.name,
                       maxLines: 3,
                       overflow: TextOverflow.ellipsis,
-                      style: const TextStyle(
-                        fontSize: 12,
+                      style:  TextStyle(
+                        fontSize: 12.sp,
                         fontWeight: FontWeight.w500,
                       ),
                     ),
                     6.height,
                     Text(
                       '${product.currency} ${product.sale != null ? (product.price - product.price * product.sale!) : product.price}',
-                      style: const TextStyle(
-                        fontSize: 12,
+                      style:  TextStyle(
+                        fontSize: 12.sp,
                         fontWeight: FontWeight.w500,
                       ),
                     ),
@@ -66,23 +67,23 @@ class TrendingCard extends StatelessWidget {
                           4.width,
                           Text(
                             '${product.currency} ${product.price}',
-                            style: const TextStyle(
-                              fontSize: 12,
+                            style:  TextStyle(
+                              fontSize: 12.sp,
                               fontWeight: FontWeight.w300,
                               decoration: TextDecoration.lineThrough,
                               color: Colors.grey,
-                              height: 0.8,
+                              height:0.8.h,
                             ),
                           ),
                           10.width,
                           Flexible(
                             child: Text(
                               '${product.sale! * 100}% OFF',
-                              style: const TextStyle(
-                                fontSize: 10,
+                              style:  TextStyle(
+                                fontSize: 10.sp,
                                 fontWeight: FontWeight.w400,
                                 color: Colors.red,
-                                height: 0.8,
+                                height:0.8.h,
                               ),
                             ),
                           ),

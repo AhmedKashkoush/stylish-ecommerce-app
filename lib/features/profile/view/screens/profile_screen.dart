@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:stylish_ecommerce_app/features/profile/view/widgets/bank_details.dart';
 import 'package:stylish_ecommerce_app/features/profile/view/widgets/custom_button.dart';
 import 'package:stylish_ecommerce_app/features/profile/view/widgets/business_details.dart';
@@ -48,7 +49,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
         title: Text(
           'Profile',
           style: TextStyle(
-            fontSize: 16,
+            fontSize: 16.sp,
             color: isDarkTheme ? Colors.white : Colors.black,
             fontWeight: FontWeight.w600,
           ),
@@ -59,7 +60,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
         child: Form(
           key: _formKey,
           child: ListView(
-            padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 10),
+            padding:  EdgeInsets.symmetric(horizontal:24.w, vertical:10.h),
             children: [
               PersonalDetails(
                 emailController: emailController,

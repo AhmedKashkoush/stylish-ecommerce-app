@@ -1,5 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:stylish_ecommerce_app/config/routes/routes.dart';
 import 'package:stylish_ecommerce_app/core/extensions/navigation_extension.dart';
 import 'package:stylish_ecommerce_app/core/extensions/space_extension.dart';
@@ -23,17 +24,17 @@ class DodCard extends StatelessWidget {
       },
       child: Container(
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(6),
+          borderRadius: BorderRadius.circular(6.r),
           color: context.theme.scaffoldBackgroundColor,
         ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             SizedBox(
-              height: 124,
+              height:124.h.h,
               child: Container(
                 decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(6),
+                  borderRadius: BorderRadius.circular(6.r),
                   image: DecorationImage(
                     image: CachedNetworkImageProvider(product.image),
                     fit: BoxFit.cover,
@@ -43,7 +44,7 @@ class DodCard extends StatelessWidget {
             ),
             Expanded(
               child: Padding(
-                padding: const EdgeInsets.all(6.0),
+                padding:  EdgeInsets.all(6.0.r),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -51,8 +52,8 @@ class DodCard extends StatelessWidget {
                       product.name,
                       maxLines: 2,
                       overflow: TextOverflow.ellipsis,
-                      style: const TextStyle(
-                        fontSize: 12,
+                      style:  TextStyle(
+                        fontSize: 12.sp.sp,
                         fontWeight: FontWeight.w500,
                       ),
                     ),
@@ -61,16 +62,16 @@ class DodCard extends StatelessWidget {
                       product.description,
                       maxLines: 2,
                       overflow: TextOverflow.ellipsis,
-                      style: const TextStyle(
-                        fontSize: 10,
+                      style:  TextStyle(
+                        fontSize: 10.sp.sp,
                         fontWeight: FontWeight.w400,
                       ),
                     ),
                     6.height,
                     Text(
                       '${product.currency} ${product.sale != null ? (product.price - product.price * product.sale!) : product.price}',
-                      style: const TextStyle(
-                        fontSize: 12,
+                      style:  TextStyle(
+                        fontSize: 12.sp.sp,
                         fontWeight: FontWeight.w500,
                       ),
                     ),
@@ -80,22 +81,22 @@ class DodCard extends StatelessWidget {
                           4.width,
                           Text(
                             '${product.currency} ${product.price}',
-                            style: const TextStyle(
-                              fontSize: 12,
+                            style:  TextStyle(
+                              fontSize: 12.sp.sp,
                               fontWeight: FontWeight.w300,
                               decoration: TextDecoration.lineThrough,
                               color: Colors.grey,
-                              height: 0.8,
+                              height:0.8.h,
                             ),
                           ),
                           10.width,
                           Text(
                             '${product.sale! * 100}% OFF',
-                            style: const TextStyle(
-                              fontSize: 10,
+                            style:  TextStyle(
+                              fontSize: 10.sp.sp,
                               fontWeight: FontWeight.w400,
                               color: Colors.red,
-                              height: 0.8,
+                              height:0.8.h,
                             ),
                           ),
                         ],
@@ -107,8 +108,8 @@ class DodCard extends StatelessWidget {
                         10.width,
                         Text(
                           '${product.totalRate}',
-                          style: const TextStyle(
-                            fontSize: 10,
+                          style:  TextStyle(
+                            fontSize: 10.sp.sp,
                             fontWeight: FontWeight.w400,
                             color: Colors.grey,
                           ),

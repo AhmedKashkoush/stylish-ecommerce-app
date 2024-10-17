@@ -12,17 +12,17 @@ class LastDateWidget extends StatelessWidget {
     return Row(
       mainAxisSize: MainAxisSize.min,
       children: [
-        const Icon(
+         Icon(
           Icons.calendar_month_outlined,
           color: Colors.white,
-          size: 12,
+          size: 12.sp,
         ),
         4.width,
         Text(
           'Last Date: ${until.day}/${until.month}/${until.year}',
-          style: const TextStyle(
+          style:  TextStyle(
             color: Colors.white,
-            fontSize: 12,
+            fontSize: 12.sp.sp,
           ),
         ),
       ],

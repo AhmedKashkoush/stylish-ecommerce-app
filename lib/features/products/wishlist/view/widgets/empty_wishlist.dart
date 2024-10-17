@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hugeicons/hugeicons.dart';
 import 'package:stylish_ecommerce_app/core/extensions/space_extension.dart';
 import 'package:stylish_ecommerce_app/core/extensions/theme_extension.dart';
@@ -23,7 +24,7 @@ class EmptyWishlist extends StatelessWidget {
             'No items',
             style: context.theme.textTheme.bodyLarge?.copyWith(
               color: context.theme.textTheme.bodyLarge?.color?.withOpacity(0.5),
-              fontSize: 20,
+              fontSize: 20.sp,
             ),
           ),
         ],

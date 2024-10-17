@@ -13,9 +13,9 @@ class TitleWidget extends StatelessWidget {
       type == ViewAllCardType.dealOfTheDay
           ? 'Deal of the day'
           : 'Trending Products',
-      style: const TextStyle(
+      style:  TextStyle(
         color: Colors.white,
-        fontSize: 16,
+        fontSize: 16.sp,
       ),
     );
   }

@@ -10,18 +10,18 @@ class PriceFilterSection extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        const Text(
+         Text(
           'Price:',
           style: TextStyle(
-            fontSize: 14,
+            fontSize: 14.sp,
             fontWeight: FontWeight.w600,
           ),
         ),
         5.width,
-        const Text(
+         Text(
           '0 EGP',
           style: TextStyle(
-            fontSize: 14,
+            fontSize: 14.sp,
             fontWeight: FontWeight.w600,
           ),
         ),
@@ -42,10 +42,10 @@ class PriceFilterSection extends StatelessWidget {
                 );
               }),
         ),
-        const Text(
+         Text(
           '10000 EGP',
           style: TextStyle(
-            fontSize: 14,
+            fontSize: 14.sp,
             fontWeight: FontWeight.w600,
           ),
         ),

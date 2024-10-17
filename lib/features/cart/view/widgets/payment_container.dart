@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:stylish_ecommerce_app/features/TrackOrder/track_screen.dart';
 
 class PaymentContainer extends StatelessWidget {
@@ -8,16 +9,16 @@ class PaymentContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     final isDarkTheme = Theme.of(context).brightness == Brightness.dark;
     return Padding(
-      padding: const EdgeInsets.only(top: 100),
+      padding:  const EdgeInsets.only(top: 100),
       child: Container(
-        height: 140,
+        height:140.h,
         width: double.infinity,
-        padding: const EdgeInsets.all(17),
+        padding:  EdgeInsets.all(17.r),
         decoration: BoxDecoration(
           color: isDarkTheme ? Colors.black : Colors.white,
-          border: const Border.symmetric(
+          border:  Border.symmetric(
             horizontal: BorderSide(
-                color: Color.fromARGB(255, 184, 182, 182), width: 1.5),
+                color: const Color.fromARGB(255, 184, 182, 182), width:1.5.w),
           ),
           borderRadius: const BorderRadius.only(
               topLeft: Radius.circular(20), topRight: Radius.circular(20)),
@@ -31,7 +32,7 @@ class PaymentContainer extends StatelessWidget {
                 Text(
                   'EGP 7,000.00',
                   style: TextStyle(
-                    fontSize: 16,
+                    fontSize: 16.sp,
                     fontWeight: FontWeight.w600,
                     color: isDarkTheme ? Colors.white : Colors.black,
                   ),
@@ -39,7 +40,7 @@ class PaymentContainer extends StatelessWidget {
                 Text(
                   'View Details',
                   style: TextStyle(
-                    fontSize: 12,
+                    fontSize: 12.sp,
                     color: isDarkTheme
                         ? Colors.redAccent
                         : const Color(0xffF83758),
@@ -65,9 +66,9 @@ class PaymentContainer extends StatelessWidget {
                   borderRadius: BorderRadius.circular(5),
                 ),
               ),
-              child: const Text(
+              child:  Text(
                 'Proceed to Payment',
-                style: TextStyle(fontSize: 15, color: Colors.white),
+                style: TextStyle(fontSize: 15.sp, color: Colors.white),
               ),
             ),
           ],

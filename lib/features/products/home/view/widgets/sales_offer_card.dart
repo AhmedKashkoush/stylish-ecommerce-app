@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:stylish_ecommerce_app/core/extensions/space_extension.dart';
 import 'package:stylish_ecommerce_app/core/widgets/buttons/offer_button.dart';
 import 'package:stylish_ecommerce_app/features/products/home/model/sales_offer_model.dart';
+
+import '../../../../../core/constants/colors.dart';
 
 class SalesOfferCard extends StatelessWidget {
   final SalesOfferModel offer;
@@ -15,44 +18,61 @@ class SalesOfferCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      alignment: AlignmentDirectional.centerStart,
-      padding: const EdgeInsets.symmetric(
-        horizontal: 16,
-        vertical: 8,
+      margin: EdgeInsets.symmetric(
+        horizontal:5.w,
       ),
+      alignment: AlignmentDirectional.centerStart,
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(8),
+        borderRadius: BorderRadius.circular(8.r),
         image: DecorationImage(
           image: AssetImage(offer.image),
           fit: BoxFit.cover,
           alignment: Alignment.centerLeft,
         ),
       ),
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        crossAxisAlignment: CrossAxisAlignment.start,
+      child: Stack(
         children: [
-          Text(
-            offer.title,
-            style: const TextStyle(
-              color: Colors.white,
-              fontSize: 20,
-              fontWeight: FontWeight.bold,
+          Container(
+            height: double.infinity,
+            width: double.infinity,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(8.r),
+              color: Colors.black.withOpacity(.5),
             ),
           ),
-          4.height,
-          Text(
-            offer.description,
-            style: const TextStyle(
-              color: Colors.white,
-              fontSize: 12,
-              fontWeight: FontWeight.w400,
+          Padding(
+            padding: EdgeInsets.symmetric(
+              horizontal:16.w,
+              vertical:8.h,
             ),
-          ),
-          10.height,
-          OfferButton(
-            text: 'Shop Now',
-            onTap: onButtonTap,
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  offer.title,
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 20.sp.sp,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                4.height,
+                Text(
+                  offer.description,
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 12.sp.sp,
+                    fontWeight: FontWeight.w400,
+                  ),
+                ),
+                5.height,
+                OfferButton(
+                  text: 'Shop Now',
+                  onTap: onButtonTap,
+                ),
+              ],
+            ),
           ),
         ],
       ),

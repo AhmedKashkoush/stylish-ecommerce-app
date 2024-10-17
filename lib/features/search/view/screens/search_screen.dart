@@ -1,7 +1,5 @@
-import 'package:stylish_ecommerce_app/core/dummy/dummy_categories.dart';
-import 'package:stylish_ecommerce_app/core/dummy/dummy_dod.dart';
-import 'package:stylish_ecommerce_app/core/dummy/dummy_sales.dart';
-import 'package:stylish_ecommerce_app/core/dummy/dummy_trending.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 import 'package:stylish_ecommerce_app/core/widgets/fields/custom_search_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:stylish_ecommerce_app/features/products/home/model/category_model.dart';
@@ -17,7 +15,7 @@ class SearchScreen extends StatefulWidget {
 
 class _SearchScreenState extends State<SearchScreen> {
   final TextEditingController _searchController = TextEditingController();
-  List<dynamic> _searchResults = [];
+  final List<dynamic> _searchResults = [];
 
   @override
   void dispose() {
@@ -26,7 +24,7 @@ class _SearchScreenState extends State<SearchScreen> {
   }
 
   void _onSearchChanged() {
-    final query = _searchController.text.toLowerCase();
+   // final query = _searchController.text.toLowerCase();
     // setState(() {
     //   _searchResults = [
     //     ...dummyCategories
@@ -65,7 +63,7 @@ class _SearchScreenState extends State<SearchScreen> {
               itemBuilder: (context, index) {
                 final result = _searchResults[index];
                 return Padding(
-                  padding: const EdgeInsets.symmetric(vertical: 8.0),
+                  padding:  EdgeInsets.symmetric(vertical:8.h),
                   child: ListTile(
                     leading: Image.asset(result.image),
                     title: Text(
