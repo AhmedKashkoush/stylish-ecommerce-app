@@ -40,13 +40,13 @@ class _SignInScreenState extends State<SignInScreen> {
           } else if (state is SignInError ) {
             // Show error message on failure
             ScaffoldMessenger.of(context).showSnackBar(
-              SnackBar(content: Text(state.error)),
+              const SnackBar(content: Text("Invalid credentials")),
             );
           }
           else if(state is SignInWithGoogleError){
             // Show error message on failure
             ScaffoldMessenger.of(context).showSnackBar(
-              SnackBar(content: Text(state.error)),
+              const SnackBar(content: Text("Something went wrong")),
             );
           }
         },

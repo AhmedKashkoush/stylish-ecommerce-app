@@ -8,15 +8,15 @@ class CustomTextField extends StatefulWidget {
   final TextEditingController controller;
   bool isPssword;
   bool isVisible;
-  CustomTextField(
-      {super.key,
-      required this.hintText,
-      required this.prefixIcon,
-      // this.suffixIcon,
-      this.isPssword = false,
-      this.isVisible = true,
-      required this.controller,
-      });
+  CustomTextField({
+    super.key,
+    required this.hintText,
+    required this.prefixIcon,
+    // this.suffixIcon,
+    this.isPssword = false,
+    this.isVisible = true,
+    required this.controller,
+  });
 
   @override
   State<CustomTextField> createState() => _CustomTextFieldState();

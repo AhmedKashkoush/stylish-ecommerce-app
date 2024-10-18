@@ -10,12 +10,18 @@ import 'package:stylish_ecommerce_app/core/widgets/fields/custom_search_bar.dart
 import 'package:stylish_ecommerce_app/core/widgets/icons/custom_icon.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
-  final GlobalKey<ScaffoldState> scaffoldKey;
-  final void Function() onSearchTap;
+  final GlobalKey<ScaffoldState>? scaffoldKey;
+  final void Function()? onSearchTap;
+  final Widget? title ; 
+  final Widget? icon , leading ;  
   const CustomAppBar({
     super.key,
-    required this.scaffoldKey,
-    required this.onSearchTap,
+     this.scaffoldKey,
+     this.onSearchTap,
+    this.title , 
+    this.icon, 
+    this.leading
+
   });
 
   @override
@@ -23,15 +29,15 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
     return AppBar(
         centerTitle: true,
         backgroundColor: Colors.transparent,
-        title: const AppLogo(
+        title: title ?? const AppLogo(
           showText: true,
         ),
-        leading: CustomIconButton(
+        leading: leading ?? (onSearchTap != null ? CustomIconButton(
           onPressed: onDrawerTap,
           icon: const CustomIcon(
             icon: HugeIcons.strokeRoundedMenu02,
           ),
-        ),
+        ):null),
         actions: [
           // CustomIconButton(
           //   onPressed: onNotificationsTap,
@@ -40,6 +46,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
           //   ),
           // ),
           // 10.w,
+          icon ?? 
           GestureDetector(
             onTap: () => onAvatarTap(context),
             child:  Padding(
@@ -51,7 +58,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
           ),
           5.width,
         ],
-        bottom: PreferredSize(
+        bottom: onSearchTap == null ? null : PreferredSize(
           preferredSize: const Size.fromHeight(kToolbarHeight),
           child: Padding(
             padding:  EdgeInsets.symmetric(horizontal:16.w),
@@ -66,7 +73,7 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   Size get preferredSize => const Size.fromHeight(kTextTabBarHeight * 2.5);
 
   void onDrawerTap() {
-    scaffoldKey.currentState?.openDrawer();
+    scaffoldKey?.currentState?.openDrawer();
   }
 
   void onNotificationsTap() {}

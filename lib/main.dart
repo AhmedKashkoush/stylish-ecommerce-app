@@ -3,6 +3,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:hive_flutter/adapters.dart';
@@ -15,6 +16,8 @@ import 'package:stylish_ecommerce_app/features/products/home/model/repositories/
 import 'package:stylish_ecommerce_app/features/products/home/view_model/category/category_cubit.dart';
 import 'package:stylish_ecommerce_app/features/products/home/view_model/home/home_cubit.dart';
 import 'package:stylish_ecommerce_app/features/products/home/view_model/product/product_cubit.dart';
+import 'package:stylish_ecommerce_app/features/products/wishlist/model/repository/wishlist_repo.dart';
+import 'package:stylish_ecommerce_app/features/products/wishlist/view_model/cubit/wishlist_cubit.dart';
 import 'package:stylish_ecommerce_app/services/firebase_messaging_service.dart';
 
 import 'firebase_options.dart';
@@ -50,7 +53,8 @@ Future<void> _firebaseBackgroundHandler(RemoteMessage message) async {
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-
+  SystemChrome.setPreferredOrientations(
+      [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
@@ -135,6 +139,7 @@ Future<void> main() async {
       CategoryCubit(CategoryRepository(FirebaseFirestore.instance));
   final ProductCubit productCubit =
       ProductCubit(ProductRepository(FirebaseFirestore.instance));
+  final WishListCubit wishListCubit = WishListCubit(WishlistRepoImpl());
 
   runApp(MultiBlocProvider(
     providers: [
@@ -144,6 +149,7 @@ Future<void> main() async {
       ),
       BlocProvider(create: (context) => categoryCubit),
       BlocProvider(create: (context) => productCubit),
+      BlocProvider(create: (context) => wishListCubit..getWishList()),
       BlocProvider(
         create: (context) =>
             HomeCubit(categoryCubit: categoryCubit, productCubit: productCubit),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:stylish_ecommerce_app/config/routes/routes.dart';
 import 'package:stylish_ecommerce_app/core/dummy/dummy_categories.dart';
 import 'package:stylish_ecommerce_app/core/extensions/navigation_extension.dart';
@@ -6,6 +7,8 @@ import 'package:stylish_ecommerce_app/core/extensions/space_extension.dart';
 import 'package:stylish_ecommerce_app/features/products/home/model/offer_model.dart';
 import 'package:stylish_ecommerce_app/features/products/home/view/widgets/trending/trending_list.dart';
 import 'package:stylish_ecommerce_app/features/products/home/view/widgets/view_all_card/view_all_card.dart';
+
+import '../../view_model/category/category_cubit.dart';
 
 class TrendingSection extends StatelessWidget {
   final OfferModel trending;
@@ -23,7 +26,7 @@ class TrendingSection extends StatelessWidget {
           onTap: () => context.pushNamed(
             AppRoutes.products,
             arguments: {
-              'categories': trending,
+                      'categories': context.read<CategoryCubit>().categories,
               'initialTab': 'Trending',
             },
           ),

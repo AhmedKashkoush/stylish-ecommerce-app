@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -18,10 +17,11 @@ class SignUpScreen extends StatefulWidget {
 }
 
 class _SignUpScreenState extends State<SignUpScreen> {
+  final TextEditingController userController = TextEditingController();
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
   final TextEditingController confirmPasswordController =
-  TextEditingController();
+      TextEditingController();
 
   @override
   void dispose() {
@@ -33,22 +33,21 @@ class _SignUpScreenState extends State<SignUpScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final isDarkTheme = Theme
-        .of(context)
-        .brightness == Brightness.dark;
+    final isDarkTheme = Theme.of(context).brightness == Brightness.dark;
 
     return Scaffold(
       body: BlocListener<AuthCubit, AuthState>(
         listener: (context, state) {
           if (state is SignUpSuccess || state is SignInWithGoogleSuccess) {
-            Navigator.pushReplacementNamed(context, AppRoutes.home);
-          }
-          else if (state is SignUpError) {
+            Navigator.pushReplacementNamed(context, AppRoutes.signIn);
+            ScaffoldMessenger.of(context).showSnackBar(
+              const SnackBar(content: Text('Account Created')),
+            );
+          } else if (state is SignUpError) {
             ScaffoldMessenger.of(context).showSnackBar(
               SnackBar(content: Text(state.error)),
             );
-          }
-          else if (state is SignInWithGoogleError) {
+          } else if (state is SignInWithGoogleError) {
             ScaffoldMessenger.of(context).showSnackBar(
               SnackBar(content: Text(state.error)),
             );
@@ -56,7 +55,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
         },
         child: ListView(
           children: [
-             Padding(
+            Padding(
               padding: const EdgeInsets.only(left: 22.0, top: 22, bottom: 18),
               child: Text(
                 "Create an\n Account",
@@ -68,31 +67,38 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 ),
               ),
             ),
+              Padding(
+              padding: EdgeInsets.symmetric(horizontal: 24.w , vertical: 10.h),
+                child: CustomTextField(
+                  hintText: 'User Name',
+                  isVisible: false,
+                  prefixIcon: const Icon(Icons.person),
+                  controller: userController,
+                )),
             Padding(
-                padding:  EdgeInsets.all(24.0.r),
+  padding: EdgeInsets.symmetric(horizontal: 24.w , vertical: 10.h),
                 child: CustomTextField(
                   hintText: ' Email',
                   isVisible: false,
-                  prefixIcon: const Icon(Icons.person),
+                  prefixIcon: const Icon(Icons.email),
                   controller: emailController,
                 )),
             Padding(
-                padding:  EdgeInsets.symmetric(horizontal:24.w),
+                padding: EdgeInsets.symmetric(horizontal: 24.w , vertical: 10.h),
                 child: CustomTextField(
                   hintText: 'Password',
                   isPssword: true,
                   controller: passwordController,
                   prefixIcon: const Icon(Icons.lock),
-                 // suffixIcon: const Icon(Icons.remove_red_eye_outlined),
+                  // suffixIcon: const Icon(Icons.remove_red_eye_outlined),
                 )),
             Padding(
-                padding:
-                 EdgeInsets.symmetric(horizontal:24.w, vertical:24.h),
+                padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 10.h),
                 child: CustomTextField(
                   isPssword: true,
                   hintText: 'Confirm Password',
                   prefixIcon: const Icon(Icons.lock),
-                 // suffixIcon: const Icon(Icons.remove_red_eye_outlined),
+                  // suffixIcon: const Icon(Icons.remove_red_eye_outlined),
                   controller: confirmPasswordController,
                 )),
             Padding(
@@ -104,7 +110,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       text: "By clicking the ",
                       style: TextStyle(
                         color:
-                        isDarkTheme ? Colors.white : Colors.grey.shade700,
+                            isDarkTheme ? Colors.white : Colors.grey.shade700,
                       ),
                     ),
                     const TextSpan(
@@ -115,30 +121,30 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       text: "button,you agree to the public offer ",
                       style: TextStyle(
                         color:
-                        isDarkTheme ? Colors.white : Colors.grey.shade700,
+                            isDarkTheme ? Colors.white : Colors.grey.shade700,
                       ),
                     ),
                   ],
                 ),
               ),
             ),
-
             Padding(
-              padding:
-               EdgeInsets.symmetric(horizontal:24.w, vertical:8.h),
+              padding: EdgeInsets.symmetric(horizontal: 24.w, vertical: 8.h),
               child: BlocBuilder<AuthCubit, AuthState>(
                 builder: (context, state) {
                   if (state is SignUpLoading) {
-                    return const Center(child: CircularProgressIndicator(),);
+                    return const Center(
+                      child: CircularProgressIndicator(),
+                    );
                   }
                   return ElevatedButton(
                     onPressed: _signUp,
                     style: ElevatedButton.styleFrom(
                       backgroundColor: const Color(0xffF83758),
                       // Red background color
-                      padding:  EdgeInsets.symmetric(
-                          horizontal:24.w, vertical:12.h),
-                      textStyle:  TextStyle(fontSize: 22.sp),
+                      padding: EdgeInsets.symmetric(
+                          horizontal: 24.w, vertical: 12.h),
+                      textStyle: TextStyle(fontSize: 22.sp),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(
                           10.0,
@@ -151,11 +157,10 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     ),
                   );
                 },
-
               ),
             ),
-             SizedBox(
-              height:50.h,
+            SizedBox(
+              height: 50.h,
             ),
             Column(
               children: [
@@ -167,18 +172,18 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     fontSize: 14.sp,
                   ),
                 ),
-                 SizedBox(
-                  height:10.h,
+                SizedBox(
+                  height: 10.h,
                 ),
                 BlocBuilder<AuthCubit, AuthState>(
                   builder: (context, state) {
-                    return  GoogleBtn(
-                    onPressed:  context.read<AuthCubit>().signInWithGoogle,
+                    return GoogleBtn(
+                      onPressed: context.read<AuthCubit>().signInWithGoogle,
                     );
                   },
                 ),
-                 SizedBox(
-                  height:10.h,
+                SizedBox(
+                  height: 10.h,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -187,7 +192,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       "I Already Have An Account ",
                       style: TextStyle(
                           color:
-                          isDarkTheme ? Colors.white : Colors.grey.shade700,
+                              isDarkTheme ? Colors.white : Colors.grey.shade700,
                           // color: Colors.black,
                           // fontFamily: "Montserrat",
                           fontSize: 14.sp),
@@ -196,7 +201,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       onTap: () {
                         context.pushReplacementNamed(AppRoutes.signIn);
                       },
-                      child:  Text(
+                      child: Text(
                         "Login ",
                         style: TextStyle(
                           decoration: TextDecoration.underline,
@@ -221,6 +226,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
   }
 
   void _signUp() {
+    final user = userController.text;
     final email = emailController.text;
     final password = passwordController.text;
     final confirmPassword = confirmPasswordController.text;
@@ -232,6 +238,6 @@ class _SignUpScreenState extends State<SignUpScreen> {
       return;
     }
 
-    context.read<AuthCubit>().signUp(email, password);
+    context.read<AuthCubit>().signUp( user ,  email, password );
   }
 }

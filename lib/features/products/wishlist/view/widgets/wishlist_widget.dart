@@ -47,11 +47,11 @@ class _WishlistWidgetState extends State<WishlistWidget> {
                   fontWeight: FontWeight.w600,
                 ),
               ),
-              ActionBar(
-                onSort: _sortWishlist,
-                onFilter: _filterWishlist,
-                options: _options,
-              ),
+              // ActionBar(
+              //   onSort: _sortWishlist,
+              //   onFilter: _filterWishlist,
+              //   options: _options,
+              // ),
             ],
           ),
         ),

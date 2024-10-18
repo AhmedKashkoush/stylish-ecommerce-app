@@ -2,9 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hive/hive.dart';
 import 'package:hive_flutter/hive_flutter.dart';
+import 'package:stylish_ecommerce_app/core/extensions/navigation_extension.dart';
+import 'package:stylish_ecommerce_app/core/extensions/theme_extension.dart';
+
+import '../../../../../config/routes/routes.dart';
+import '../../../../../core/widgets/app_bars/custom_app_bar.dart';
 
 class NotificationsTab extends StatelessWidget {
-  const NotificationsTab({super.key});
+  final GlobalKey<ScaffoldState> rootKey;
+  const NotificationsTab({super.key, required this.rootKey});
 
   @override
   Widget build(BuildContext context) {
@@ -12,10 +18,18 @@ class NotificationsTab extends StatelessWidget {
     print("pppppppppppppppppppppppppp");
     print(notificationsBox.length);
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Notifications'),
-        centerTitle: true,
-        backgroundColor: Colors.redAccent, // Use a suitable accent color
+      backgroundColor: context.theme.colorScheme.surface,
+      appBar: CustomAppBar(
+        scaffoldKey: rootKey,
+        title: Text(
+          "Notifications",
+          style: TextStyle(
+            color: Colors.black,
+            fontSize: 18.sp,
+            fontWeight: FontWeight.w600,
+          ),
+        ),
+        
       ),
       body: ValueListenableBuilder(
         valueListenable: notificationsBox.listenable(),
@@ -23,7 +37,7 @@ class NotificationsTab extends StatelessWidget {
           if (box.isEmpty) {
             return Center(
               child: Padding(
-                padding:  EdgeInsets.all(16.0.r),
+                padding: EdgeInsets.all(16.0.r),
                 child: Text(
                   'No notifications received yet.',
                   style: TextStyle(
@@ -37,10 +51,9 @@ class NotificationsTab extends StatelessWidget {
           }
 
           return Padding(
-            padding:  EdgeInsets.symmetric(horizontal:10.w, vertical:8.h),
+            padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 8.h),
             child: ListView.builder(
               itemCount: box.length,
-
               itemBuilder: (context, index) {
                 var notification = box.getAt(index);
 
@@ -52,15 +65,17 @@ class NotificationsTab extends StatelessWidget {
                       borderRadius: BorderRadius.circular(15),
                     ),
                     child: ListTile(
-                      contentPadding:  EdgeInsets.symmetric(vertical:12.h, horizontal:16.w),
+                      contentPadding: EdgeInsets.symmetric(
+                          vertical: 12.h, horizontal: 16.w),
                       leading: const Icon(
                         Icons.notifications,
-                        color: Colors.redAccent, // Accent color to match the theme
+                        color:
+                            Colors.redAccent, // Accent color to match the theme
                         size: 40,
                       ),
                       title: Text(
                         notification['title'],
-                        style:  TextStyle(
+                        style: TextStyle(
                           fontSize: 16.sp,
                           fontWeight: FontWeight.bold,
                           color: Colors.black87,
@@ -69,7 +84,7 @@ class NotificationsTab extends StatelessWidget {
                       subtitle: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          SizedBox(height:5.h),
+                          SizedBox(height: 5.h),
                           Text(
                             notification['body'],
                             style: TextStyle(
@@ -77,7 +92,7 @@ class NotificationsTab extends StatelessWidget {
                               color: Colors.black54,
                             ),
                           ),
-                          SizedBox(height:5.h),
+                          SizedBox(height: 5.h),
                           Text(
                             _formatTimestamp(notification['timestamp']),
                             style: TextStyle(

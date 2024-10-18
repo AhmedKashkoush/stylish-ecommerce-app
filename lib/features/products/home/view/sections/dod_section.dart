@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:stylish_ecommerce_app/config/routes/routes.dart';
 
 import 'package:stylish_ecommerce_app/core/extensions/navigation_extension.dart';
@@ -6,6 +7,8 @@ import 'package:stylish_ecommerce_app/core/extensions/space_extension.dart';
 import 'package:stylish_ecommerce_app/features/products/home/model/offer_model.dart';
 import 'package:stylish_ecommerce_app/features/products/home/view/widgets/deal_of_the_day/dod_list.dart';
 import 'package:stylish_ecommerce_app/features/products/home/view/widgets/view_all_card/view_all_card.dart';
+
+import '../../view_model/category/category_cubit.dart';
 
 class DodSection extends StatelessWidget {
   final OfferModel dealOfTheDay;
@@ -20,7 +23,7 @@ class DodSection extends StatelessWidget {
           onTap: () => context.pushNamed(
             AppRoutes.products,
             arguments: {
-              'categories': dealOfTheDay,
+          'categories': context.read<CategoryCubit>().categories,
               'initialTab': 'Deal Of The Day',
             },
           ),
