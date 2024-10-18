@@ -20,7 +20,7 @@ import 'package:stylish_ecommerce_app/features/splash/splash_screen.dart';
 import '../../features/onboarding/view/screens/onboarding_screen.dart';
 
 class AppRouter {
-  static const String initialRoute = AppRoutes.signIn;
+  static const String initialRoute = AppRoutes.splash;
 
   static Route<dynamic>? onGenerateRoute(RouteSettings settings) {
     switch (settings.name) {

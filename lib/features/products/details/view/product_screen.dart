@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:stylish_ecommerce_app/features/products/wishlist/view/screens/wishlist_screen.dart';
+import 'package:stylish_ecommerce_app/core/extensions/space_extension.dart';
+import 'package:stylish_ecommerce_app/features/products/wishlist/view_model/cubit/wishlist_states.dart';
 
+import '../../../../core/widgets/app_bars/custom_app_bar.dart';
 import '../../home/model/product_model.dart';
+import '../../wishlist/view_model/cubit/wishlist_cubit.dart';
 
 class ProductDetailsScreen extends StatefulWidget {
   final ProductModel product;
@@ -16,100 +20,130 @@ class ProductDetailsScreen extends StatefulWidget {
 
 class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
   bool isInWishlist = false;
-  void toggleWishlist(ProductModel product) {
-    setState(() {
-      isInWishlist = !isInWishlist;
-      if (isInWishlist) {
-        WishlistScreen.wishlistItems.add(product);
-      } else {
-        WishlistScreen.wishlistItems.remove(product);
-      }
-    });
+
+  @override
+  void initState() {
+    var cubit = BlocProvider.of<WishListCubit>(context);
+    isInWishlist = cubit.wishList
+        .where((element) => element.id == widget.product.id)
+        .isNotEmpty;
+    super.initState();
+  }
+
+  void toggleWishlist(BuildContext context, ProductModel product) async {
+    var cubit = BlocProvider.of<WishListCubit>(context);
+
+    if (!isInWishlist) {
+      await cubit.addToWishList(product);
+    } else {
+      await cubit.removeFromWishList(product);
+    }
+
+  
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text(
-          'Product Details',
+      appBar: CustomAppBar(
+        icon: BlocBuilder<WishListCubit, WishListStates>(
+          builder: (context, state) {
+            var cubit = BlocProvider.of<WishListCubit>(context);
+            return IconButton(
+              onPressed: () => toggleWishlist(context, widget.product),
+              icon: Icon(
+                cubit.wishList
+                        .where((element) => element.id == widget.product.id)
+                        .isNotEmpty
+                    ? Icons.favorite
+                    : Icons.favorite_border,
+                color: cubit.wishList
+                        .where((element) => element.id == widget.product.id)
+                        .isNotEmpty
+                    ? Colors.red
+                    : null,
+              ),
+            );
+          },
+        ),
+        title: Text(
+          "Product Details",
           style: TextStyle(
-            color: Colors.white,
+            color: Colors.black,
+            fontSize: 18.sp,
+            fontWeight: FontWeight.w600,
           ),
         ),
-        centerTitle: true,
-        backgroundColor: Colors.redAccent,
-        actions: [
-          IconButton(
-            onPressed: () => toggleWishlist(widget.product),
-            icon: Icon(
-              isInWishlist ? Icons.favorite : Icons.favorite_border,
-              color: isInWishlist ? Colors.red : Colors.white,
-            ),
-          ),
-        ],
       ),
-      body: Padding(
-        padding:  EdgeInsets.all(16.r),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            // Product Image
-            Center(
-              child: Image.network(
-                widget.product.image,
-                height:250.h,
-                width:250.w,
-                fit: BoxFit.cover,
-              ),
-            ),
-             SizedBox(height:20.h),
-
-            Text(
-              widget.product.name,
-              style:  TextStyle(
-                fontSize: 24.sp,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-             SizedBox(height:10.h),
-
-            Text(
-              '\$${widget.product.price.toStringAsFixed(2)}',
-              style:  TextStyle(
-                fontSize: 20.sp,
-                fontWeight: FontWeight.w500,
-                color: Colors.green,
-              ),
-            ),
-             SizedBox(height:20.h),
-
-            // Product Description
-            Text(
-              widget.product.description,
-              style:  TextStyle(fontSize: 16.sp, height:1.5.h),
-            ),
-            const Spacer(),
-
-            // Add to Cart Button
-            SizedBox(
-              width: double.infinity,
-              height:50.h,
-              child: ElevatedButton(
-                onPressed: () {},
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.redAccent, // Customize button color
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10),
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: EdgeInsets.all(15.r),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              // Product Image
+              Center(
+                child: Container(
+                  clipBehavior: Clip.hardEdge,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(12.r),
+                  ),
+                  child: Image.network(
+                    widget.product.image,
+                    height: 200.h,
+                    width: double.infinity,
+                    fit: BoxFit.cover,
                   ),
                 ),
-                child:  Text(
-                  'Add to Cart',
-                  style: TextStyle(fontSize: 18.sp, color: Colors.white),
+              ),
+              16.height,
+
+              Text(
+                widget.product.name,
+                style: TextStyle(
+                  fontSize: 20.sp,
+                  fontWeight: FontWeight.bold,
                 ),
               ),
-            ),
-          ],
+              16.height,
+
+              Text(
+                '\$${widget.product.price.toStringAsFixed(2)}',
+                style: TextStyle(
+                  fontSize: 18.sp,
+                  fontWeight: FontWeight.w500,
+                  color: Colors.green,
+                ),
+              ),
+              16.height,
+
+              // Product Description
+              Text(
+                widget.product.description,
+                style: TextStyle(fontSize: 12.sp, height: 1.5.h),
+              ),
+
+              16.height,
+              // Add to Cart Button
+              SizedBox(
+                width: double.infinity,
+                height: 50.h,
+                child: ElevatedButton(
+                  onPressed: () {},
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.redAccent, // Customize button color
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                  ),
+                  child: Text(
+                    'Add to Cart',
+                    style: TextStyle(fontSize: 18.sp, color: Colors.white),
+                  ),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );

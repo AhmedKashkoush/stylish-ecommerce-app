@@ -30,52 +30,63 @@ class SalesOfferCard extends StatelessWidget {
           alignment: Alignment.centerLeft,
         ),
       ),
-      child: Stack(
-        children: [
-          Container(
+      child : 
+       Container(
             height: double.infinity,
             width: double.infinity,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(8.r),
-              color: Colors.black.withOpacity(.5),
+              color: Colors.black.withOpacity(.2),
             ),
           ),
-          Padding(
-            padding: EdgeInsets.symmetric(
-              horizontal:16.w,
-              vertical:8.h,
-            ),
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  offer.title,
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 20.sp.sp,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                4.height,
-                Text(
-                  offer.description,
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 12.sp.sp,
-                    fontWeight: FontWeight.w400,
-                  ),
-                ),
-                5.height,
-                OfferButton(
-                  text: 'Shop Now',
-                  onTap: onButtonTap,
-                ),
-              ],
-            ),
-          ),
-        ],
-      ),
+      // child: Stack(
+      //   children: [
+      //     Container(
+      //       height: double.infinity,
+      //       width: double.infinity,
+      //       decoration: BoxDecoration(
+      //         borderRadius: BorderRadius.circular(8.r),
+      //         color: Colors.black.withOpacity(.5),
+      //       ),
+      //     ),
+      //     Padding(
+      //       padding: EdgeInsets.symmetric(
+      //         horizontal:16.w,
+      //         vertical:8.h,
+      //       ),
+      //       child: Column(
+      //         mainAxisSize: MainAxisSize.min,
+      //         crossAxisAlignment: CrossAxisAlignment.start,
+      //         children: [
+      //           Text(
+      //             offer.title,
+      //             style: TextStyle(
+      //               color: Colors.white,
+      //               fontSize: 20.sp.sp,
+      //               fontWeight: FontWeight.bold,
+      //             ),
+      //           ),
+      //           4.height,
+      //           Text(
+      //             offer.description,
+      //             style: TextStyle(
+      //               color: Colors.white,
+      //               fontSize: 12.sp.sp,
+      //               fontWeight: FontWeight.w400,
+      //             ),
+      //           ),
+      //           5.height,
+      //           OfferButton(
+      //             text: 'Shop Now',
+      //             onTap: onButtonTap,
+      //           ),
+      //         ],
+      //       ),
+      //     ),
+      //   ],
+      // ),
+   
+   
     );
   }
 }
