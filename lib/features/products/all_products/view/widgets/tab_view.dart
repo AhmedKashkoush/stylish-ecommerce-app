@@ -20,7 +20,7 @@ class _TabViewState extends State<TabView> {
 
   @override
   void initState() {
-    print("#########${widget.category}");
+
     context.read<ProductCubit>().fetchProducts(widget.category);
     super.initState();
   }

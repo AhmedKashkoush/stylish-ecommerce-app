@@ -19,7 +19,7 @@ class AuthRepository {
           email: email, password: password);
     if (userCredential.user != null) {
       // Save user data in Firestore
-      print(username);
+
      await userCredential.user!.updateDisplayName(username);
      
       await saveUserData( username, userCredential.user! );

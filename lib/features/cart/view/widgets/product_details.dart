@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:stylish_ecommerce_app/features/products/home/model/product_model.dart';
 
 class ProductDetails extends StatelessWidget {
-  const ProductDetails({super.key});
+  final ProductModel product;
+  const ProductDetails({super.key, required this.product});
 
   @override
   Widget build(BuildContext context) {
+
     final isDarkTheme = Theme.of(context).brightness == Brightness.dark;
 
     return Row(
@@ -16,7 +19,7 @@ class ProductDetails extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              'Women\'s Casual Wear',
+              product.name,
               style: TextStyle(
                 fontSize: 16.sp,
                 fontWeight: FontWeight.w600,
@@ -27,7 +30,7 @@ class ProductDetails extends StatelessWidget {
               height:10.h,
             ),
             Text(
-              'Checked Single-Breasted Blazer',
+              product.description,
               style: TextStyle(
                 fontSize: 13.sp,
                 fontWeight: FontWeight.w500,

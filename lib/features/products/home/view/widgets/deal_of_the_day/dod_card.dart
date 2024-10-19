@@ -58,13 +58,15 @@ class DodCard extends StatelessWidget {
                       ),
                     ),
                     6.height,
-                    Text(
-                      product.description,
-                      maxLines: 2,
-                      overflow: TextOverflow.ellipsis,
-                      style:  TextStyle(
-                        fontSize: 10.sp.sp,
-                        fontWeight: FontWeight.w400,
+                    Flexible(
+                      child: Text(
+                        product.description,
+                        maxLines: 2,
+                        overflow: TextOverflow.ellipsis,
+                        style:  TextStyle(
+                          fontSize: 10.sp.sp,
+                          fontWeight: FontWeight.w400,
+                        ),
                       ),
                     ),
                     6.height,

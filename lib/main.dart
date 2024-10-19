@@ -11,6 +11,8 @@ import 'package:stylish_ecommerce_app/app.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:stylish_ecommerce_app/features/auth/model/repositories/auth_repository.dart';
 import 'package:stylish_ecommerce_app/features/auth/view_model/auth_cubit.dart';
+import 'package:stylish_ecommerce_app/features/cart/model/repository/cart_repository.dart';
+import 'package:stylish_ecommerce_app/features/cart/view_model/cart_cubit.dart';
 import 'package:stylish_ecommerce_app/features/products/home/model/repositories/category_repository.dart';
 import 'package:stylish_ecommerce_app/features/products/home/model/repositories/products_repositories.dart';
 import 'package:stylish_ecommerce_app/features/products/home/view_model/category/category_cubit.dart';
@@ -55,6 +57,8 @@ Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   SystemChrome.setPreferredOrientations(
       [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
+
+
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
@@ -153,7 +157,8 @@ Future<void> main() async {
       BlocProvider(
         create: (context) =>
             HomeCubit(categoryCubit: categoryCubit, productCubit: productCubit),
-      )
+      ),
+      BlocProvider(create: (context) => CartCubit(CartRepository()),)
     ],
     child: const StylishApp(),
   ));

@@ -54,25 +54,29 @@ class TrendingCard extends StatelessWidget {
                       ),
                     ),
                     6.height,
-                    Text(
-                      '${product.currency} ${product.sale != null ? (product.price - product.price * product.sale!) : product.price}',
-                      style:  TextStyle(
-                        fontSize: 12.sp,
-                        fontWeight: FontWeight.w500,
+                    Flexible(
+                      child: Text(
+                        '${product.currency} ${product.sale != null ? (product.price - product.price * product.sale!) : product.price}',
+                        style:  TextStyle(
+                          fontSize: 12.sp,
+                          fontWeight: FontWeight.w500,
+                        ),
                       ),
                     ),
                     if (product.sale != null)
                       Row(
                         children: [
                           4.width,
-                          Text(
-                            '${product.currency} ${product.price}',
-                            style:  TextStyle(
-                              fontSize: 12.sp,
-                              fontWeight: FontWeight.w300,
-                              decoration: TextDecoration.lineThrough,
-                              color: Colors.grey,
-                              height:0.8.h,
+                          Flexible(
+                            child: Text(
+                              '${product.currency} ${product.price}',
+                              style:  TextStyle(
+                                fontSize: 12.sp,
+                                fontWeight: FontWeight.w300,
+                                decoration: TextDecoration.lineThrough,
+                                color: Colors.grey,
+                                height:0.8.h,
+                              ),
                             ),
                           ),
                           10.width,

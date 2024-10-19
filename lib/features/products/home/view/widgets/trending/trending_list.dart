@@ -23,8 +23,7 @@ class _TrendingListState extends State<TrendingList> {
   void initState() {
     // TODO: implement initState
     super.initState();
-    print("9999999999999999999999999999");
-    print(widget.products.first);
+
   }
 
   @override

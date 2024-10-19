@@ -5,6 +5,7 @@ import 'package:stylish_ecommerce_app/core/extensions/space_extension.dart';
 import 'package:stylish_ecommerce_app/features/products/wishlist/view_model/cubit/wishlist_states.dart';
 
 import '../../../../core/widgets/app_bars/custom_app_bar.dart';
+import '../../../cart/view_model/cart_cubit.dart';
 import '../../home/model/product_model.dart';
 import '../../wishlist/view_model/cubit/wishlist_cubit.dart';
 
@@ -42,6 +43,10 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
   
   }
 
+  void addToCart(BuildContext context) {
+    var cartCubit = BlocProvider.of<CartCubit>(context);
+    cartCubit.addProduct(widget.product.id, widget.product.name, widget.product.price, widget.product.image);
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -129,7 +134,12 @@ class _ProductDetailsScreenState extends State<ProductDetailsScreen> {
                 width: double.infinity,
                 height: 50.h,
                 child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    addToCart(context);
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(content: Text('Added to cart!')),
+                    );
+                  },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.redAccent, // Customize button color
                     shape: RoundedRectangleBorder(
